@@ -44,3 +44,7 @@ docker run \
 4) I am not sure if non default ports like 8080, 30053, 30054 will break the demonstration
 
 5) Can docker simulate different ip addresses? Or must I use VMs like Vagrant?
+^
+I think have to dive into docker networking
+^
+I think we start with 1 Bind9, 1 Nginx, otherwise it would be confusing.
