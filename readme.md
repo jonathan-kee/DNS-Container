@@ -42,3 +42,5 @@ docker run \
 3) You can actually run Ubuntu Container, then install Bind9, Nginx seperately I think
 
 4) I am not sure if non default ports like 8080, 30053, 30054 will break the demonstration
+
+5) Can docker simulate different ip addresses? Or must I use VMs like Vagrant?
