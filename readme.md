@@ -1,7 +1,7 @@
 # Docker Setup
 - Bind9 (Master)
 - Bind9 (Slave)
-- Nginx
+- Nginx (Web Server)
 
 # Download an image without starting a container:
 1) docker image pull ubuntu/bind9
@@ -20,6 +20,19 @@ docker run -d -p 30053:53 ubuntu/bind9
 
 # Run Bind9 (Slave) in detached mode, map free host port 30054 to the container’s port 53
 docker run -d -p 30054:53 ubuntu/bind9
+
+# Example of one of popular docker images 
+docker run \
+        --name=bind9 \
+        --restart=always \
+        --publish 53:53/udp \
+        --publish 53:53/tcp \
+        --publish 127.0.0.1:953:953/tcp \
+        --volume /etc/bind \
+        --volume /var/cache/bind \
+        --volume /var/lib/bind \
+        --volume /var/log \
+        internetsystemsconsortium/bind9:9.18
 
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
