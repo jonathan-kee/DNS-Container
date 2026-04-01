@@ -50,7 +50,7 @@ https://labs.iximiuz.com/challenges/edit-file-in-running-slim-container
 4) node03
 
 # Tutorial
-on node01
+- on node01
 - Install bind with below commands
 sudo apt update 
 sudo apt install bind9 bind9utils -y
@@ -102,6 +102,18 @@ zone "multinode.kodekloud.lab" {
 };
 
 After adding the lines, save the changes and exit the editor.
+
+- on node2:
+1. First, SSH into node02:
+ssh node02
+
+2. Install and start BIND9 using the following commands:
+sudo apt update
+sudo apt install bind9 bind9utils -y
+sudo systemctl start named
+
+Explanation
+As with our primary DNS server, it is essential to install BIND9 on node02 to handle DNS requests. Having two DNS servers enhances the availability of our DNS service, ensuring continued operation even if one server encounters issues.
 
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
