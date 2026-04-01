@@ -39,6 +39,10 @@ docker run \
         --volume /var/log \
         internetsystemsconsortium/bind9:9.18
 
+# How to add configuration to Bind9 servers
+https://labs.iximiuz.com/challenges/edit-file-in-running-container
+https://labs.iximiuz.com/challenges/edit-file-in-running-slim-container
+
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
 
