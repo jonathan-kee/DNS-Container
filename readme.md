@@ -62,15 +62,15 @@ systemctl status named
 - Explanation
 The BIND9 system service file is located at /lib/systemd/system/named.service. This file contains the service unit configuration that the system uses to manage the BIND9 DNS server (named) process, including how to start, stop, and restart the service, as well as its dependencies and resource limits.
 
-To configure BIND with zone file.
+- To configure BIND with zone file.
 1. Make sure you are on node01
 2. A zone file containing the DNS records.
 Note: To complete this task, ensure you have a note of the IP address of node01 and node02. You can get IP address by running the ifconfig eth0 command on respective nodes.
 
-Step 1: Create the Zone File
+- Step 1: Create the Zone File
 sudo vi /etc/bind/db.multinode.kodekloud.lab
 
-Next, add the following content to the zone file:
+- Next, add the following content to the zone file:
 $TTL 604800
 @       IN      SOA     node01.multinode.kodekloud.lab. admin.multinode.kodekloud.lab. (
                     1     ; Serial
@@ -84,6 +84,24 @@ $TTL 604800
 
 node01  IN      A       <ip of node01>
 node02  IN      A       <ip of node02>
+
+- On node01 node, configure BIND to use our new zone file:
+
+1. A declaration in named.conf.local to instruct BIND to load this zone, effectively configuring the machine as a local resolver.
+
+Zone file location would be - /etc/bind/db.multinode.kodekloud.lab
+Type: master
+
+- Please execute the following command to open the local BIND configuration file:
+sudo vi /etc/bind/named.conf.local
+
+- Once the file is open, insert the following lines:
+zone "multinode.kodekloud.lab" {
+    type master;
+    file "/etc/bind/db.multinode.kodekloud.lab";
+};
+
+After adding the lines, save the changes and exit the editor.
 
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
