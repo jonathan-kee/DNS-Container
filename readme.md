@@ -43,6 +43,48 @@ docker run \
 https://labs.iximiuz.com/challenges/edit-file-in-running-container
 https://labs.iximiuz.com/challenges/edit-file-in-running-slim-container
 
+# Project Architecture
+1) ubuntu-host
+2) node01
+3) node02
+4) node03
+
+# Tutorial
+on node01
+- Install bind with below commands
+sudo apt update 
+sudo apt install bind9 bind9utils -y
+
+- Start the service
+sudo systemctl start named
+systemctl status named
+
+- Explanation
+The BIND9 system service file is located at /lib/systemd/system/named.service. This file contains the service unit configuration that the system uses to manage the BIND9 DNS server (named) process, including how to start, stop, and restart the service, as well as its dependencies and resource limits.
+
+To configure BIND with zone file.
+1. Make sure you are on node01
+2. A zone file containing the DNS records.
+Note: To complete this task, ensure you have a note of the IP address of node01 and node02. You can get IP address by running the ifconfig eth0 command on respective nodes.
+
+Step 1: Create the Zone File
+sudo vi /etc/bind/db.multinode.kodekloud.lab
+
+Next, add the following content to the zone file:
+$TTL 604800
+@       IN      SOA     node01.multinode.kodekloud.lab. admin.multinode.kodekloud.lab. (
+                    1     ; Serial
+                    604800         ; Refresh
+                    86400          ; Retry
+                    2419200        ; Expire
+                    604800 )       ; Negative Cache TTL
+
+@       IN      NS      node01.multinode.kodekloud.lab.
+@       IN      NS      node02.multinode.kodekloud.lab.
+
+node01  IN      A       <ip of node01>
+node02  IN      A       <ip of node02>
+
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
 
