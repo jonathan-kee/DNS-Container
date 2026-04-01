@@ -141,6 +141,21 @@ As with our primary DNS server, it is essential to install BIND9 on node02 to ha
 - Restart BIND on Both Servers
 sudo systemctl reload named
 
+- What is the Response code in the dig output on node02?
+dig @localhost node01.multinode.kodekloud.lab
+
+In Section 2 of the course, we explored the importance of obtaining a complete copy of all DNS records from the primary DNS server when setting up a secondary DNS server. This process is accomplished through zone transfers, which can be categorized into two types: AXFR (full zone transfer) and IXFR (incremental zone transfer). The primary server controls which servers are authorized to receive these copies through the allow-transfer directive. Conversely, the secondary server uses the masters directive to indicate the source from which to retrieve the DNS records.
+
+- Task: Install Web Server on ubuntu-host
+Install a web server, which is crucial for testing the functionality of CNAME records. The web server will serve the content that the CNAME resolves to.
+
+Instructions:
+1. SSH into ubuntu-host.
+2. Execute the following commands:
+sudo apt update
+sudo apt install nginx -y
+sudo systemctl start nginx
+
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
 
