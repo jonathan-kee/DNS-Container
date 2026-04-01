@@ -156,6 +156,21 @@ sudo apt update
 sudo apt install nginx -y
 sudo systemctl start nginx
 
+- Task: Add Web Server DNS Records
+On the node01, follow these steps to edit your zone file and add the web server:
+1. Open the zone file with the following command:
+sudo vi /etc/bind/db.multinode.kodekloud.lab
+
+2. Add the following records to the file after replacing the with ip address of the ubuntu-host node, ensuring that you increment the serial number:
+; Web Server Records
+ubuntu-host         IN      A       <REPLACE_WITH_ubuntu-host_IP>
+www             IN      CNAME   ubuntu-host
+webserver       IN      CNAME   ubuntu-host
+
+3. Restart the DNS service with the command:
+sudo systemctl reload named
+
+
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
 
