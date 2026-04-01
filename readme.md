@@ -170,6 +170,36 @@ webserver       IN      CNAME   ubuntu-host
 3. Restart the DNS service with the command:
 sudo systemctl reload named
 
+- Task: Configure DNS Client
+In this step, you will configure the DNS client on node03 to utilize the DNS servers that were set up earlier (node01 and node02). This configuration will enable node03 to resolve domain names such as www.multinode.kodekloud.lab to the corresponding IP addresses based on the DNS records you have established.
+
+You can test the accessibility to nginx server by running the below command on node03.
+curl www.multinode.kodekloud.lab
+
+Note: open a new terminal window by clicking on the + button at the terminal, access node03 by ssh node03 command.
+
+Note: You need to replace existing /etc/resolv.conf
+
+1. On node03, open the resolv.conf file using the following command:
+sudo vi /etc/resolv.conf
+
+2. Add the following lines to the file:
+nameserver REPLACE_WITH_NODE01_IP
+nameserver REPLACE_WITH_NODE02_IP
+search multinode.kodekloud.lab
+
+-In this step, on node03 you will test the failover functionality of our DNS setup. By stopping the BIND service on the primary server (node01), you will simulate a failure. The goal is to confirm that the secondary DNS server (node02) can still resolve DNS queries, thereby ensuring redundancy in our DNS infrastructure.
+
+1. Execute the command:
+dig node01.multinode.kodekloud.lab
+
+Observe the IP address of the nameserver.
+1. Stop the BIND service on node01.
+2. Execute the command:
+dig node01.multinode.kodekloud.lab
+
+Observe the IP address of the server.
+
 
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
