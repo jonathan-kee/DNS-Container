@@ -44,10 +44,10 @@ https://labs.iximiuz.com/challenges/edit-file-in-running-container
 https://labs.iximiuz.com/challenges/edit-file-in-running-slim-container
 
 # Project Architecture
-1) ubuntu-host
-2) node01
-3) node02
-4) node03
+1) ubuntu-host (Nginx Web Server)
+2) node01 (Bind9 DNS Master)
+3) node02 (Bind9 DNS Slave)
+4) node03 (DNS Client)
 
 # Tutorial
 - on node01
