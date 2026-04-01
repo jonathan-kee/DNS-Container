@@ -14,12 +14,17 @@ The servers would be missing the configuration
 *** for -p, docker host is left of :  ,docker container is right of : ***
 
 docker run -d -p 8080:80 nginx:stable-alpine3.23-perl
+*** verbose command ***
+docker run --name nginx --detach -p 8080:80 nginx:stable-alpine3.23-perl
 
 # Run Bind9 (Master) in detached mode, map free host port 30053 to the container’s port 53
 docker run -d -p 30053:53 ubuntu/bind9
 
 # Run Bind9 (Slave) in detached mode, map free host port 30054 to the container’s port 53
 docker run -d -p 30054:53 ubuntu/bind9
+
+# Show all containers (running, exited, crashed)
+docker ps -a
 
 # Example of one of popular docker images 
 docker run \
