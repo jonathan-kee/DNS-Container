@@ -115,6 +115,32 @@ sudo systemctl start named
 Explanation
 As with our primary DNS server, it is essential to install BIND9 on node02 to handle DNS requests. Having two DNS servers enhances the availability of our DNS service, ensuring continued operation even if one server encounters issues.
 
+- Step 5: Configure Secondary DNS Settings
+- Task 1: Configure Primary (node01 node) to Allow Transfers
+1. SSH into node01
+2. Edit the BIND options file /etc/bind/named.conf.options
+3. Add the following content after placing the IP of node02 as indicated below:
+   options {
+       directory "/var/cache/bind";
+       allow-transfer { <REPLACE_WITH_node02_IP;> };
+       recursion yes;
+       allow-recursion { any; };
+       listen-on { any; };
+   };
+
+- Task 2: Configure Secondary Server (node02)
+1. SSH into node02:
+2. Edit named.conf.local file /etc/bind/named.conf.local
+3. Add the following configuration after placing the IP of node01 as indicated below:
+   zone "multinode.kodekloud.lab" {
+       type slave;
+       file "/var/cache/bind/db.multinode.kodekloud.lab";
+       masters { <REPLACE_WITH_node01_IP;> };
+   };
+
+- Restart BIND on Both Servers
+sudo systemctl reload named
+
 # QNA
 1) Do I want to do port mapping for Bind9? What is Bind9 DNS port?
 
