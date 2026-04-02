@@ -1,6 +1,6 @@
 $TTL 604800
 ; The "@" symbol here refers to the zone "test."
-@       IN      SOA     node01.test. admin.test. (
+@       IN      SOA     test. root.test. (
                     1     ; Serial
                     604800         ; Refresh
                     86400          ; Retry
@@ -8,14 +8,9 @@ $TTL 604800
                     604800 )       ; Negative Cache TTL
 
 ; Name Servers for the domain "test."
-@       IN      NS      node01.test.
-@       IN      NS      node02.test.
+@       IN      NS      test.
 
 ; IP addresses for those Name Servers
-node01  IN      A       172.17.0.2
-node02  IN      A       172.17.0.3
-
-; Web Server Records
-ubuntu-host         IN      A       172.17.0.4
-www             IN      CNAME   ubuntu-host
-webserver       IN      CNAME   ubuntu-host
+@  IN      A       172.17.0.2
+www IN A 172.17.0.2
+@ IN AAAA 1234:1234::1
