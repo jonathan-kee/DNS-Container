@@ -27,6 +27,7 @@ docker run -d -p 30054:53 ubuntu/bind9
 docker ps -a
 
 # Example of one of popular docker images 
+docker image pull internetsystemsconsortium/bind9:9.20
 docker run \
         --name=bind9 \
         --restart=always \
@@ -37,7 +38,7 @@ docker run \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
         --volume /var/log \
-        internetsystemsconsortium/bind9:9.18
+        internetsystemsconsortium/bind9:9.20
 
 # How to add configuration to Bind9 servers
 https://labs.iximiuz.com/challenges/edit-file-in-running-container
@@ -71,6 +72,13 @@ Notes on VM IT foundation
 - Next up is bridged. The VM gets its own IP address on the same network as your host. Other devices can talk to it which is useful for running servers or simulating real devices.
 
 - And lastly host only which provides no internet access. The VM can only talk to your host machine which is ideal for secure local testing.
+
+Networking website:
+https://docs.docker.com/engine/network/
+
+When Docker Engine on Linux starts for the first time, it has a single built-in network called the "default bridge" network. When you run a container without the --network option, it is connected to the default bridge.
+
+
 
 # Tutorial
 - on node01
