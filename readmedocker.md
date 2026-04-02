@@ -59,6 +59,8 @@ exit
 client 172.17.0.5/16
 
 ## SSH into Ubuntu-host (Nginx Web Server)
+docker exec -it nginx sh
+ping -c 1 172.17.0.4
 ping -c 1 172.17.0.2
 ping -c 1 172.17.0.3
 ping -c 1 172.17.0.5
