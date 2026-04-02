@@ -3,6 +3,11 @@
 docker image pull internetsystemsconsortium/bind9:9.20
 docker image pull nginx:stable-alpine3.23-perl
 docker image pull ubuntu
+^
+Ubuntu no utilities
+
+docker image pull busybox
+
 
 # Run Images
 *** I removed the mapping of host port to container port to avoid breakage ***
@@ -27,15 +32,36 @@ docker run --detach \
 
 docker run --name nginx --detach nginx:stable-alpine3.23-perl
 
-docker run --name client --detach ubuntu
+docker run --name client -it --detach busybox
+^
+Need -it for it to stay running
 
 # Test Connection & note down IPv4 Address
-# # SSH into Ubuntu-host (Nginx Web Server)
+## SSH into Ubuntu-host (Nginx Web Server)
 docker exec -it nginx sh
 ip a
-ping -c 1 node01
-ping -c 1 node02
-ping -c 1 node03
+exit
+nginx 172.17.0.4/16
+
+docker exec -it node01 sh
+ip a
+exit
+node01 172.17.0.2/16
+
+docker exec -it node02 sh
+ip a
+exit
+node02 172.17.0.3/16
+
+docker exec -it client sh
+ip a
+exit
+client 172.17.0.5/16
+
+## SSH into Ubuntu-host (Nginx Web Server)
+ping -c 1 172.17.0.2
+ping -c 1 172.17.0.3
+ping -c 1 172.17.0.5
 
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
