@@ -86,7 +86,7 @@ docker cp \
 
 ## Configure BIND options
 docker cp \
-    ./node01/named.conf.local \
+    ./node01/named.conf.options \
     node01:/etc/bind/named.conf.options
 
 # Node02 (Bind9 DNS Slave)
