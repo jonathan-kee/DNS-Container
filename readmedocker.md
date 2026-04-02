@@ -53,6 +53,8 @@ docker cp \
     node02:/etc/bind/named.conf.local
 
 # Ubuntu-host (Nginx Web Server)
+
+# Node03 (DNS Client)
 ## Replace existing /etc/resolv.conf
 docker cp \ 
     ./node03/resolv.conf \
