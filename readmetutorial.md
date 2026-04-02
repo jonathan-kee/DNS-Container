@@ -33,3 +33,6 @@ You need first 4 octets of Ip address, in-addr-arpa is template standard naming:
 zone "1.168.192.in-addr-arpa" 
 
 In forward zone file, @ denotes the origin, not sure what it means by that
+
+The full command (I skip the -v arguments):
+sudo docker run --name bind9-dns-server --rm -it --net host ubuntu/bind9
