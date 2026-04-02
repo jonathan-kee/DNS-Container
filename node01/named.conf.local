@@ -1,4 +1,4 @@
 zone "multinode.kodekloud.lab" {
     type master;
-    file "/etc/bind/db.multinode.kodekloud.lab";
+    file "/etc/bind/db.test";
 };

@@ -1,5 +1,5 @@
 zone "multinode.kodekloud.lab" {
     type slave;
-    file "/var/cache/bind/db.multinode.kodekloud.lab";
+    file "/var/cache/bind/db.test";
     masters { 172.17.0.2; };
 };

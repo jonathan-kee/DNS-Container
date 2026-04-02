@@ -1,16 +1,20 @@
 $TTL 604800
-@       IN      SOA     node01.multinode.kodekloud.lab. admin.multinode.kodekloud.lab. (
+; The "@" symbol here refers to the zone "test."
+@       IN      SOA     node01.test. admin.test. (
                     1     ; Serial
                     604800         ; Refresh
                     86400          ; Retry
                     2419200        ; Expire
                     604800 )       ; Negative Cache TTL
 
-@       IN      NS      node01.multinode.kodekloud.lab.
-@       IN      NS      node02.multinode.kodekloud.lab.
+; Name Servers for the domain "test."
+@       IN      NS      node01.test.
+@       IN      NS      node02.test.
 
+; IP addresses for those Name Servers
 node01  IN      A       172.17.0.2
 node02  IN      A       172.17.0.3
+
 ; Web Server Records
 ubuntu-host         IN      A       172.17.0.4
 www             IN      CNAME   ubuntu-host

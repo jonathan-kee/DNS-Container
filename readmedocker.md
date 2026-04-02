@@ -7,6 +7,10 @@ docker image pull ubuntu
 Ubuntu no utilities
 
 docker image pull busybox
+^
+No curl
+
+docker image pull yauritux/busybox-curl
 
 
 # Run Images
@@ -35,6 +39,10 @@ docker run --name nginx --detach nginx:stable-alpine3.23-perl
 docker run --name client -it --detach busybox
 ^
 Need -it for it to stay running
+^
+No curl
+
+docker run --name client -it --detach --dns=172.17.0.2 --dns=172.17.0.3 --dns-search=test yauritux/busybox-curl
 
 # Test Connection & note down IPv4 Address
 ## SSH into Ubuntu-host (Nginx Web Server)
@@ -86,6 +94,9 @@ docker cp \
 docker cp \
     ./node02/named.conf.local \
     node02:/etc/bind/named.conf.local
+
+# Restart DNS servers
+docker restart node01 node02 client
 
 # Ubuntu-host (Nginx Web Server)
 
