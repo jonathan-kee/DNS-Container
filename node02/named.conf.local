@@ -1,5 +1,5 @@
 zone "multinode.kodekloud.lab" {
     type slave;
     file "/var/cache/bind/db.multinode.kodekloud.lab";
-    masters { <REPLACE_WITH_node01_IP;> };
+    masters { 172.17.0.2; };
 };

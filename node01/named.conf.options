@@ -1,6 +1,6 @@
 options {
     directory "/var/cache/bind";
-    allow-transfer { <REPLACE_WITH_node02_IP;> };
+    allow-transfer { 172.17.0.3; };
     recursion yes;
     allow-recursion { any; };
     listen-on { any; };
