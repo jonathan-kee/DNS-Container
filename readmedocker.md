@@ -29,6 +29,13 @@ docker run --name nginx --detach nginx:stable-alpine3.23-perl
 
 docker run --name client --detach ubuntu
 
+# Test Connection & note down IPv4 Address
+ssh into Ubuntu-host (Nginx Web Server)
+ip a
+ping -c 1 node01
+ping -c 1 node02
+ping -c 1 node03
+
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
 docker cp \
