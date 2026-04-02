@@ -1,4 +1,4 @@
-zone "multinode.kodekloud.lab" {
+zone "test" {
     type master;
     file "/etc/bind/db.test";
 };

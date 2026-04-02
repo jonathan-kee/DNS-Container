@@ -76,8 +76,8 @@ ping -c 1 172.17.0.5
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
 docker cp \
-    ./node01/db.multinode.kodekloud.lab \
-    node01:/etc/bind/db.multinode.kodekloud.lab
+    ./node01/db.test \
+    node01:/etc/bind/db.test
 
 ## Configure BIND to use our new zone file
 docker cp \
