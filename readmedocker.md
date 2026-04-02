@@ -2,6 +2,7 @@
 ## Pull Images
 docker image pull internetsystemsconsortium/bind9:9.20
 docker image pull nginx:stable-alpine3.23-perl
+docker image pull ubuntu
 
 # Run Images
 docker run \
@@ -29,6 +30,8 @@ docker run \
         internetsystemsconsortium/bind9:9.20
 
 docker run --name nginx --detach -p 8080:80 nginx:stable-alpine3.23-perl
+
+docker run --name client --detach ubuntu
 
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
