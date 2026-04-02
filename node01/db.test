@@ -14,3 +14,6 @@ $TTL 604800
 @  IN      A       172.17.0.2
 www IN A 172.17.0.2
 @ IN AAAA 1234:1234::1
+
+; Nginx Server
+nginx   IN      A       172.17.0.3
