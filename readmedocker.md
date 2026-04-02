@@ -93,7 +93,7 @@ docker cp \
 ## Replace existing /etc/resolv.conf
 docker cp \ 
     ./node03/resolv.conf \
-    node03:/etc/resolv.conf
+    client:/etc/resolv.conf
 
 ## Test the accessibility to nginx server
 curl www.multinode.kodekloud.lab
