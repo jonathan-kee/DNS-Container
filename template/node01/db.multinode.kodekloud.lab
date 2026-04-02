@@ -1,0 +1,17 @@
+$TTL 604800
+@       IN      SOA     node01.multinode.kodekloud.lab. admin.multinode.kodekloud.lab. (
+                    1     ; Serial
+                    604800         ; Refresh
+                    86400          ; Retry
+                    2419200        ; Expire
+                    604800 )       ; Negative Cache TTL
+
+@       IN      NS      node01.multinode.kodekloud.lab.
+@       IN      NS      node02.multinode.kodekloud.lab.
+
+node01  IN      A       <ip of node01>
+node02  IN      A       <ip of node02>
+; Web Server Records
+ubuntu-host         IN      A       REPLACE_WITH_ubuntu-host_IP
+www             IN      CNAME   ubuntu-host
+webserver       IN      CNAME   ubuntu-host
