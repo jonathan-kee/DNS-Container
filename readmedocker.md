@@ -5,31 +5,27 @@ docker image pull nginx:stable-alpine3.23-perl
 docker image pull ubuntu
 
 # Run Images
-docker run \
+*** I removed the mapping of host port to container port to avoid breakage ***
+
+docker run --detach \
         --name=node01 \
         --restart=always \
-        --publish 53:53/udp \
-        --publish 53:53/tcp \
-        --publish 127.0.0.1:953:953/tcp \
         --volume /etc/bind \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
         --volume /var/log \
         internetsystemsconsortium/bind9:9.20
 
-docker run \
+docker run --detach \
         --name=node02 \
         --restart=always \
-        --publish 53:53/udp \
-        --publish 53:53/tcp \
-        --publish 127.0.0.1:953:953/tcp \
         --volume /etc/bind \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
         --volume /var/log \
         internetsystemsconsortium/bind9:9.20
 
-docker run --name nginx --detach -p 8080:80 nginx:stable-alpine3.23-perl
+docker run --name nginx --detach nginx:stable-alpine3.23-perl
 
 docker run --name client --detach ubuntu
 
