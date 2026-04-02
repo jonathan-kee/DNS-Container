@@ -43,6 +43,11 @@ docker run \
 https://labs.iximiuz.com/challenges/edit-file-in-running-container
 https://labs.iximiuz.com/challenges/edit-file-in-running-slim-container
 
+# Learn container networking
+https://labs.iximiuz.com/tutorials/container-networking-from-scratch#creating-the-second-container-repeating-the-same-steps
+^
+Maybe I should really just install a ubuntu container, then install bind9, nginx in the ubuntu container.
+
 # Project Architecture
 1) ubuntu-host (Nginx Web Server)
 2) node01 (Bind9 DNS Master)
