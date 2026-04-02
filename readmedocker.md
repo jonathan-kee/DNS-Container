@@ -1,6 +1,9 @@
 # Docker setup
+## Pull Images
 docker image pull internetsystemsconsortium/bind9:9.20
+docker image pull nginx:stable-alpine3.23-perl
 
+# Run Images
 docker run \
         --name=node01 \
         --restart=always \
@@ -24,6 +27,8 @@ docker run \
         --volume /var/lib/bind \
         --volume /var/log \
         internetsystemsconsortium/bind9:9.20
+
+docker run --name nginx --detach -p 8080:80 nginx:stable-alpine3.23-perl
 
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
