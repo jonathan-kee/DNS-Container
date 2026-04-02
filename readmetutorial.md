@@ -54,6 +54,8 @@ docker run --name client -it --detach --dns=172.17.0.2 --dns-search=test yauritu
 # Remove --dns-search=test (This one is working)
 docker run --name client -it --detach --dns=172.17.0.2 yauritux/busybox-curl
 
+docker run --name nginx --detach nginx:stable-alpine3.23-perl
+
 # Test Connection & note down IPv4 Address
 docker exec -it node01 sh
 ip a
@@ -64,6 +66,11 @@ docker exec -it client sh
 ip a
 exit
 client 172.17.0.3/16
+
+docker exec -it nginx sh
+ip a
+exit
+nginx 172.17.0.4/16
 
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
@@ -81,5 +88,11 @@ docker cp \
     ./node01/named.conf.options \
     node01:/etc/bind/named.conf.options
 
+# Restart DNS servers
+docker restart node01 client
+
 # Test NSLookup if can query DNS Server
 nslookup test
+
+# Test curl if can reach Nginx Server
+nginx.test
