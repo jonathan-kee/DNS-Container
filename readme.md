@@ -56,6 +56,12 @@ Go to Understanding Docker network types (drivers) Section
 3) node02 (Bind9 DNS Slave)
 4) node03 (DNS Client)
 
+# Simple Project 
+1) ubuntu-host
+2) ubuntu-host
+^
+Test if they can ping each other
+
 # Tutorial
 - on node01
 - Install bind with below commands
