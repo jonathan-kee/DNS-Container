@@ -95,4 +95,5 @@ docker restart node01 client
 nslookup test
 
 # Test curl if can reach Nginx Server
-nginx.test
+curl nginx.test
+curl 172.17.0.4
