@@ -36,3 +36,33 @@ In forward zone file, @ denotes the origin, not sure what it means by that
 
 The full command (I skip the -v arguments):
 sudo docker run --name bind9-dns-server --rm -it --net host ubuntu/bind9
+
+# Run Images
+*** I removed the mapping of host port to container port to avoid breakage ***
+
+docker run --detach \
+        --name=node01 \
+        --restart=always \
+        --volume /etc/bind \
+        --volume /var/cache/bind \
+        --volume /var/lib/bind \
+        --volume /var/log \
+        ubuntu/bind9
+
+docker run --name client -it --detach --dns=172.17.0.2 --dns-search=test yauritux/busybox-curl
+ 
+# Node01 (Bind9 DNS Master)
+## Copy over zone file
+docker cp \
+    ./node01/db.test \
+    node01:/etc/bind/db.test
+
+## Configure BIND to use our new zone file
+docker cp \
+    ./node01/named.conf.local \
+    node01:/etc/bind/named.conf.local
+
+## Configure BIND options
+docker cp \
+    ./node01/named.conf.options \
+    node01:/etc/bind/named.conf.options
