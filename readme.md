@@ -61,6 +61,16 @@ Go to Understanding Docker network types (drivers) Section
 2) ubuntu-host
 ^
 Test if they can ping each other
+^
+Containers can talk to each other through virtual networks.
+For large projects orchestration tools like Kubernetes or Docker Compose help manage them.
+^
+Notes on VM IT foundation
+- The default method is NAT standing for Network Address Translation which lets your VM use your host’s internet connection. Simple and safe. From the outside it looks just like your main machine is doing everything.
+
+- Next up is bridged. The VM gets its own IP address on the same network as your host. Other devices can talk to it which is useful for running servers or simulating real devices.
+
+- And lastly host only which provides no internet access. The VM can only talk to your host machine which is ideal for secure local testing.
 
 # Tutorial
 - on node01
