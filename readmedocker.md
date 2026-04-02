@@ -30,7 +30,8 @@ docker run --name nginx --detach nginx:stable-alpine3.23-perl
 docker run --name client --detach ubuntu
 
 # Test Connection & note down IPv4 Address
-ssh into Ubuntu-host (Nginx Web Server)
+# # SSH into Ubuntu-host (Nginx Web Server)
+docker exec -it nginx sh
 ip a
 ping -c 1 node01
 ping -c 1 node02
