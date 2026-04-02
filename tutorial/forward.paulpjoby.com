@@ -1,0 +1,15 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL 20
+@ IN SOA paulpjoby.com. root.paulpjoby.com. (
+         2  ; Serial
+         20 ; Refresh
+         20 ; Retry
+         20  ; Expire
+         20 ) ; Negative Cache TTL
+;
+@ IN NS paulpjoby.com.
+@ IN A 192.168.1.100
+www IN A 192.168.1.100
+@ IN AAAA 1234:1234::1
