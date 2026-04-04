@@ -22,7 +22,13 @@ test
 nginx
 
 # QNA Private Network DNS naming
-From my understanding, the DNS server for test. is responsbile to provide the records to resolve nginx.test. subdomain
+- From my understanding, the DNS server for test. is responsbile to provide the records to resolve nginx.test. subdomain
+
+- A regular lookup is also sometimes called a forward lookup. Windows Server uses the term Forward Lookup Zones for normal zones and Reverse Lookup Zones for zones that map IP addresses to names.
+
+^
+
+This is reffering to the zone file, so db.test is most likely the forward zone file.
 
 # Docker setup
 ## Pull Images
