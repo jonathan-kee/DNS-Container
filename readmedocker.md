@@ -21,6 +21,9 @@ test
 ## Sub Domains
 nginx
 
+# QNA Private Network DNS naming
+From my understanding, the DNS server for test. is responsbile to provide the records to resolve nginx.test. subdomain
+
 # Docker setup
 ## Pull Images
 - docker image pull internetsystemsconsortium/bind9:9.20
