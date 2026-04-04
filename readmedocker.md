@@ -1,12 +1,29 @@
+# Project Architecture
+1) ubuntu-host (Nginx Web Server)
+2) node01 (Bind9 DNS Master)
+3) node02 (Bind9 DNS Slave)
+4) node03 (DNS Client)
+
+# Project Architecture's IP addresses & Ports
+docker name port
+- nginx     172.17.0.4/16   80
+- node01    172.17.0.2/16   53
+- node02    172.17.0.3/16   53
+- client    172.17.0.5/16
+
 # Docker setup
 ## Pull Images
 docker image pull internetsystemsconsortium/bind9:9.20
+
 docker image pull nginx:stable-alpine3.23-perl
+
 docker image pull ubuntu
+
 ^
 Ubuntu no utilities
 
 docker image pull busybox
+
 ^
 No curl
 
@@ -37,8 +54,10 @@ docker run --detach \
 docker run --name nginx --detach nginx:stable-alpine3.23-perl
 
 docker run --name client -it --detach busybox
+
 ^
 Need -it for it to stay running
+
 ^
 No curl
 
@@ -46,31 +65,38 @@ docker run --name client -it --detach --dns=172.17.0.2 --dns=172.17.0.3 --dns-se
 
 # Test Connection & note down IPv4 Address
 ## SSH into Ubuntu-host (Nginx Web Server)
-docker exec -it nginx sh
-ip a
-exit
-nginx 172.17.0.4/16
+1) docker exec -it nginx sh
+2) ip a
+3) exit
+4) nginx 172.17.0.4/16
 
-docker exec -it node01 sh
-ip a
-exit
-node01 172.17.0.2/16
+##
+1) docker exec -it node01 sh
+2) ip a
+3) exit
+4) node01 172.17.0.2/16
 
-docker exec -it node02 sh
-ip a
-exit
-node02 172.17.0.3/16
+##
+1) docker exec -it node02 sh
+2) ip a
+3) exit
+4) node02 172.17.0.3/16
 
-docker exec -it client sh
-ip a
-exit
-client 172.17.0.5/16
+## 
+1) docker exec -it client sh
+2) ip a
+3) exit
+4) client 172.17.0.5/16
 
 ## SSH into Ubuntu-host (Nginx Web Server)
 docker exec -it nginx sh
-ping -c 1 172.17.0.4
+
 ping -c 1 172.17.0.2
+
 ping -c 1 172.17.0.3
+
+ping -c 1 172.17.0.4
+
 ping -c 1 172.17.0.5
 
 # Node01 (Bind9 DNS Master)
