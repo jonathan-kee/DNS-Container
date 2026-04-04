@@ -11,11 +11,21 @@ Container Name | IP Address | Port
 - node02 | 172.17.0.3/16 | 53
 - client | 172.17.0.5/16 | xx
 
+# DNS naming
+## Fully Qualified Domain
+nginx.test.
+
+## Top Level Domain
+test
+
+## Sub Domains
+nginx
+
 # Docker setup
 ## Pull Images
-docker image pull internetsystemsconsortium/bind9:9.20
+- docker image pull internetsystemsconsortium/bind9:9.20
 
-docker image pull nginx:stable-alpine3.23-perl
+- docker image pull nginx:stable-alpine3.23-perl
 
 docker image pull ubuntu
 
@@ -27,7 +37,7 @@ docker image pull busybox
 ^
 No Curl
 
-docker image pull yauritux/busybox-curl
+- docker image pull yauritux/busybox-curl
 
 
 # Run Images
@@ -131,8 +141,13 @@ docker cp \
     ./node03/resolv.conf \
     client:/etc/resolv.conf
 
-## Test the accessibility to nginx server
-curl www.multinode.kodekloud.lab
+## Test NSLookup if can query DNS Server
+nslookup test
 
-# Restart DNS servers
+## Test curl if can reach Nginx Server
+curl nginx.test
+
+curl 172.17.0.4
+
+# Restart Containers
 docker restart nginx node01 node02 client
