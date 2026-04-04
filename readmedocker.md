@@ -121,6 +121,8 @@ docker cp \
     node01:/etc/bind/named.conf.local
 
 ## Configure BIND options
+*** The template can allow zone transfer of Master to Slave ***
+
 docker cp \
     ./node01/named.conf.options \
     node01:/etc/bind/named.conf.options
