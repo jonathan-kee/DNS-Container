@@ -1,15 +1,15 @@
 # Project Architecture
 1) ubuntu-host (Nginx Web Server)
-2) node01 (Bind9 DNS Master)
-3) node02 (Bind9 DNS Slave)
-4) node03 (DNS Client)
+2) node01 (Bind9 DNS Master / Name Server)
+3) node02 (Bind9 DNS Slave / Name Server)
+4) node03 (DNS Client / Resolvers)
 
 # Project Architecture's IP addresses & Ports
-docker name port
-- nginx     172.17.0.4/16   80
-- node01    172.17.0.2/16   53
-- node02    172.17.0.3/16   53
-- client    172.17.0.5/16
+Container Name | IP Address | Port
+- nginx  | 172.17.0.4/16 | 80
+- node01 | 172.17.0.2/16 | 53
+- node02 | 172.17.0.3/16 | 53
+- client | 172.17.0.5/16 | xx
 
 # Docker setup
 ## Pull Images
@@ -20,18 +20,18 @@ docker image pull nginx:stable-alpine3.23-perl
 docker image pull ubuntu
 
 ^
-Ubuntu no utilities
+Ubuntu No Utilities
 
 docker image pull busybox
 
 ^
-No curl
+No Curl
 
 docker image pull yauritux/busybox-curl
 
 
 # Run Images
-*** I removed the mapping of host port to container port to avoid breakage ***
+*** I removed the mapping of host port to container port to avoid breakage from client / resolver query the DNS server / Nameserver ***
 
 docker run --detach \
         --name=node01 \
@@ -63,7 +63,7 @@ No curl
 
 docker run --name client -it --detach --dns=172.17.0.2 --dns=172.17.0.3 --dns-search=test yauritux/busybox-curl
 
-# Test Connection & note down IPv4 Address
+# Test Connection & Note down IPv4 Address
 ## SSH into Ubuntu-host (Nginx Web Server)
 1) docker exec -it nginx sh
 2) ip a
@@ -121,10 +121,9 @@ docker cp \
     ./node02/named.conf.local \
     node02:/etc/bind/named.conf.local
 
-# Restart DNS servers
-docker restart node01 node02 client
 
 # Ubuntu-host (Nginx Web Server)
+*** This section requires no configuration ***
 
 # Node03 (DNS Client)
 ## Replace existing /etc/resolv.conf
@@ -134,3 +133,6 @@ docker cp \
 
 ## Test the accessibility to nginx server
 curl www.multinode.kodekloud.lab
+
+# Restart DNS servers
+docker restart nginx node01 node02 client
