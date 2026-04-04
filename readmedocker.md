@@ -11,7 +11,7 @@ Container Name | IP Address | Port
 - node02 | 172.17.0.3/16 | 53
 - client | 172.17.0.5/16 | xx
 
-# DNS naming
+# Private Network DNS naming
 ## Fully Qualified Domain
 nginx.test.
 
@@ -149,5 +149,5 @@ curl nginx.test
 
 curl 172.17.0.4
 
-# Restart Containers
+# Restart Containers09
 docker restart nginx node01 node02 client
