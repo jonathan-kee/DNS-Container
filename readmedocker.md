@@ -34,6 +34,11 @@ nginx
 
 This is reffering to the zone file, so db.test is most likely the forward zone file.
 
+A resolver may: 
+- Have its own cache, and it might be running on the host itself 
+- Running on the local router / gateway 
+- Combined with a network’s local name server.
+
 # Docker setup
 ## Pull Images
 - docker image pull internetsystemsconsortium/bind9:9.20
