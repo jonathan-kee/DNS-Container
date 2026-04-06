@@ -44,6 +44,8 @@ In my case the DNS server is located locally, instead of a router, I guess I can
 
 - Question: Where is the Linux local DNS resolver cache located?
 
+- Question: How do I set up Internal & External DNS?
+
 # Docker setup
 ## Pull Images
 - docker image pull internetsystemsconsortium/bind9:9.20
