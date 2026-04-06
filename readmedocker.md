@@ -21,6 +21,10 @@ test
 ## Sub Domains
 nginx
 
+## Forward Lookup Zone documentation
+
+## Reverse Lookup Zone documentation
+
 # QNA Private Network DNS naming
 - From my understanding, the DNS server for test. is responsbile to provide the records to resolve nginx.test. subdomain
 
@@ -80,7 +84,10 @@ Need -it for it to stay running
 ^
 No curl
 
-docker run --name client -it --detach --dns=172.17.0.2 --dns=172.17.0.3 --dns-search=test yauritux/busybox-curl
+docker run --name client -it --detach --dns=172.17.0.2 --dns-search=test yauritux/busybox-curl
+
+# Setup Ansible to Test Connection
+
 
 # Test Connection & Note down IPv4 Address
 ## SSH into Ubuntu-host (Nginx Web Server)
@@ -88,6 +95,7 @@ docker run --name client -it --detach --dns=172.17.0.2 --dns=172.17.0.3 --dns-se
 2) ip a
 3) exit
 4) nginx 172.17.0.4/16
+172.17.0.3
 
 ##
 1) docker exec -it node01 sh
@@ -106,6 +114,7 @@ docker run --name client -it --detach --dns=172.17.0.2 --dns=172.17.0.3 --dns-se
 2) ip a
 3) exit
 4) client 172.17.0.5/16
+172.17.0.4/16
 
 ## SSH into Ubuntu-host (Nginx Web Server)
 docker exec -it nginx sh
@@ -158,7 +167,10 @@ nslookup test
 ## Test curl if can reach Nginx Server
 curl nginx.test
 
-curl 172.17.0.4
+curl 172.17.0.3
 
 # Restart Containers09
 docker restart nginx node01 node02 client
+docker restart nginx node01 client
+
+## Make sure to use static address
