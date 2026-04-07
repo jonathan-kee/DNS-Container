@@ -48,7 +48,7 @@ In my case the DNS server is located locally, instead of a router, I guess I can
 
 “How do all these DNS servers know to refresh the records they store in their cache with fresh information from the authoritative name servers?” That is controlled by a time to live (TTL) field on every DNS record. This field indicates the number of seconds that administrators want DNS resolvers to hold records in their caches before removing the cached record.
 
-- Question: How to setup Dynamic DNS (DDNS) for Bind9 on containers
+- Question: How to setup Dynamic DNS (DDNS) for Bind9 on containers?
 
 # Record Explanation
 - Start of Authority (SOA) Every zone requires an SOA record that defines the primary name server in charge of the zone. 
