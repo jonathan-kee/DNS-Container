@@ -128,6 +128,25 @@ docker run --name client -it --detach --dns=172.17.0.2 --dns-search=test yauritu
 
 # Setup Ansible to Test Connection
 
+# Trouble Shooting
+## ping
+Example from Comptia Network+ book:
+- ipconfig / flushdns
+- ping www.totalsem.com
+
+## ipconfig / all
+-  ipconfig / all
+
+## nslookup
+- nslookup www.totalsem.com 8.8.8.8
+- nslookup
+
+interactive mode:
+- type server dns.google
+
+## dig (domain information groper)
+- dig -x 192.168.4.251
+
 
 # Test Connection & Note down IPv4 Address
 ## SSH into Ubuntu-host (Nginx Web Server)
