@@ -46,6 +46,32 @@ In my case the DNS server is located locally, instead of a router, I guess I can
 
 - Question: How do I set up Internal & External DNS?
 
+“How do all these DNS servers know to refresh the records they store in their cache with fresh information from the authoritative name servers?” That is controlled by a time to live (TTL) field on every DNS record. This field indicates the number of seconds that administrators want DNS resolvers to hold records in their caches before removing the cached record.
+
+# Record Explanation
+- Start of Authority (SOA) Every zone requires an SOA record that defines the primary name server in charge of the zone. 
+
+- NS An NS record points to the server that holds the records (zone) for a part of the DNS tree. The NS record in Figure 9.22 shows the primary name server for totalhome. My network could have a secondary name server to provide redundancy. This secondary name server is also authoritative for the totalhome domain. 
+
+- A Individual hosts each get their own unique A record. A records are the workhorse records in the zone that hold the IPv4 addresses for hosts.
+
+- AAAA AAAA records (“quad A” when spoken) are the equivalent of A records, but they hold IPv6 addresses. 
+
+- CNAME A CNAME record acts like an alias and holds an FQDN, not an IP address. 
+
+- PTR A PTR record reverses the functions of A or AAAA records. PTR records are found only in reverse lookup zones; they use an IP address for their names and hold the FQDN of a host at that address. One quirk of PTR records is that a PTR record can only point a single IP address to a single FQDN. In contrast, A or AAAA records can have many FQDNs pointing to a single IP address.
+
+*** 
+PTR is a one to one relationship for FQDNs pointing to a single IP address
+A or AAAA is one to many relationship for FQDNs pointing to a single IP address
+****
+
+- MX SMTP servers use MX records exclusively to determine where to send mail. They hold the FQDN of the server that handles mail for the domain. 
+
+- SRV is like custom records
+
+- TXT A TXT record is a freeform type of record that can be used for … anything. TXT records allow any text to be added to a zone. 
+
 # Docker setup
 ## Pull Images
 - docker image pull internetsystemsconsortium/bind9:9.20
@@ -175,6 +201,8 @@ docker cp \
 
 ## Test NSLookup if can query DNS Server
 nslookup test
+
+## Test Dig if can query DNS Server
 
 ## Test curl if can reach Nginx Server
 curl nginx.test
