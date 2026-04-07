@@ -135,9 +135,11 @@ Example from Comptia Network+ book:
 - ping www.totalsem.com
 
 ## ipconfig / all
+Example from Comptia Network+ book:
 -  ipconfig / all
 
 ## nslookup
+Example from Comptia Network+ book:
 - nslookup www.totalsem.com 8.8.8.8
 - nslookup
 
@@ -145,6 +147,7 @@ interactive mode:
 - type server dns.google
 
 ## dig (domain information groper)
+Example from Comptia Network+ book:
 - dig -x 192.168.4.251
 
 
