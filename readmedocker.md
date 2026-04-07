@@ -5,11 +5,11 @@
 4) node03 (DNS Client / Resolvers)
 
 # Project Architecture's IP addresses & Ports
-Container Name | IP Address | Port
-- nginx  | 172.17.0.4/16 | 80
-- node01 | 172.17.0.2/16 | 53
-- node02 | 172.17.0.3/16 | 53
-- client | 172.17.0.5/16 | xx
+Container Name | IP Address     | Port
+- nginx        | 172.17.0.4/16  | 80
+- node01       | 172.17.0.2/16  | 53
+- node02       | 172.17.0.3/16  | 53
+- client       | 172.17.0.5/16  | xx
 
 # Private Network DNS naming
 ## Fully Qualified Domain
