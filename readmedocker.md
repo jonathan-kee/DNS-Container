@@ -50,6 +50,9 @@ In my case the DNS server is located locally, instead of a router, I guess I can
 
 - Question: How to setup Dynamic DNS (DDNS) for Bind9 on containers?
 
+- Docker has firewalls as well
+https://docs.docker.com/engine/network/packet-filtering-firewalls/
+
 # Record Explanation
 - Start of Authority (SOA) Every zone requires an SOA record that defines the primary name server in charge of the zone. 
 
