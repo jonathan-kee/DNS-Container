@@ -53,6 +53,8 @@ In my case the DNS server is located locally, instead of a router, I guess I can
 - Docker has firewalls as well
 https://docs.docker.com/engine/network/packet-filtering-firewalls/
 
+- Maybe after learning Vagrant, I should shift the containers to the VM to practise Linux command line tools.
+
 # Record Explanation
 - Start of Authority (SOA) Every zone requires an SOA record that defines the primary name server in charge of the zone. 
 
