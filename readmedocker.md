@@ -243,3 +243,10 @@ docker restart nginx node01 node02 client
 docker restart nginx node01 client
 
 ## Make sure to use static address
+
+# Extra
+Continue where I left off:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
+^
+Other People Project include Nginx with React:
+https://github.com/Abhiram-Rakesh/Three-Tier-EKS-Terraform
