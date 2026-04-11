@@ -60,6 +60,58 @@ com’s Symantec Secure Web Gateway Appliance.
 
 *** Figure 11-20 Squid Proxy Server software ***
 
+## Comptia Network+ Load Balancing Explanation 
+(Switch Features, Load Balancing)
+Popular Internet servers are exactly that—popular. So popular that a single system cannot
+possibly support the thousands, if not millions, of requests per day that bombard them.
+But from what you’ve learned thus far about servers, you know that a single server has
+a single IP address. Put this to the test. Go to a command prompt and type ping www
+.google.com and press enter.
+
+C:\>ping www.google.com
+Pinging www.l.google.com [74.125.95.147] with 32 bytes of data:
+Reply from 74.125.95.147: bytes=32 time=71ms TTL=242
+Reply from 74.125.95.147: bytes=32 time=71ms TTL=242
+Reply from 74.125.95.147: bytes=32 time=70ms TTL=242
+Reply from 74.125.95.147: bytes=32 time=70ms TTL=242
+
+A seriously epic site like google.com will handle trillions of search requests per year.
+Let’s throw hypothetical math into the mix. Imagine 2 trillion requests; the average would
+be well over 5 billion search requests a day and 60,000 per second. Each of those 60,000
+requests might require the Web server to deliver thousands of HTTP segments. A single,
+powerful, dedicated Web server simply can’t handle that load. A busy Web site often needs
+more than one Web server to handle all the requests. Let’s say a Web site needs three serv-
+ers to handle the traffic. How does that one Web site, using three different servers, use a
+single IP address? The answer is found in something called load balancing.
+
+NOTE Coming to a consensus on statistics like the number of requests/day
+or how many requests a single server can handle is difficult. Just concentrate
+on the concept. If some nerdy type says your numbers are way off, nicely
+agree and walk away. Just don’t invite them to any parties.
+
+Load balancing means making a bunch of servers look like a single server, creating a
+server cluster. Not only do you need to make them look like one server, you need to make
+sure that requests to these servers are distributed evenly so no one server is bogged down
+while another is idle. There are a few ways to do this, as you are about to see. Be warned,
+not all of these methods require an advanced network device called a load balancer, but
+it’s common to use one. Employing a device designed to do one thing really well is always
+much faster than using a general-purpose computer and slapping on software.
+
+*** Skipped DNS Load Balancing ***
+
+(Switch Features, Load Balancing, Content Switch)
+Many multilayer switches handle load balancing by functioning at multiple layers. An
+alternative is a content switch. Content switches always work at Layer 7 (Application layer).
+Content switches designed to work with Web servers, for example, can read incoming
+HTTP and HTTPS requests. With this feature, you can perform very advanced actions,
+such as handling TLS certificates and cookies, on the content switch, removing the work-
+load from the Web servers. Not only can these devices load balance in the ways previously
+described, but their HTTP savvy can actually pass a cookie to HTTP requesters—Web
+browsers—so the next time that client returns, it is sent to the same server.
+
+## Comptia Network+ Load Balancing Explanation (Data Centers)
+
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
