@@ -1,4 +1,8 @@
 # Keywords need to be familiar
+- load balancer
+- reverse proxy
+- forward proxy
+- caching laye
 
 # Extra
 Continue where I left off:
