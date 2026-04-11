@@ -110,7 +110,22 @@ described, but their HTTP savvy can actually pass a cookie to HTTP requesters—
 browsers—so the next time that client returns, it is sent to the same server.
 
 ## Comptia Network+ Load Balancing Explanation (Data Centers)
+As a concept, load balancing means to share among two or more systems the effort to
+enable some process to work. You saw this concept way back in Chapter 11 in the con-
+text of using multiple servers as a server cluster that manifests as a single entity. Special-
+purpose load balancers help apportion the work among the various servers. You’ve seen
+the concept used in spine-and-leaf data centers earlier that rely on protocols like ECPM to
+balance the work among the various switches so that no single connection gets swamped.
+Load balancing in its many forms is one pillar of high availability.
 
+Clustering, in the traditional sense, means to have multiple pieces of equipment, such
+as servers, connected in a manner that appears to the user and the network as one logical
+device, providing data and services to the organization. Clusters usually share high-speed
+networking connections as well as data stores and applications and are configured to
+provide redundancy if a single member of the cluster fails.
+
+NOTE Clustering solutions are commonly active-active examples of high
+availability in that all members of the cluster are active at the same time.
 
 # Extra
 Continue where I left off:
