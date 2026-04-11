@@ -250,3 +250,5 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Co
 ^
 Other People Project include Nginx with React:
 https://github.com/Abhiram-Rakesh/Three-Tier-EKS-Terraform
+^
+I am confuse if alot of these nginx terms are available in Comptia Network+
