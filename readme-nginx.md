@@ -1,4 +1,7 @@
 # Keywords need to be familiar
+
+KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Introduction/Nginx-Use-Cases/page
 - Load balancer
 - Reverse proxy
 - Forward proxy
