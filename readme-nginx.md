@@ -13,6 +13,14 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Introduction/Nginx-Use-Case
 - Offloading SSL/TLS and request routing
 - Controlling outbound traffic and anonymizing clients
 
+KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Nginx-Overview/page
+- virtual hosts
+- Symbolic links
+- MIME type definitions
+- PID file location
+
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
