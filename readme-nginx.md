@@ -20,6 +20,9 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Nginx-Overvi
 - MIME type definitions
 - PID file location
 
+(Continue) KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Install-Config/page
+
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
