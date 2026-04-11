@@ -4,6 +4,13 @@
 - forward proxy
 - caching laye
 
+Comptia Network+ Proxy Server Explanation:
+A proxy server sits in between clients and external servers, essentially pocketing the requests
+from the clients for server resources and making those requests itself. The client comput-
+ers never touch the outside servers and thus stay protected from any unwanted activity.
+A proxy server usually does something to those requests as well. Let’s see how proxy servers
+work using HTTP, one of the oldest uses of proxy servers.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
