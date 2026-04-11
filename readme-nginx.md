@@ -2,7 +2,7 @@
 - load balancer
 - reverse proxy
 - forward proxy
-- caching laye
+- caching layer
 
 ## Comptia Network+ Proxy Server Explanation
 A proxy server sits in between clients and external servers, essentially pocketing the requests
