@@ -1,11 +1,17 @@
 # Keywords need to be familiar
 
 KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Introduction/Nginx-Architecture/page#event-driven-architecture-overview
+- Master and Worker Processes
+
+KodeKloud notes link:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Introduction/Nginx-Use-Cases/page
 - Load balancer
 - Reverse proxy
 - Forward proxy
 - Caching layer
+- Offloading SSL/TLS and request routing
+- Controlling outbound traffic and anonymizing clients
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
