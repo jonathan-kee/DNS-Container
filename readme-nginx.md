@@ -94,6 +94,19 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Reverse
 - ssl_protocols
 - proxy server local storage
 
+Kodekloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Summary/page
+
+- Server weighting
+- Session stickiness
+- session affinity
+- NAT/proxying
+- IP-based sticky sessions
+- robust session persistence
+- prefer shared session stores (for example, Redis)
+- application-level affinity techniques
+- cache invalidation 
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
