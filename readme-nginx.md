@@ -34,6 +34,11 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Demo-Nginx-I
 (Good resource to follow for first website) KodeKloud notes link:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Demo-First-Website-with-Nginx/page
 
+KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Firewall-Ports/page
+^
+Does not deep into how Linux Distro firewall works
+
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
