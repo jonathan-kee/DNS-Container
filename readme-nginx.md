@@ -23,6 +23,13 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Nginx-Overvi
 (Continue) KodeKloud notes link:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Install-Config/page
 
+KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Demo-Nginx-Install-Config/page#5-1-common-configuration-directories
+
+- Core Nginx configuration
+- Independent configuration fragments
+- Virtual host definitions (disabled by default)
+- Symlinks to enabled virtual hosts
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
