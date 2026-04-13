@@ -39,6 +39,11 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Firewall-Por
 ^
 Does not deep into how Linux Distro firewall works
 
+KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Demo-Firewall-Ports-Install-Config/page
+
+- VPN
+
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
