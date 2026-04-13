@@ -31,6 +31,10 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Demo-Nginx-I
 - Virtual host definitions (disabled by default)
 - Symlinks to enabled virtual hosts
 
+(Good resource to follow for first website) KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Demo-First-Website-with-Nginx/page
+
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
