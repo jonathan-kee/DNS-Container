@@ -113,6 +113,8 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Security/Security-Introduct
 - Self-Signed Certificates
 - Automated certificates
 
+*** I think Compti Security+ Covers the Security section ***
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
