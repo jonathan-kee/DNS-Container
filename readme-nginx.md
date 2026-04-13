@@ -82,7 +82,17 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Load-Ba
 - proxy_pass
 - Various Algorithms (Round Robin, Weighted Round Robin, IP Hash, Least Connections, Least Time*)
 
+Kodekloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Reverse-Proxy/page
 
+- Hiding backend server identities
+- SSL/TLS offloading
+- The reverse proxy exposes only itself to the Internet
+- Backend servers remain isolated on private networks
+- ssl_certificate
+- ssl_certificate_key
+- ssl_protocols
+- proxy server local storage
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
