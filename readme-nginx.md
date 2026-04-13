@@ -292,6 +292,35 @@ and EAP-TLS (discussed in Chapter 14) is common for more-secure wireless network
 
 NOTE SSL/TLS also supports mutual authentication, but this is relatively rare.
 
+## Comptia Network+ SSL/TLS Explanation (Chapter 13: WAN Connectivity, SSL (Really TLS) VPNs)
+Cisco makes VPN hardware that enables SSL VPNs. These types of VPN offer an advan-
+tage over Data Link– or Network-based VPNs because they don’t require any special
+client software. Clientless VPN clients connect to the VPN server using a standard Web
+browser, with the traffic secured using Transport Layer Security (TLS), requiring no spe-
+cific client-based software. (TLS replaced Secure Sockets Layer, or SSL, many years ago,
+but the SSL VPN moniker stuck.) The two most common types of SSL VPNs are SSL
+portal VPNs and SSL tunnel VPNs.
+
+NOTE Many VPN technologies use the terms client and server to denote the
+functions of the devices that make the connection. You’ll also see the terms
+host and gateway to refer to the connections, such as a host-to-gateway
+tunnel.
+
+With SSL portal VPNs, a client accesses the VPN and is presented with a secure
+Web page. The client gains access to anything linked on that page, be it e-mail, data,
+links to other pages, and so on.
+
+With tunnel VPNs, in contrast, the client Web browser runs some kind of active
+control, such as Java, and gains much greater access to the VPN-connected network. SSL
+tunnel VPNs create a more typical host-to-site connection than SSL portal VPNs, but
+the user must have sufficient permissions to run the active browser controls.
+
+## Comptia Network+ SSL/TLS Explanation (Chapter 21: Network Troubleshooting)
+TLS/SSL certificates have expiration dates and companies need to maintain them prop-
+erly. If you get complaints from clients that the company Web site is giving their browsers
+untrusted TLS/SSL certificate errors, chances are that the certificate has expired. The fix
+for that is pretty simple—update the certificate.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
