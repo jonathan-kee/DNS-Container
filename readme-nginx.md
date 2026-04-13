@@ -271,6 +271,27 @@ HTTPS twice. The first is Hypertext Transfer Protocol Secure (HTTPS) [Secure
 Sockets Layer (SSL)]. The second time is HTTPS [Transport Layer Security (TLS)]
 to reinforce that modern HTTPS uses TLS rather than SSL.
 
+## Comptia Network+ SSL/TLS Explanation (Chapter 10: Securing TCP/IP)
+SSL requires a server with a certificate. When a client requests
+access to an SSL-secured server, the server sends to the client a copy of the certificate
+(Figure 10-30). The SSL client checks this certificate (all Web browsers come with an
+exhaustive list of CA root certificates preloaded), and if the certificate checks out, the
+server is authenticated and the client negotiates a symmetric-key cipher for use in the
+session. The session is now in a very secure encrypted tunnel between the SSL server and
+the SSL client
+
+*** Figure 10-30 Fetching the server’s certificate ***
+
+The Transport Layer Security (TLS) protocol was designed as an upgrade to SSL. TLS is
+very similar to SSL, working in almost the same way. TLS is more robust and flexible and
+works with just about any TCP application. SSL is limited to HTTP, FTP, SMTP, and a
+few older TCP applications. TLS has no such restrictions and is used in securing Voice
+over IP (VoIP) and virtual private networks (VPNs), but it is still most heavily used in
+securing Web pages. Every Web browser today uses TLS for HTTPS-secured Web sites,
+and EAP-TLS (discussed in Chapter 14) is common for more-secure wireless networks.
+
+NOTE SSL/TLS also supports mutual authentication, but this is relatively rare.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
