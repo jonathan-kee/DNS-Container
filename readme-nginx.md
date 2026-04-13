@@ -238,6 +238,39 @@ provide redundancy if a single member of the cluster fails.
 NOTE Clustering solutions are commonly active-active examples of high
 availability in that all members of the cluster are active at the same time.
 
+## Comptia Network+ SSL/TLS Explanation (Chapter 8: TCP/IP Applications)
+Any nosy person who can plug into a network can see and read the HTTP packets mov-
+ing between a Web server and a Web client. Less than nice people can easily create a
+fake Web site to trick people into thinking it’s a legitimate Web site and then steal their
+usernames and passwords. For these and other reasons, the Internet has moved away
+from HTTP.
+
+For an Internet application to be secure, it must have the following:
+• Authentication Usernames and passwords
+• Encryption Stirring up the data so others can’t read it
+• Nonrepudiation Source is not able to deny a sent message
+
+All of Chapter 10 is dedicated to these concepts, but the Web side of things requires
+mention here. Almost every Web site today uses the secure version of HTTP, called
+Hypertext Transfer Protocol Secure (HTTPS), to enable connections between clients and
+servers that hackers can’t break. HTTPS uses Transport Layer Security (TLS), the latest
+version of Secure Sockets Layer (SSL), although techs use the terms interchangeably. SSL/
+TLS uses encryption to set up a secure private connection.
+
+EXAM TIP The CompTIA Network+ exam objectives use Hypertext Transfer
+Protocol Secure for HTTPS, though you’ll hear the older terms—HTTP over
+SSL and HTTP over TLS—used by many techs.
+
+HTTPS uses TCP port 443. You can tell a Web page is using HTTPS by the URL
+(starts with https://) or a small lock icon in the address bar of the browser. Figure 8-21
+shows a typical secure Web page.
+
+EXAM TIP HTTP enables you to access the Web, but HTTPS gets you there
+securely. HTTPS uses TLS to provide the security. The exam objectives list
+HTTPS twice. The first is Hypertext Transfer Protocol Secure (HTTPS) [Secure
+Sockets Layer (SSL)]. The second time is HTTPS [Transport Layer Security (TLS)]
+to reinforce that modern HTTPS uses TLS rather than SSL.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
