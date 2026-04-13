@@ -66,7 +66,11 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Virtual
 
 (Good resource to follow for multiple website on a single nginx server) Kodekloud notes link:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Virtual-Servers-Multiple-Sites/page#managing-multiple-server-blocks
-  
+
+(Good resource to follow for multiple website on a single nginx server part 2) Kodekloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-Multiple-Sites/page
+
+
 
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
