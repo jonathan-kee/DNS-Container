@@ -49,6 +49,12 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Install-Config/Summary/page
 ^
 I think Ansible is the one configuring the firewalls
 
+KodeKloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Intermediate-Config-introduction/page
+
+- Upstream
+- proxy targets
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
