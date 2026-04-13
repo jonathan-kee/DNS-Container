@@ -73,6 +73,17 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Co
 (Not enough experience / foundation to understand why redirect) Kodekloud notes link:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/URL-Redirect-Rewrite/page#why-redirect-vs-rewrite
 
+Kodekloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Load-Balancer/page
+
+- upstream pools
+- single point of failure
+- health checks
+- proxy_pass
+- Various Algorithms (Round Robin, Weighted Round Robin, IP Hash, Least Connections, Least Time*)
+
+
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
