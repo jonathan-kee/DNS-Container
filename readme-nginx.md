@@ -64,6 +64,10 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Virtual
 - Virtual servers (also known as server blocks or virtual hosts)
 - Host header 
 
+(Good resource to follow for multiple website on a single nginx server) Kodekloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Virtual-Servers-Multiple-Sites/page#managing-multiple-server-blocks
+  
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
