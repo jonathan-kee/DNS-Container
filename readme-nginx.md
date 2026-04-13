@@ -107,6 +107,12 @@ https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Summary
 - application-level affinity techniques
 - cache invalidation 
 
+(Not enough experience / foundation to understand why redirect) Kodekloud notes link:
+https://notes.kodekloud.com/docs/Nginx-For-Beginners/Security/Security-Introduction/page
+
+- Self-Signed Certificates
+- Automated certificates
+
 ## Comptia Network+ Proxy Server Explanation (Reverse proxy, Foward proxy, Caching layer)
 A proxy server sits in between clients and external servers, essentially pocketing the requests
 from the clients for server resources and making those requests itself. The client comput-
