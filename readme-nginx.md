@@ -53,6 +53,9 @@ KodeKloud notes link:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Intermediate-Config-introduction/page
 
 - Upstream
+^
+Can't find the explanation in Comptia Network+
+
 - proxy targets
 
 KodeKloud notes link:
