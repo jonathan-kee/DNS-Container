@@ -321,6 +321,10 @@ erly. If you get complaints from clients that the company Web site is giving the
 untrusted TLS/SSL certificate errors, chances are that the certificate has expired. The fix
 for that is pretty simple—update the certificate.
 
+## Comptia Network+ outbound traffic Explanation
+outbound traffic Describes the direction of a flow of packets relative to some point
+of reference. Relative to the entire network, packets leaving the network from within it.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
