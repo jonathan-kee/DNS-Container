@@ -380,6 +380,43 @@ for example, work at the Data Link layer. Many VPNs use IPsec at the Network lay
 handle encryption needs. TLS VPNs don’t really fit into the OSI model well at all, with
 some features in the Session layer and others in the Presentation layer.
 
+## Comptia Network+ Virtual Private Networks Explanation (Chapter 15: Virtualization and Cloud Computing)
+The most convenient way to connect a network to the public cloud is through a VPN.
+As discussed back in Chapter 13, a VPN creates an encrypted tunnel between two net-
+works over another, less-secure network. A site-to-site VPN can establish a permanent
+tunnel (often using IPsec) between a local network and a virtual network in the cloud.
+
+VPN tunnels are relativity simple to set up because they use off-the-shelf technology
+like IPsec. This makes them easy to integrate with existing site-to-site WAN infrastruc-
+ture or even an SD-WAN service (like you saw in Chapter 13).
+
+There are many reasons you might want or need to interconnect these networks. The
+reasons all basically boil down to making it easier for a device on one side to access a
+resource on the other. To work on this chapter from the Amazon WorkSpace I showed
+you in the DaaS section earlier, for example, WorkSpaces needed access to my file server.
+Figure 15-27 shows the VPN tunnel set up between my network’s router and the AWS
+Virtual Private Cloud network to which my virtual desktop is attached. Once I have the
+tunnel set up and the routes propagate, I can copy down my working files as shown in
+Figure 15-28.
+
+*** Figure 15-27 VPN activity on my network’s router and its BGP routing table ***
+
+*** Figure 15-28 Transferring files from my on-premises file server to my virtual desktop ***
+
+### Private Direct Connection
+VPNs are easy to set up, but big-time organizations often need big-time pipes. Provid-
+ers such as AWS and Azure offer private direct connections—private direct links between
+your network and the cloud provider’s—to meet this need. These connections take one
+of two forms: a physical port on the cloud provider’s switch, which enables you to run
+fiber between your equipment and the cloud provider’s, or a leased line that you contract
+through a third party. The main thing to keep in mind is that the traffic for a private
+direct connection never goes over the public Internet. It’s a private line between your data
+center and your cloud provider.
+
+EXAM TIP You might see a question on the CompTIA Network+ exam that
+calls on you to identify a private-direct connection to cloud provider. That’s a
+specific high-end (and expensive) data connection, as discussed here.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
