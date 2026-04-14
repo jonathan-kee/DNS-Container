@@ -325,6 +325,61 @@ for that is pretty simple—update the certificate.
 outbound traffic Describes the direction of a flow of packets relative to some point
 of reference. Relative to the entire network, packets leaving the network from within it.
 
+## Comptia Network+ Virtual Private Networks Explanation (Chapter 13: WAN Connectivity)
+Remote connections have been around for a long time, even before the Internet existed.
+The biggest drawback to remote connections was the cost to connect. If you were on one
+side of the continent and had to connect to your LAN on the other side of the continent,
+the only connection option was a telephone. Or, if you needed to connect two LANs
+across the continent, you ended up paying outrageous monthly charges for a private con-
+nection. The introduction of the Internet gave people wishing to connect to their home
+or work networks a very inexpensive connection option, but there was one problem—the
+whole Internet was (and is) open to the public. People wanted to stop using dial-up and
+expensive private connections and use the Internet instead, but they wanted to be able
+to do it securely.
+
+If you read the previous chapter, you might think you could use some of the tools for
+securing TCP/IP to help, and you would be correct. Several standards use encrypted tun-
+nels between a computer or a remote network and a private network through the Internet
+(Figure 13-20), resulting in what is called a virtual private network (VPN).
+
+*** Figure 13-20 VPN connecting computers across the United States ***
+
+An encrypted tunnel requires endpoints—the ends of the tunnel where the data is
+encrypted and decrypted. In the tunnels you’ve seen thus far, the client for the applica-
+tion sits on one end and the server sits on the other. VPNs do the same thing. Either
+some software running on a computer or, in some cases, a dedicated box must act as an
+endpoint for a VPN (Figure 13-21).
+
+*** Figure 13-21 Typical tunnel ***
+
+The key with the VPN is that the computers should be on the same network—and
+that means they must all have the same network ID. You would want the laptop that
+you use in the Denver airport lounge, for example, to have the same network ID as the
+computers in the LAN back at the office. But there’s no simple way to do this. If it’s
+a single client trying to access a network, that client is going to take on the IP address
+from its local DHCP server. In the case of your laptop in the airport, your network ID
+and IP address come from the DHCP server in the airport, not the DHCP server back
+at the office.
+
+To make the VPN work, you need VPN client software installed on your local
+machine—the laptop at the Denver airport—and VPN server software or hardware
+at your office. You connect your laptop first to the Internet using the airport wireless
+network; it’s just a normal Internet connection. Second, the VPN client software creates
+a virtual NIC on your laptop (endpoint 1), makes a connection with the VPN server
+at the office (endpoint 2), and then, in essence, creates a virtual direct cable from the
+virtual NIC to the office (Figure 13-22). That “virtual cable” is called a VPN tunnel.
+The laptop now has two IPv4 addresses. One is local from the airport DHCP server.
+The other is “local,” but works with the office network. That second IP address goes
+with the virtual NIC.
+
+*** Figure 13-22 Endpoints must have their own IP addresses.
+
+Clever network engineers have come up with many ways to make this work, and
+those implementations function at different layers of the OSI model. PPTP and L2TP,
+for example, work at the Data Link layer. Many VPNs use IPsec at the Network layer to
+handle encryption needs. TLS VPNs don’t really fit into the OSI model well at all, with
+some features in the Session layer and others in the Presentation layer.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
