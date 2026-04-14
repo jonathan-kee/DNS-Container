@@ -1,6 +1,14 @@
 # Labs QNA
 Question: What is EOF in bash?
 
+Question: How does the syntax for "https://$host$request_uri;" below work?
+
+server {
+    listen 80;
+    server_name diner.com;
+    return 301 https://$host$request_uri;
+}
+
 # Keywords need to be familiar
 
 KodeKloud notes link:
