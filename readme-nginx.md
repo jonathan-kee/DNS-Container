@@ -1,3 +1,6 @@
+# Labs QNA
+Question: What is EOF in bash?
+
 # Keywords need to be familiar
 
 KodeKloud notes link:
