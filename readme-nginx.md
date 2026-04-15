@@ -254,8 +254,6 @@ availability in that all members of the cluster are active at the same time.
 
 ## Related Comptia Security+ for SSL/TLS understanding
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Cryptography/page
-
-https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Encryption/page
 ^
 Public Key Infrastructure (PKI) is a cryptographic framework that establishes trust through encryption and digital signatures. It plays a crucial role in securing communications over public internet channels as well as within private networks.
 
@@ -270,6 +268,8 @@ However, if your Public Key is shared online, how can recipients verify its auth
 A digital certificate functions as a secure wrapper for a public key. It contains the public key along with information about its issuer, and it is digitally signed by a certificate authority. This signature validates the certificate and attests to the public key’s trustworthiness.
 
 Understanding digital certificates is critical for ensuring the authenticity of public keys and maintaining secure communications.
+
+https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Encryption/page
 
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/PKI/page
 ^
