@@ -256,8 +256,23 @@ availability in that all members of the cluster are active at the same time.
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Cryptography/page
 
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Encryption/page
+^
+Public Key Infrastructure (PKI) is a cryptographic framework that establishes trust through encryption and digital signatures. It plays a crucial role in securing communications over public internet channels as well as within private networks.
+
+To grasp how PKI operates, it is essential to understand the concept of asymmetric encryption, which secures data confidentiality by utilizing two distinct keys:
+- Public Key: This key can be shared openly and is even available on the internet.
+- Private Key: This key is kept exclusively by the owner and is never shared.
+
+For instance, if someone wants to send data securely over the internet, they encrypt it using your Public Key. Only the corresponding Private Key—which only you possess—can decrypt the data.
+
+However, if your Public Key is shared online, how can recipients verify its authenticity? That’s where certificate authorities (CAs) come into play. CAs are trusted entities that verify the identity of the key owner by digitally signing the Public Key with their own credentials. This process confirms that the key truly belongs to the claimed owner.
 
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/PKI/page
+^
+In asymmetric encryption, one key encrypts the data while a different key decrypts it. The two keys are defined as follows:
+- Public Key: Shared openly and often made available on the Internet.
+- Private Key: Kept confidential and stored securely.
+Any file encrypted with the public key can only be decrypted using its matching private key, and vice versa. This mechanism is fundamental to PKI.
 
 ## Comptia Network+ SSL/TLS Explanation (Chapter 8: TCP/IP Applications)
 Any nosy person who can plug into a network can see and read the HTTP packets mov-
