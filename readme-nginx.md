@@ -270,6 +270,8 @@ A digital certificate functions as a secure wrapper for a public key. It contain
 Understanding digital certificates is critical for ensuring the authenticity of public keys and maintaining secure communications.
 
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Encryption/page
+^
+(This part a bit advance due to lack of experience)
 
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/PKI/page
 ^
