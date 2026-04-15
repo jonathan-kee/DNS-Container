@@ -459,6 +459,16 @@ EXAM TIP You might see a question on the CompTIA Network+ exam that
 calls on you to identify a private-direct connection to cloud provider. That’s a
 specific high-end (and expensive) data connection, as discussed here.
 
+## Comptia Network+ network address translation (NAT) Explanation (Glossary)
+network address translation (NAT) A means of translating a system’s IP address into
+another IP address before sending it out to a larger network. NAT manifests itself by a NAT
+program that runs on a system or a router. A network using NAT provides the systems
+on the network with private IP addresses. The system running the NAT software has two
+interfaces: one connected to the network and the other connected to the larger network.
+The NAT program takes packets from the client systems bound for the larger network
+and translates their internal private IP addresses to its own public IP address, enabling
+many systems to share a single IP address.
+
 # Extra
 Continue where I left off:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Intermediate-Config/Demo-Configure-URL-Redirect/page#2-review-existing-nginx-configuration
