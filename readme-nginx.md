@@ -252,6 +252,13 @@ provide redundancy if a single member of the cluster fails.
 NOTE Clustering solutions are commonly active-active examples of high
 availability in that all members of the cluster are active at the same time.
 
+## Related Comptia Security+ for SSL/TLS understanding
+https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Cryptography/page
+
+https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/Encryption/page
+
+https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/PKI/page
+
 ## Comptia Network+ SSL/TLS Explanation (Chapter 8: TCP/IP Applications)
 Any nosy person who can plug into a network can see and read the HTTP packets mov-
 ing between a Web server and a Web client. Less than nice people can easily create a
