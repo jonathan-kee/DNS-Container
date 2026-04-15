@@ -267,6 +267,10 @@ For instance, if someone wants to send data securely over the internet, they enc
 
 However, if your Public Key is shared online, how can recipients verify its authenticity? That’s where certificate authorities (CAs) come into play. CAs are trusted entities that verify the identity of the key owner by digitally signing the Public Key with their own credentials. This process confirms that the key truly belongs to the claimed owner.
 
+A digital certificate functions as a secure wrapper for a public key. It contains the public key along with information about its issuer, and it is digitally signed by a certificate authority. This signature validates the certificate and attests to the public key’s trustworthiness.
+
+Understanding digital certificates is critical for ensuring the authenticity of public keys and maintaining secure communications.
+
 https://notes.kodekloud.com/docs/CompTIA-Security-Certification/Controls-and-Security-Concepts/PKI/page
 ^
 In asymmetric encryption, one key encrypts the data while a different key decrypts it. The two keys are defined as follows:
