@@ -9,6 +9,8 @@ server {
     return 301 https://$host$request_uri;
 }
 
+*** I notice soft linking happens a lot for nginx ***
+
 # Keywords need to be familiar
 
 KodeKloud notes link:
@@ -458,6 +460,9 @@ center and your cloud provider.
 EXAM TIP You might see a question on the CompTIA Network+ exam that
 calls on you to identify a private-direct connection to cloud provider. That’s a
 specific high-end (and expensive) data connection, as discussed here.
+
+## Comptia Network+ network address translation (NAT) Explanation (Chapter 7: Routing)
+
 
 ## Comptia Network+ network address translation (NAT) Explanation (Glossary)
 network address translation (NAT) A means of translating a system’s IP address into
