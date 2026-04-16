@@ -164,6 +164,10 @@ Example from Comptia Network+ book:
 4) nginx 172.17.0.4/16
 172.17.0.3
 
+Try out a command like below:
+ssh node01 "ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+' | head -1"
+ssh node02 "ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+' | head -1"
+
 ##
 1) docker exec -it node01 sh
 2) ip a
