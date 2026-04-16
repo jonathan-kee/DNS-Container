@@ -10,6 +10,9 @@ Youtube playlist on Vagrant
 https://www.youtube.com/playlist?list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa
 
 # Vagrant tutorial
+Youtube link part 1:
+https://www.youtube.com/watch?v=czMCO1w-xQU&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa
+
 0) Install Vagrant
 
 1) "vagrant init" for the Vagrantfile
@@ -21,3 +24,6 @@ https://www.youtube.com/playlist?list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa
 4) Which provisioner to use like Ansible, Puppet, Chef, Salt, Scripts
 
 5) "vagrant up" will setup the virtual machines
+
+Youtube link part 2:
+https://www.youtube.com/watch?v=7DLfOGt8YvA&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=2
