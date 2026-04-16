@@ -61,3 +61,5 @@ The first time. Vagrant will download the box from the internet
 
 8) SSH into the virtual machine 
 vagrant ssh
+
+*** Continue 26:00, it's about Vagrant commands ***
