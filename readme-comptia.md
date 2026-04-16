@@ -63,3 +63,12 @@ The first time. Vagrant will download the box from the internet
 vagrant ssh
 
 *** Continue 26:00, it's about Vagrant commands ***
+
+Youtube link part 3:
+https://www.youtube.com/watch?v=349ul4Wuj9I&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=3
+
+Youtube link part 4:
+https://www.youtube.com/watch?v=bIJCN57N0Kc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=5
+
+Youtube link part 5:
+https://www.youtube.com/watch?v=Q6qL2tU1d-8&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=6
