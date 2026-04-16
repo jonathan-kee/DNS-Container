@@ -182,7 +182,7 @@ ssh node02 "ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+' | he
 
 ## 
 1) docker exec -it client sh
-2) ip a
+2) ip a 
 3) exit
 4) client 172.17.0.5/16
 172.17.0.4/16

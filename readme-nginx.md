@@ -11,6 +11,8 @@ server {
 
 *** I notice soft linking happens a lot for nginx ***
 
+Question: Where do I learn more about HTTP headers?
+
 # Keywords need to be familiar
 
 KodeKloud notes link:
