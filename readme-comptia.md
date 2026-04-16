@@ -81,6 +81,8 @@ Automated provisioning can save time and ensure consistency across multiple VMs 
 Vagrant allows for easy provisioning of VMs using configuration files called "Vagrantfiles" 
 which specify the desired state of the VM
 
+*** Continue 11:30, it's about provisioning virtual machine ***
+
 Youtube link part 4:
 https://www.youtube.com/watch?v=bIJCN57N0Kc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=5
 
