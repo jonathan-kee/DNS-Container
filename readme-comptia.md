@@ -67,6 +67,20 @@ vagrant ssh
 Youtube link part 3:
 https://www.youtube.com/watch?v=349ul4Wuj9I&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=3
 
+What is "Provision the virtual machine"?
+Provisioning a virtual machine means process of setting up and configuring a virtual machine with the
+necessary software and resources needed for a particular task or application
+
+Settings on the VM to a desired state for a project or task
+
+Provisioning can be done manually by logging into the VM and making the necessary changes, or
+it can be automated using configuration management tools like Ansible, Chef, or Puppet
+
+Automated provisioning can save time and ensure consistency across multiple VMs or environments
+
+Vagrant allows for easy provisioning of VMs using configuration files called "Vagrantfiles" 
+which specify the desired state of the VM
+
 Youtube link part 4:
 https://www.youtube.com/watch?v=bIJCN57N0Kc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=5
 
