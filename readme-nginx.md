@@ -11,7 +11,12 @@ server {
 
 *** I notice soft linking happens a lot for nginx ***
 
-Question: Where do I learn more about HTTP headers?
+Question: Where do I learn more about HTTP headers like below?
+- Strict-Transport-Security
+- X-Frame-Options
+- Content-Security Policy
+- cross-site scripting (XSS)
+- Referrer-Policy
 
 # Keywords need to be familiar
 
