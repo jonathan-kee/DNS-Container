@@ -189,3 +189,22 @@ vagrant ssh
 Step 4 - Navigate to the guest folder that you specified in the Vagrantfile
 
 Step 5 - You should see the contents of the shared folder from your host machine in the guest machine's folder
+
+Youtube link part 7:
+https://www.youtube.com/watch?v=Dovd-CcyR7A
+
+What is a Snapshot
+Full copy of the VM in its Current state
+All configurations - disk contents, apps, packages, folders, memory
+Creates backup of the Virtual Machine
+Restoring the VM from an earlier state
+
+vagrant snapshot save my_snapshot           save the current state of the VM so that we can rollback at a later time
+vagrant snapshot list                       show list of saved snapshots
+vagrant snapshot restore my_snapshot        restore the machine from an earlier snapshot
+vagrant snapshot delete my_snapshot         delete the snapshot
+
+Location of Snapshots
+Note: Snapshots do not include the Vagrantfile or any other configuration files in your project directory 
+These files are separate from the snapshot and can be shared or version controlled separately
+
