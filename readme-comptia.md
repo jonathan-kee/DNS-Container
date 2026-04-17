@@ -133,3 +133,39 @@ https://vagrantfile-generator.vercel.app/
 
 Youtube link part 5:
 https://www.youtube.com/watch?v=Q6qL2tU1d-8&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=6
+
+Vagrant Network Configuration
+Vagrant offers the following three network options:
+1. Port forwarding
+2. Private network (host-only network)
+3. Public network (bridged network)
+
+Today we will learn:
+How to do port forwarding in Vagrant
+How to access an application running on VM from the Host machine browser
+
+Port Forwarding
+Networking allows access to the Virtual Machine from outside (like from the host system)
+Vagrant by default forwards port 22 from the guest machine (VM) to an open port in the host machine
+Users can also forward a specific port of your choice using vagrantfile
+
+Step 1 - Open vagrantfile and add this line
+config.vm.network "forwarded_port", guest: 80, host:8080
+
+Users can now access the webserver running in VM by navigating to http://localhost:8080 on your host machine
+
+Step 2 - Add provision script to install and start Apache Server on the VM
+
+Step 3 - Restart VM with updated Vagrantfile 
+vagrant reload --provision
+
+Step 4 - On the host machine open browser and goto http://localhost:8080
+
+What if port 8080 is busy
+
+Step 5 - Add auto-correction "option auto_correct: true" in Vagrantfile
+By default, Vagrant will choose auto-correction port between port 2200 and port 2250
+You can also choose your own custom range
+
+config.vm.usable_port_range = (2200..2250)
+
