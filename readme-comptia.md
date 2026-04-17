@@ -169,3 +169,21 @@ You can also choose your own custom range
 
 config.vm.usable_port_range = (2200..2250)
 
+Youtube link part 6:
+https://www.youtube.com/watch?v=qKyqv4G64Yc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=6
+
+Sharing between Host and Guest (VM)
+Today we will learn:
+How to Share folders between the host and the virtual machine
+By default the folder where you have Vagrantfile is shared to the /vagrant folder on the VM
+
+Step 1 - Open Vagrantfile and add
+config.vm.synced_folder "/path/to/host/folder", "/path/to/guest/folder"
+
+Step 2 - Save the file and goto the file location on Terminal and run command 
+vagrant up 
+
+Step 3 - SSH into the VM 
+vagrant ssh
+
+Step 4 - Navigate to the guest folder that you specified in the Vagrantfile
