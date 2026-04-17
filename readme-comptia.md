@@ -230,3 +230,29 @@ Plugins location on host system
 Win: C:\Users\<username>\.vagrant.d\
 Mac: ~/.vagrant.d/
 Linux: ~/.vagrant.d/plugins/opt/vagrant/plugins/usr/share/vagrant/plugins
+
+Youtube link part 9:
+https://www.youtube.com/watch?v=aqqyJxvzsag
+
+How to create a Virtual Machine with defined Configurations
+Step 1 - Create a new folder and create a vagrantfile 
+vagrant init
+
+Step 2 - Open the vagrantfile in a text editor and add configurations
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "centos/7"
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = "1024"
+        vb.cpus = 2
+    end
+
+    config.vm.network :private_network, ip: "192.168.10.10"
+
+    config.vm.network "forwarded_port", guest: 80, host: 8080
+
+    config.vm.synced_folder ".","/vagrant"
+
+    config.vm.provision :shell, path: "provision1.sh"
+end
