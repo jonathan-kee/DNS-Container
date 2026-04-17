@@ -256,3 +256,10 @@ Vagrant.configure("2") do |config|
 
     config.vm.provision :shell, path: "provision1.sh"
 end
+
+Configuration Options in Vagrant
+config.vm:          modify the configuration of the machine that Vagrant manages
+config.ssh:         configure how Vagrant will access your machine over SSH
+config.winrm:       configure WinRM (Windows Remote Management) settings for the VM
+config.winssh:      configure SSH on windows
+config.vagrant:     modify the behavior of Vagrant itself
