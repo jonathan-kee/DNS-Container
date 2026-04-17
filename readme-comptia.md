@@ -187,3 +187,5 @@ Step 3 - SSH into the VM
 vagrant ssh
 
 Step 4 - Navigate to the guest folder that you specified in the Vagrantfile
+
+Step 5 - You should see the contents of the shared folder from your host machine in the guest machine's folder
