@@ -128,5 +128,8 @@ Step 3 - If VM is already up can run the command vagrant provision
 Youtube link part 4:
 https://www.youtube.com/watch?v=bIJCN57N0Kc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=5
 
+Website for vagrantfile generation:
+https://vagrantfile-generator.vercel.app/
+
 Youtube link part 5:
 https://www.youtube.com/watch?v=Q6qL2tU1d-8&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=6
