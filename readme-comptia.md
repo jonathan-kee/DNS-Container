@@ -111,6 +111,20 @@ This will only update the new changes (Ensure the VM is up when running this com
 Step 5 - Access your virtual machine
 vagrant ssh
 
+*** Continue 16:00 ***
+
+Can add the provision steps:
+1. Within Vagrantfile 
+2. In a new file and provide location in Vagrantfile
+
+To use Provision Script from external file:
+Step 1 - Create a new file (e.g. provision.sh) and add the scripts to provision the VM
+
+Step 2 - Provide location of the file Vagrantfile 
+config.vm.provision :shell, path: "provision.sh"
+
+Step 3 - If VM is already up can run the command vagrant provision
+
 Youtube link part 4:
 https://www.youtube.com/watch?v=bIJCN57N0Kc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=5
 
