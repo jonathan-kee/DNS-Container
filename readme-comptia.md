@@ -263,3 +263,9 @@ config.ssh:         configure how Vagrant will access your machine over SSH
 config.winrm:       configure WinRM (Windows Remote Management) settings for the VM
 config.winssh:      configure SSH on windows
 config.vagrant:     modify the behavior of Vagrant itself
+
+(Skip, not needed) Youtube link part 10:
+https://www.youtube.com/watch?v=iTaLhEuxJhg&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=10
+
+(Skip, not needed) Youtube link part 11:
+https://www.youtube.com/watch?v=zwJ2sWA2_oU&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=11
