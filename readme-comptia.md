@@ -208,3 +208,25 @@ Location of Snapshots
 Note: Snapshots do not include the Vagrantfile or any other configuration files in your project directory 
 These files are separate from the snapshot and can be shared or version controlled separately
 
+Youtube link part 8:
+https://www.youtube.com/watch?v=PF4NSHzW75g
+
+How to install and use plugins with Vagrant
+vagrant plugin --help                   to see subcommands and options
+vagrant plugin list                     to list all installed plugins
+vagrant plugin install vbinfo           to install a plugin
+vagrant vbinfo                          to use the plugin
+vagrant plugin update vbinfo            to update a plugin
+vagrant plugin repair                   to repair installed plugins in case of error
+vagrant plugin license [license_file]   to associate the plugin with a license file
+vagrant plugin uninstall vbinfo         to remove plugin
+vagrant plugin expunge                  to delete all plugins
+vagrant plugin expunge --reinstall      to reinstall all expunged plugins
+
+Available Plugins
+https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins
+
+Plugins location on host system
+Win: C:\Users\<username>\.vagrant.d\
+Mac: ~/.vagrant.d/
+Linux: ~/.vagrant.d/plugins/opt/vagrant/plugins/usr/share/vagrant/plugins
