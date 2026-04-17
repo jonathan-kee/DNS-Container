@@ -83,6 +83,34 @@ which specify the desired state of the VM
 
 *** Continue 11:30, it's about provisioning virtual machine ***
 
+How to Provision the virtual machine
+
+Can add the provision steps:
+1. Within Vagrantfile 
+2. In a new file and provide location in Vagrantfile
+
+Step 1 - Open Vagrantfile and add config.vm.provision block, add it to your Vagrantfile
+
+Step 2 - Choose a provisioner. Vagrant supports several provisioners, including Shell, Ansible, Puppet, and Chef
+config.vm.provision "shell", inline: <<-SHELL
+    # Add your provisioning commands here
+SHELL
+
+Step 3 - Add the commands you need to setup the VM (Install, Update, Configure)
+config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install apache2 -y
+SHELL
+
+Step 4 - Save Vagrantfile and start virtual machine "vagrant up" or "vagrant reload" (to restart machine)
+
+Vagrant will read the Vagrantfile, and run the provisioning commands specified in the config.vm.provision block
+From now onwards whenever you make any changes in the provision script can run command vagrant provision
+This will only update the new changes (Ensure the VM is up when running this command)
+
+Step 5 - Access your virtual machine
+vagrant ssh
+
 Youtube link part 4:
 https://www.youtube.com/watch?v=bIJCN57N0Kc&list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa&index=5
 
