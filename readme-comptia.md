@@ -73,6 +73,10 @@ sudo launchctl unload -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utili
 sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
 
 vagrant up --provider vmware_desktop
+^
+This is not working
+
+vagrant up --provider virtualbox
 
 *** it took around one hour to download the box ***
 
