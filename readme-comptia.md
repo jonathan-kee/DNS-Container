@@ -62,6 +62,26 @@ vagrant --version
 2) Select a VM Provider. Vagrant has direct support for VirtualBox, Hyper-V, Docker
 Install VirtualBox https://www.virtualbox.org/wiki/Downloads
 
+Install VMware Fusion (Mac), VMware Workstation Pro (Windows)  
+https://www.youtube.com/watch?v=bySLCNZVcI4&t=177s
+
+*** https://developer.hashicorp.com/vagrant/docs/providers/vmware/installation ***
+vagrant plugin install vagrant-vmware-desktop
+vagrant plugin update vagrant-vmware-desktop
+
+sudo launchctl unload -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
+sudo launchctl load -w /Library/LaunchDaemons/com.vagrant.vagrant-vmware-utility.plist
+
+vagrant up --provider vmware_desktop
+
+*** it took around one hour to download the box ***
+
+https://portal.cloud.hashicorp.com/vagrant/discover/StefanScherer/windows_2016
+^
+This one not working
+
+https://portal.cloud.hashicorp.com/vagrant/discover/stromweld/windows-11/versions
+
 3) Create a new folder for Vagrant project
 
 4) On terminal or command line navigate to the folder and initiate vagrant project 
