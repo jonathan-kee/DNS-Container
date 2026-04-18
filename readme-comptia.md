@@ -6,8 +6,34 @@ Apparently MacOs does not support kvm, so I have to try out Vagrant
 docker command for Windows Server 2019
 docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
 
+
+
+
 Youtube playlist on Vagrant
 https://www.youtube.com/playlist?list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa
+
+# Vagrant installation
+brew tap hashicorp/tap
+brew install hashicorp/tap/hashicorp-vagrant
+
+# Vagrant Windows Server 2019
+https://portal.cloud.hashicorp.com/vagrant/discover/StefanScherer/windows_2019
+
+Step 1
+    Option 1: Create a Vagrantfile and initiate the box:
+    
+vagrant init StefanScherer/windows_2019 --box-version 2021.05.15
+
+    Option 2: Open the Vagrantfile and replace the contents with the following:
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "StefanScherer/windows_2019"
+  config.vm.box_version = "2021.05.15"
+end
+
+Step 2
+Bring up your virtual machine
+vagrant up
 
 # Vagrant tutorial
 Youtube link part 1:
