@@ -7,8 +7,6 @@ docker command for Windows Server 2019
 docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
 
 
-
-
 Youtube playlist on Vagrant
 https://www.youtube.com/playlist?list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa
 
@@ -34,6 +32,10 @@ end
 Step 2
 Bring up your virtual machine
 vagrant up
+
+# Vagrant QNA
+I will be manually Provisioning instead of using an automated configuration managemet tools like
+Ansible, Chef, or Puppet
 
 # Vagrant tutorial
 Youtube link part 1:
