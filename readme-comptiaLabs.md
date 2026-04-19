@@ -64,6 +64,20 @@ Windows IP Configuration
 Lab Exercise 9.02: nslookup
 *** WireShark section ***
 
+Step 1, c.
+type set q=ns and press ENTER, which will set the query type to NS, 
+the name server DNS resource record type that identifies authoritative DNS
+servers (DNS servers that have zone files to consult for responses 
+instead of using a cache like a local DNS server does, querying for its clients).
+
+Step 2,
+At the > prompt, type com. and press ENTER Notice, as shown
+in Figure 9-4, that it’s com followed by . and not .com (with the dot
+before com). The . at the end prevents your system from appending
+anything after this (which it could do based on your configuration),
+and it’s the proper way to end an FQDN. Furthermore, queries never
+begin with a . (as in .com).
+
 Lab Exercise 9.03
 Step 1
 • IP address: 192.168.1.18
