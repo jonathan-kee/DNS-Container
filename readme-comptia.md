@@ -62,6 +62,8 @@ vagrant --version
 2) Select a VM Provider. Vagrant has direct support for VirtualBox, Hyper-V, Docker
 Install VirtualBox https://www.virtualbox.org/wiki/Downloads
 
+*** The GUI is called Oracle Virtual Box Manager ***
+
 Install VMware Fusion (Mac), VMware Workstation Pro (Windows)  
 https://www.youtube.com/watch?v=bySLCNZVcI4&t=177s
 
