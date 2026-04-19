@@ -78,6 +78,34 @@ anything after this (which it could do based on your configuration),
 and it’s the proper way to end an FQDN. Furthermore, queries never
 begin with a . (as in .com).
 
+Step 4,
+At the > prompt, type set q=mx and press ENTER. Now,
+instead of the NS (name server) records for the domain, nslookup
+will display the MX (mail exchange) resource records, which identify
+a domain’s mail servers. Once again, one at a time, execute queries
+for (without the commas) rit.edu., flcc.edu., syr.edu., and
+naz.edu. (without the commas, but with the dots at the end). What do
+you see as output?
+
+Step 5,
+At the > prompt, type set q=a and press ENTER. Now
+nslookup will show the A (IPv4 address) resource record(s) for each
+query. Type www.rit.edu. (with or without the dot at the end this time)
+and press ENTER to get the IPv4 address of the RIT Web server.
+
+*** Still left some text ***
+
+Step 6, 
+At the > prompt, type set q=aaaa and press ENTER. Now,
+nslookup will show the AAAA (IPv6 address) resource record(s) for
+each query. Type www.rit.edu. (with or without the dot at the end this
+time) and press ENTER to get the IPv6 address of the RIT Web
+server. What is the IPv6 address of the RIT Web server? IPv6
+addresses are four times the length of IPv4 records (32 × 4 = 128),
+which is why this DNS resource record was named AAAA.
+
+
+
 Lab Exercise 9.03
 Step 1
 • IP address: 192.168.1.18
