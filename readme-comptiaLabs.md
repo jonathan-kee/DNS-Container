@@ -1,4 +1,4 @@
-Lab Exercise 9.01
+Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
 
 Step 2:
 ipconfig /all
@@ -19,7 +19,7 @@ ipconfig /displaydns
 
 *** WireShark section ***
 
-Lab Exercise 9.02
+Lab Exercise 9.02: nslookup
 *** WireShark section ***
 
 Lab Exercise 9.03
