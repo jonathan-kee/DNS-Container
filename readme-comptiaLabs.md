@@ -5,6 +5,8 @@ ipconfig /displaydns
 ipconfig /flushdns
 ipconfig /displaydns
 
+Question: Why is the syntax having / ? Instead of - like in Linux?
+
 *** WireShark section ***
 
 Lab Exercise 9.02
