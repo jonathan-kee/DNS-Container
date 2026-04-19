@@ -1,11 +1,21 @@
 Lab Exercise 9.01
 
+Step 2:
 ipconfig /all
+
+Question: Why is the syntax having / ? Instead of - like in Linux?
+Question: Does every PC contains DNS resolver cache?
+
+Step 3:
 ipconfig /displaydns
+
+"ipconfig /displaydns" Output:
+
+Step 4:
 ipconfig /flushdns
 ipconfig /displaydns
 
-Question: Why is the syntax having / ? Instead of - like in Linux?
+"ipconfig /displaydns" Output after "ipconfig /flushdns":
 
 *** WireShark section ***
 
