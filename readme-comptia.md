@@ -79,6 +79,9 @@ vagrant up --provider vmware_desktop
 This is not working
 
 vagrant up --provider virtualbox
+vagrant rdp
+^
+Need connect to wifi for it to work for some reason
 
 *** it took around one hour to download the box ***
 
