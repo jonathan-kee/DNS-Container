@@ -86,6 +86,14 @@ This one not working
 
 https://portal.cloud.hashicorp.com/vagrant/discover/stromweld/windows-11/versions
 
+*** Download Windows App (Previously Remote Desktop) to do rdp on the windows vm ***
+
+Link to default credentials for Windows:
+https://developer.hashicorp.com/vagrant/docs/vagrantfile/winrm_settings
+
+Username: vagrant
+Password: vagrant
+
 3) Create a new folder for Vagrant project
 
 4) On terminal or command line navigate to the folder and initiate vagrant project 
