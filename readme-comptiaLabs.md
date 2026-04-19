@@ -11,11 +11,53 @@ ipconfig /displaydns
 
 "ipconfig /displaydns" Output:
 
+Windows IP Configuration
+
+    download.windowsupdate.com
+    ----------------------------------------
+    Record Name . . . . . : download.windowsupdate.com
+    Record Type . . . . . : 5
+    Time To Live  . . . . : 622
+    Data Length . . . . . : 8
+    Section . . . . . . . : Answer
+    CNAME Record  . . . . : download.windowsupdate.com.delivery.microsoft.com
+
+
+    Record Name . . . . . : download.windowsupdate.com.delivery.microsoft.com
+    Record Type . . . . . : 5
+    Time To Live  . . . . : 622
+    Data Length . . . . . : 8
+    Section . . . . . . . : Answer
+    CNAME Record  . . . . : wu-f-net.trafficmanager.net
+
+... Quite long list
+
 Step 4:
 ipconfig /flushdns
 ipconfig /displaydns
 
 "ipconfig /displaydns" Output after "ipconfig /flushdns":
+
+Windows IP Configuration
+
+    client.wns.windows.com
+    ----------------------------------------
+    Record Name . . . . . : client.wns.windows.com
+    Record Type . . . . . : 5
+    Time To Live  . . . . : 12098
+    Data Length . . . . . : 8
+    Section . . . . . . . : Answer
+    CNAME Record  . . . . : wns.notify.trafficmanager.net
+
+
+    Record Name . . . . . : wns.notify.trafficmanager.net
+    Record Type . . . . . : 1
+    Time To Live  . . . . : 12098
+    Data Length . . . . . : 4
+    Section . . . . . . . : Answer
+    A (Host) Record . . . : 4.213.25.241
+    
+... Only 2 records compared to previous long list
 
 *** WireShark section ***
 
