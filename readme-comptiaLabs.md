@@ -32,6 +32,8 @@ Windows IP Configuration
 
 ... Quite long list
 
+Question: What does Record Name, Record Types, and the rest of the fields mean?
+
 Step 4:
 ipconfig /flushdns
 ipconfig /displaydns
