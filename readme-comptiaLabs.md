@@ -157,6 +157,8 @@ Chapter 6, IP addresses go from the more general (the network ID)
 to the more specific (host ID). As a result, IP addresses have to be
 reformatted to be used in a reverse lookup zone hierarchy.
 
+Question: What is PTR (pointer) resource records?
+
 Step 10 
 Answer either what’s being asked for (DNS query) or
 what’s being returned (DNS response) in DNS. Choose from the
@@ -169,6 +171,8 @@ used more than once:
 • Either an IPv4 or an IPv6 address
 
 Lab Exercise 9.03: DNS Client and DNS Server
+*** Am I able to setup Windows Server on my existing vm ***
+
 Step 1
 • IP address: 192.168.1.18
 • Subnet mask: 255.255.255.0
