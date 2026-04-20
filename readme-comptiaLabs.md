@@ -126,6 +126,8 @@ Servers. Then execute a few of the earlier queries (see Figure 9-6).
 Where can you see proof that the queries went to the new servers in
 both the command prompt and Wireshark?
 
+Question: What is 8.8.8.8 or 8.8.4.4 Ip addresses?
+
 Step 8, 
 As shown in earlier steps, the queries for NS and MX
 records return FQDNs, not IP addresses. What if you wanted the
