@@ -104,7 +104,57 @@ server. What is the IPv6 address of the RIT Web server? IPv6
 addresses are four times the length of IPv4 records (32 × 4 = 128),
 which is why this DNS resource record was named AAAA.
 
+Step 7, 
+With nslookup, you can change the DNS server from your
+default DNS server that the queries go to by default by simply typing
+server followed either by the IP address or FQDN of another DNS
+server.
 
+Type server 8.8.8.8 or server 8.8.4.4 to have any subsequent
+queries through nslookup go to one of these Google Public DNS
+Servers. Then execute a few of the earlier queries (see Figure 9-6).
+Where can you see proof that the queries went to the new servers in
+both the command prompt and Wireshark?
+
+Step 8, 
+As shown in earlier steps, the queries for NS and MX
+records return FQDNs, not IP addresses. What if you wanted the
+actual IP addresses for DNS servers and mail servers? Simple!
+Execute a query to find out the FQDN of the server first, and then
+take the answer that comes back in a DNS response and use that as
+the question in a DNS query for either an A or AAAA record!
+
+a. Find the FQDN of a DNS server from a domain, and then find its IP address.
+b. Find the FQDN of a mail server from a domain, and then find its IP address.
+
+Step 9,
+At the > prompt, type set q=ptr and press ENTER. Now,
+nslookup will display the PTR (pointer) resource records. In essence,
+PTR resource records are the inverse of A and AAAA records, as
+they map a given IP address (either IPv4 or IPv6) to an FQDN. Type
+129.21.1.40 and press ENTER. Notice in the output that the answer is
+the FQDN web01www01.rit.edu (the CNAME for www.rit.edu), which
+you saw earlier mapped to 129.21.1.40. Also notice that the octets of
+the IP address in the query are in reverse order with a TLD of in-
+addr.arpa, which is the TLD for DNS reverse zones. In order to use
+IP addresses in DNS this way, the IP address must be inverted. The
+reason why is very interesting. DNS goes from the more specific to
+the more general, for example, www (the hostname) to flcc (the
+second-level domain, SLD) to edu (the TLD). As you learned in
+Chapter 6, IP addresses go from the more general (the network ID)
+to the more specific (host ID). As a result, IP addresses have to be
+reformatted to be used in a reverse lookup zone hierarchy.
+
+Step 10 
+Answer either what’s being asked for (DNS query) or
+what’s being returned (DNS response) in DNS. Choose from the
+following choices for each RR (resource record) type, which can be
+used more than once:
+• FQDN
+• IPv4 address
+• IPv6 address
+• domain
+• Either an IPv4 or an IPv6 address
 
 Lab Exercise 9.03
 Step 1
