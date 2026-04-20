@@ -177,12 +177,6 @@ Step 3
 Step 6
 *** Windows Defender Firewall is involved ***
 
-Lab Exercise 9.01
-
-Lab Exercise 9.01
-
-Lab Exercise 9.01
-
 Chapter 10
 - Using a digital certificate from a reputable certificate authority (CA) is a must. 
 - Using Secure Shell (SSH) for remote management to encrypt traffic to and from an SSH server is a must. 
