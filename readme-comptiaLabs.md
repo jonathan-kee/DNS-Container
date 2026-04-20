@@ -156,7 +156,7 @@ used more than once:
 • domain
 • Either an IPv4 or an IPv6 address
 
-Lab Exercise 9.03
+Lab Exercise 9.03: DNS Client and DNS Server
 Step 1
 • IP address: 192.168.1.18
 • Subnet mask: 255.255.255.0
