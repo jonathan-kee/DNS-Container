@@ -72,6 +72,8 @@ the name server DNS resource record type that identifies authoritative DNS
 servers (DNS servers that have zone files to consult for responses 
 instead of using a cache like a local DNS server does, querying for its clients).
 
+Question: What does NS (name server) mean?
+
 Step 2,
 At the > prompt, type com. and press ENTER Notice, as shown
 in Figure 9-4, that it’s com followed by . and not .com (with the dot
@@ -89,11 +91,15 @@ for (without the commas) rit.edu., flcc.edu., syr.edu., and
 naz.edu. (without the commas, but with the dots at the end). What do
 you see as output?
 
+Question: What does mx (mail exchange) mean?
+
 Step 5,
 At the > prompt, type set q=a and press ENTER. Now
 nslookup will show the A (IPv4 address) resource record(s) for each
 query. Type www.rit.edu. (with or without the dot at the end this time)
 and press ENTER to get the IPv4 address of the RIT Web server.
+
+Question: What does A (IPv4 address) mean?
 
 *** Still left some text ***
 
@@ -105,6 +111,8 @@ time) and press ENTER to get the IPv6 address of the RIT Web
 server. What is the IPv6 address of the RIT Web server? IPv6
 addresses are four times the length of IPv4 records (32 × 4 = 128),
 which is why this DNS resource record was named AAAA.
+
+Question: What does AAAA (IPv6 address) mean?
 
 Step 7, 
 With nslookup, you can change the DNS server from your
