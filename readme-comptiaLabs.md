@@ -1,3 +1,6 @@
+(Continue) 30 min video on Wireshark for Docker
+https://www.youtube.com/watch?v=IU9C8H0My0w&t=166s
+
 Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
 
 Step 2:
