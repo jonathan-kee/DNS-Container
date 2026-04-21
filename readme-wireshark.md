@@ -50,3 +50,7 @@ Lab Exercise 10.02: Secure Ports, OpenSSH, and TLS
 Lab Exercise 11.04: SPAN
 
 Lab Exercise 12.03: IPv6 Configuration and Communication
+
+Lab Exercise 12.04: IPv6 Neighbor Discovery Protocol (RS, RA)
+
+Lab Exercise 12.05: IPv6 Neighbor Discovery Protocol (NS, NA)
