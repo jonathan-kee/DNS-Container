@@ -13,8 +13,22 @@ Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
 Lab Exercise 6.07: DHCP Client and DHCP Server
-197, 202, 204, 205, 206, 207, 209, 217, 219, 235, 240, 241, 242, 245, 
-248, 249, 250, 251, 257, 262, 264, 265, 266, 267, 268, 270, 274, 276, 
+197, 
+
+Lab Exercise 7.01: tracert
+202, 204, 205, 206, 207, 209, 
+
+Lab Exercise 7.02: NAT and Port Forwarding
+217, 219, 
+
+Lab Exercise 8.03: HTTP
+235, 240, 241, 
+
+Lab Exercise 8.04: FTP
+242, 245, 248, 249, 
+
+Lab Exercise 8.05: The TCP Three-Way Handshake and Beyond
+250, 251, 257, 262, 264, 265, 266, 267, 268, 270, 274, 276, 
 282, 283, 291, 295, 297, 299, 300, 338, 354, 359, 360, 368, 369, 370, 
 371, 372, 375, 377, 385, 386, 387, 389, 390, 395, 430, 432, 433, 434, 
 435, 436, 439, 440 
