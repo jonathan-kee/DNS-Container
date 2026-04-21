@@ -30,9 +30,17 @@ Lab Exercise 8.04: FTP
 Lab Exercise 8.05: The TCP Three-Way Handshake and Beyond
 250, 251, 257, 
 
+Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
+262, 264, 265, 266, 267, 268, 
 
-262, 264, 265, 266, 267, 268, 270, 274, 276, 
-282, 283, 291, 295, 297, 299, 300, 338, 354, 359, 360, 368, 369, 370, 
+Lab Exercise 9.02: nslookup
+270, 274, 276, 
+
+Lab Exercise 9.03: DNS Client and DNS Server
+282, 283, 
+
+Lab Exercise 10.02: Secure Ports, OpenSSH, and TLS
+291, 295, 297, 299, 300, 338, 354, 359, 360, 368, 369, 370, 
 371, 372, 375, 377, 385, 386, 387, 389, 390, 395, 430, 432, 433, 434, 
 435, 436, 439, 440 
 )
