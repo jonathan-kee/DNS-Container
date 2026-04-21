@@ -34,3 +34,9 @@ Lab Exercise 7.01: tracert
 Lab Exercise 7.02: NAT and Port Forwarding
 
 Lab Exercise 8.03: HTTP
+
+Lab Exercise 8.04: FTP
+
+Lab Exercise 8.05: The TCP Three-Way Handshake and Beyond
+
+Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
