@@ -1,7 +1,18 @@
 All mentions of "wireshark" in comptia network+ book
 ^
 Verify now (
-Pages 20, 34, 161, 163, 164, 165, 166, 167, 168, 171, 173, 188, 190, 
+Pages 20, 
+
+Lab Exercise 1.01: Network Hardware and Software
+34, 
+
+Lab Exercise 6.04: Packet Sniffing, (Start at Page 161)
+161, 163, 164, 165, 166, 167, 168, 171, 173, 
+
+Lab Exercise 6.06: Dynamic IP Address Configuration
+188, 190, 
+
+Lab Exercise 6.07: DHCP Client and DHCP Server
 197, 202, 204, 205, 206, 207, 209, 217, 219, 235, 240, 241, 242, 245, 
 248, 249, 250, 251, 257, 262, 264, 265, 266, 267, 268, 270, 274, 276, 
 282, 283, 291, 295, 297, 299, 300, 338, 354, 359, 360, 368, 369, 370, 
