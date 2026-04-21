@@ -52,9 +52,19 @@ Lab Exercise 12.04: IPv6 Neighbor Discovery Protocol (RS, RA)
 360, 
 
 Lab Exercise 12.05: IPv6 Neighbor Discovery Protocol (NS, NA)
-368, 369, 370, 
-371, 372, 375, 377, 385, 386, 387, 389, 390, 395, 430, 432, 433, 434, 
-435, 436, 439, 440 
+368, 369, 370, 371, 372, 375, 377, 
+
+Lab Exercise 13.01: VPN
+385, 386, 387, 389, 390, 
+
+Lab Exercise 13.02: Remote Desktop
+395, 
+
+Lab Exercise 15.03: Traffic Between the Host System and the VM
+430, 432, 433, 434, 435, 436, 
+
+Lab Exercise 15.04: Traffic from the VM to the Internet
+439, 440 
 )
 
 Page 34
