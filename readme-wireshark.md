@@ -46,3 +46,7 @@ Lab Exercise 9.02: nslookup
 Lab Exercise 9.03: DNS Client and DNS Server
 
 Lab Exercise 10.02: Secure Ports, OpenSSH, and TLS
+
+Lab Exercise 11.04: SPAN
+
+Lab Exercise 12.03: IPv6 Configuration and Communication
