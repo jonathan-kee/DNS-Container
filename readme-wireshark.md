@@ -40,3 +40,9 @@ Lab Exercise 8.04: FTP
 Lab Exercise 8.05: The TCP Three-Way Handshake and Beyond
 
 Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
+
+Lab Exercise 9.02: nslookup
+
+Lab Exercise 9.03: DNS Client and DNS Server
+
+Lab Exercise 10.02: Secure Ports, OpenSSH, and TLS
