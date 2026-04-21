@@ -42,8 +42,17 @@ Lab Exercise 9.03: DNS Client and DNS Server
 Lab Exercise 10.02: Secure Ports, OpenSSH, and TLS
 291, 295, 297, 299, 300, 
 
-Lab Exercise 10.03: Kerberos
-338, 354, 359, 360, 368, 369, 370, 
+Lab Exercise 11.04: SPAN
+338, 
+
+Lab Exercise 12.03: IPv6 Configuration and Communication
+354, 359, 
+
+Lab Exercise 12.04: IPv6 Neighbor Discovery Protocol (RS, RA)
+360, 
+
+Lab Exercise 12.05: IPv6 Neighbor Discovery Protocol (NS, NA)
+368, 369, 370, 
 371, 372, 375, 377, 385, 386, 387, 389, 390, 395, 430, 432, 433, 434, 
 435, 436, 439, 440 
 )
