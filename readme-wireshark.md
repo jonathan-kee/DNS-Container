@@ -54,3 +54,13 @@ Lab Exercise 12.03: IPv6 Configuration and Communication
 Lab Exercise 12.04: IPv6 Neighbor Discovery Protocol (RS, RA)
 
 Lab Exercise 12.05: IPv6 Neighbor Discovery Protocol (NS, NA)
+
+Continue Lab Exercise 13.00
+
+Lab Exercise 13.01: VPN
+
+Lab Exercise 13.02: Remote Desktop
+
+Lab Exercise 15.03: Traffic Between the Host System and the VM
+
+Lab Exercise 15.04: Traffic from the VM to the Internet
