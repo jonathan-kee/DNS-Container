@@ -9,6 +9,64 @@ Lab Exercise 1.01: Network Hardware and Software
 Lab Exercise 6.04: Packet Sniffing
 161, 163, 164, 165, 166, 167, 168, 171, 173, 
 
+Of course, IP packets, which exist at Layer 3 of the OSI model,
+are encapsulated inside of Layer 2 frames. On wired LANs, they are
+Ethernet frames. On wireless LANs, they are 802.11 frames. In the
+context of capturing and analyzing network traffic, though, even
+though the lowest unit to capture and analyze is the frame, it’s still
+called packet sniffing.
+
+Every single bit, all the
+1s and 0s that go in and out of a network interface card (NIC), can
+be seen and analyzed. There is an option to see them in true binary,
+even hexadecimal, but as humans, we prefer a format that is more
+intuitive. A packet sniffer (also known as a packet analyzer and
+protocol analyzer), implemented in software or hardware, will not
+only intercept and log all the 1s and 0s moving in and out of a NIC
+but show it to us humans in a human-readable format in addition to
+binary and hexadecimal. All of the fields of every single frame,
+packet, segment, datagram, and upper-layer data will be shown with
+their names, along with their corresponding data values. For
+example, in the IP packet, you’ll see the source IP address with a
+value like 192.168.1.113 and the destination IP address with a value
+like 192.168.1.107. You’ll see the content as it’s listed in the RFC or
+other specifications.
+
+Packet sniffers can provide so much insight into network traffic.
+This impressive list of functions of packet sniffers can be found in
+Wikipedia’s “Packet analyzer” entry,
+https://en.wikipedia.org/wiki/Packet_analyzer:
+
+• Analyze network problems
+• Detect network intrusion attempts
+• Detect network misuse by internal and external users
+• Document regulatory compliance through logging all perimeter and endpoint traffic
+• Gain information for effecting a network intrusion
+• Aid in gathering information to isolate exploited systems
+• Monitor WAN bandwidth utilization
+• Monitor network usage (including internal and external users and systems)
+• Monitor data in transit
+• Monitor WAN and endpoint security status
+• Gather and report network statistics
+• Identify suspect content in network traffic
+• Troubleshoot performance problems by monitoring network data from an application
+• Serve as the primary data source for day-to-day network monitoring and management
+• Spy on other network users and collect sensitive information
+such as login details or user cookies (depending on any
+content encryption methods that may be in use)
+• Reverse engineer proprietary protocols used over the network
+• Debug client/server communications
+• Debug network protocol implementations
+• Verify adds, moves, and changes
+• Verify internal control system effectiveness (firewalls, access control, Web filter, spam filter, proxy)
+
+Tech Tip
+The terms frame and packet are often used interchangeably.
+However, this is incorrect. Frames are found at Layer 2 and
+encapsulate packets, while packets are found at Layer 3 and
+encapsulate ICMP packets, TCP segments, UDP datagrams,
+and more. You should use the proper terms!
+
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
