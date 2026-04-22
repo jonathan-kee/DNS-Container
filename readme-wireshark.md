@@ -1,12 +1,12 @@
 All mentions of "wireshark" in comptia network+ book
 ^
-Verify now (
+Verify now
 Pages 20, 
 
 Lab Exercise 1.01: Network Hardware and Software
 34, 
 
-Lab Exercise 6.04: Packet Sniffing, (Start at Page 161)
+Lab Exercise 6.04: Packet Sniffing
 161, 163, 164, 165, 166, 167, 168, 171, 173, 
 
 Lab Exercise 6.06: Dynamic IP Address Configuration
@@ -65,7 +65,7 @@ Lab Exercise 15.03: Traffic Between the Host System and the VM
 
 Lab Exercise 15.04: Traffic from the VM to the Internet
 439, 440 
-)
+
 
 Page 34
 Enter the MAC address of your NIC into the Wireshark OUI
@@ -94,6 +94,8 @@ the captured data. By the end of this lab exercise, you’ll be able to
 • Perform a live capture of network traffic by sniffing and filtering
 with Wireshark
 
+
+(Old Labs below)
 Lab Exercise 6.04: Packet Sniffing
 
 Lab Exercise 7.01: tracert
