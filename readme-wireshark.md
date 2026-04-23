@@ -105,6 +105,8 @@ understand the differences between local communication and
 remote communication, as well as understand the relationship
 between IP addresses and MAC addresses.
 
+Step 1 (Follow Download for Wireshark)
+
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
