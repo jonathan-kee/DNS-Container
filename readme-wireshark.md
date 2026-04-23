@@ -74,6 +74,7 @@ encapsulate ICMP packets, TCP segments, UDP datagrams,
 and more. You should use the proper terms!
 
 (LAB)
+*** This labs goes indepth into details of using Wireshark ***
 The magical world of networking uses the same logic. Computing
 devices directly deliver messages for other devices on the same
 network through switches. Switches connect devices of the same
