@@ -109,6 +109,9 @@ Step 1 (Follow Download for Wireshark)
 
 Step 2 (Select the NIC you want to capture traffic from)
 
+Question: What is NIC?
+Question: How do I know which NIC to choose?
+
 Step 3
 Context/Interpretation of the data:
 - The top section is the Packet List pane, which lists a summary of each frame captured. 
