@@ -16,6 +16,10 @@ context of capturing and analyzing network traffic, though, even
 though the lowest unit to capture and analyze is the frame, it’s still
 called packet sniffing.
 
+Question: what is Layer 3 of the OSI model?
+Question: What is Layer 2 frames?
+Question: What is a frame?
+
 Every single bit, all the
 1s and 0s that go in and out of a network interface card (NIC), can
 be seen and analyzed. There is an option to see them in true binary,
