@@ -120,6 +120,11 @@ row you selected in the Packet List pane. When you click a field/value in the Pa
 highlight the corresponding hex digits and ASCII/Unicode representation. You can even turn that hex into binary by right-
 clicking in the Packet Bytes pane and selecting …As Bits.
 
+Step 7
+Question: What is promiscuous mode?
+*** Apparently wireshark can track broadcast request like ARP request ***
+*** Apparently wireshark can track unicast request like ARP reply ***
+
 
 Lab Exercise 6.07: DHCP Client and DHCP Server
 197, 
