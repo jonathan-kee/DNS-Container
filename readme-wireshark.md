@@ -1,3 +1,6 @@
+Download for MacOS:
+https://www.wireshark.org/download.html
+
 All mentions of "wireshark" in comptia network+ book
 ^
 Verify now
