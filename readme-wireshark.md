@@ -73,6 +73,34 @@ encapsulate packets, while packets are found at Layer 3 and
 encapsulate ICMP packets, TCP segments, UDP datagrams,
 and more. You should use the proper terms!
 
+(LAB)
+The magical world of networking uses the same logic. Computing
+devices directly deliver messages for other devices on the same
+network through switches. Switches connect devices of the same
+network together. However, computing devices rely on a router to
+communicate with devices on different networks. We’ll see exactly
+how routing and switching work in future chapters, but for now, all
+you need to know is that switches connect devices of the same
+network together and routers connect different networks together.
+
+The source of traffic knows its own MAC address and IP address,
+but before any traffic can be sent, that host needs to have a
+destination MAC address and a destination IP address to send traffic
+to. The host will know the destination’s IP address. It will either just
+have that IP address or Domain Name System (DNS), coming up in
+Chapter 9, will resolve a fully qualified domain name (FQDN) into its
+corresponding IP address. Getting the destination MAC address,
+though, is a different story, made possible by a protocol called
+Address Resolution Protocol (ARP). In fact, the process differs for
+local communication (meant for a device on the same network) and
+remote communication (meant for a device on a different network).
+
+Get ready to explore the mechanics of ARP and ICMP (Internet
+Control Message Protocol) and dissect network traffic to fully
+understand the differences between local communication and
+remote communication, as well as understand the relationship
+between IP addresses and MAC addresses.
+
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
