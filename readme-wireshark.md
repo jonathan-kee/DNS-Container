@@ -133,6 +133,9 @@ clicking in the Packet Bytes pane and selecting …As Bits.
 
 Step 7
 Question: What is promiscuous mode?
+Question: What is ARP?
+Question: What is ICMP? 
+
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply ***
 
