@@ -107,10 +107,12 @@ between IP addresses and MAC addresses.
 
 Step 1 (Follow Download for Wireshark)
 
-Lab Exercise 6.06: Dynamic IP Address Configuration
-188, 190, 
+Step 2 (Select the NIC you want to capture traffic from)
 
+Step 3
 Context/Interpretation of the data:
+- The top section is the Packet List pane, which lists a summary of each frame captured. 
+
 - The middle section is the Packet Details pane, which displays details of each captured frame.
 
 - The bottom section is the Packet Bytes pane, which shows hexadecimal values of captured data. 
@@ -131,6 +133,8 @@ Question: What is promiscuous mode?
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply ***
 
+Lab Exercise 6.06: Dynamic IP Address Configuration
+188, 190, 
 
 Lab Exercise 6.07: DHCP Client and DHCP Server
 197, 
