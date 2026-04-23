@@ -104,6 +104,23 @@ between IP addresses and MAC addresses.
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
+Context/Interpretation of the data:
+- The middle section is the Packet Details pane, which displays details of each captured frame.
+
+- The bottom section is the Packet Bytes pane, which shows hexadecimal values of captured data. 
+
+- The right side of the bottom section will show the ASCII/Unicode values for the hex values, 
+even if the hex values are not meant to be translated into ASCII/Unicode. When you see a dot, 
+it means that there is no ASCII/Unicode equivalent. Other times you’ll see ASCII/Unicode translations that
+make no sense because they weren’t meant to be translated, but coincidentally can be interpreted as an ASCII/Unicode character.
+
+Step 3
+- When you click a row in the Packet List pane, the Packet Details pane changes to fields and values for all protocols involved in the
+row you selected in the Packet List pane. When you click a field/value in the Packet Details pane, the Packet Bytes pane will
+highlight the corresponding hex digits and ASCII/Unicode representation. You can even turn that hex into binary by right-
+clicking in the Packet Bytes pane and selecting …As Bits.
+
+
 Lab Exercise 6.07: DHCP Client and DHCP Server
 197, 
 
