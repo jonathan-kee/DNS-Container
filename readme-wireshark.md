@@ -20,9 +20,8 @@ Question: what is Layer 3 of the OSI model?
 Question: What is Layer 2 frames?
 Question: What is a frame?
 
-Every single bit, all the
-1s and 0s that go in and out of a network interface card (NIC), can
-be seen and analyzed. There is an option to see them in true binary,
+Every single bit, all the 1s and 0s that go in and out of a network interface card (NIC), 
+can be seen and analyzed. There is an option to see them in true binary,
 even hexadecimal, but as humans, we prefer a format that is more
 intuitive. A packet sniffer (also known as a packet analyzer and
 protocol analyzer), implemented in software or hardware, will not
@@ -35,6 +34,9 @@ example, in the IP packet, you’ll see the source IP address with a
 value like 192.168.1.113 and the destination IP address with a value
 like 192.168.1.107. You’ll see the content as it’s listed in the RFC or
 other specifications.
+
+Question: Why is there software or hardware for alot of networking applications?
+Question: What is packet, segment, datagram, upper-layer data?
 
 Packet sniffers can provide so much insight into network traffic.
 This impressive list of functions of packet sniffers can be found in
