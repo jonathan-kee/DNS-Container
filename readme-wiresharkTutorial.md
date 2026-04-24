@@ -9,6 +9,7 @@ https://bitbucket.org/spandeygit/learn_lua/src/master/
 
 # Introduction 
 Hub will always send request to every computer in the network
+Switch will send request to the target computer instead of every computer in the network
 
 ## Spoofing To Obtain Traffic
 *** This is ettercap, not sure what is this tbh ***
@@ -20,3 +21,5 @@ Loopback interface: lo0 (
 Just local only traffic, that's only network messages that are going 
 from this system to this system on a special loopback interface
 )
+
+# 
