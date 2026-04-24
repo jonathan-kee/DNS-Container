@@ -32,3 +32,12 @@ Has IPv4 & IPv6 addresses
 
 Question: What is Pipes?
 Question: What is Remote Interfaces?
+
+Wireshark can output to below format:
+- pcap-ng
+- pcap
+
+Resolve network names, the network work name would be if you got an ip address,
+it would resolve the ip address. So I could go to network names, so I'm not just
+looking at IP addresses I'm actually looking at actual host names.
+
