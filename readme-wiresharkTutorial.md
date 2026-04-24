@@ -8,8 +8,8 @@ Wireshark Lua API Course Git repo
 https://bitbucket.org/spandeygit/learn_lua/src/master/
 
 # Introduction 
-Hub will always send request to every computer in the network
-Switch will send request to the target computer instead of every computer in the network
+- Hub will always send request to every computer in the network
+- Switch will send request to the target computer instead of every computer in the network
 
 ## Spoofing To Obtain Traffic
 *** This is ettercap, not sure what is this tbh ***
@@ -17,9 +17,18 @@ Switch will send request to the target computer instead of every computer in the
 *** arpspoof is another tool, not sure what is this tbh ***
 
 ## Capturing And Viewing
-Loopback interface: lo0 (
+Loopback interface: lo0 Explanation:
 Just local only traffic, that's only network messages that are going 
 from this system to this system on a special loopback interface
-)
 
-# 
+# Capture Options
+
+## Capture Options*
+Each interface like 
+- Ethernet: en0
+- Loopback: lo0
+- Wi-Fi: en1 
+Has IPv4 & IPv6 addresses
+
+Question: What is Pipes?
+Question: What is Remote Interfaces?
