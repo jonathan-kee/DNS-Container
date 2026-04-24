@@ -114,6 +114,7 @@ Question: What is NIC?
 Question: How do I know which NIC to choose?
 
 Step 3
+*** Data Modelling concepts applies here ***
 Context/Interpretation of the data:
 - The top section is the Packet List pane, which lists a summary of each frame captured. 
 
