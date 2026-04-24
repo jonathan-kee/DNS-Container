@@ -56,3 +56,10 @@ SSH if it were a TCP frame that we were looking at.
 Resolve network names or transport names will slow the app look up the network names.
 
 ## Using Filters
+Select an Ethernet: en0
+Use filter: host 172.30.42.13
+Click on Sharkfin
+
+## Sorting And Searching
+Click on the header to do sorting
+You can search for keywords next to "Find"
