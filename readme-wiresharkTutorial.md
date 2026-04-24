@@ -37,7 +37,12 @@ Wireshark can output to below format:
 - pcap-ng
 - pcap
 
-Resolve network names, the network work name would be if you got an ip address,
+Resolve network names, 
+The network work name would be if you got an ip address,
 it would resolve the ip address. So I could go to network names, so I'm not just
 looking at IP addresses I'm actually looking at actual host names.
 
+Resolve transport names, 
+I would get the actual name of the port so for eaxmple
+instead of just seeing 22 under a port identifier what I would see would be 
+SSH if it were a TCP frame that we were looking at.
