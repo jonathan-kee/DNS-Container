@@ -63,3 +63,5 @@ Click on Sharkfin
 ## Sorting And Searching
 Click on the header to do sorting
 You can search for keywords next to "Find"
+
+## Viewing Frame Data
