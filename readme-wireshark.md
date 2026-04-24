@@ -19,6 +19,7 @@ context of capturing and analyzing network traffic, though, even
 though the lowest unit to capture and analyze is the frame, it’s still
 called packet sniffing.
 
+Question: Does wired LANs & wireless LANs have different NICs?
 Question: what is Layer 3 of the OSI model?
 Question: What is Layer 2 frames?
 Question: What is a frame?
@@ -137,7 +138,7 @@ Question: What is ARP?
 Question: What is ICMP? 
 
 *** Apparently wireshark can track broadcast request like ARP request ***
-*** Apparently wireshark can track unicast request like ARP reply ***
+*** Apparently wireshark can track unicast request like ARP reply *** 
 
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
