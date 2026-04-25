@@ -121,3 +121,12 @@ Save as .pcapng for being restricted to Wireshark format
 
 You can also export certain packets instead of all packets
 You can also export by filter for packets instead of all packets 
+
+## Capturing From Other Sources
+Cli tools like tcpdump allows performing various filtering activites 
+tcpdump host 172.30.42.1
+tcpdump -w output.pcap -i en0
+tcpdump -w output.pcap -s 0 -i en0
+ls -la output.pcap
+
+## Opening Saved Captures
