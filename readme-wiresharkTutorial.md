@@ -65,3 +65,15 @@ Click on the header to do sorting
 You can search for keywords next to "Find"
 
 ## Viewing Frame Data
+Frame is layer 1
+Ethernet is layer 2 header
+Internet Protocol is layer 3
+
+Question What does layer mean?
+
+Some commentary by speaker:
+We have HTTP header at Application later,
+UDP, internet protocol, 
+We have ethernet header at layer 2
+
+## Changing The View
