@@ -185,3 +185,13 @@ Not entire sure what it means by "Create a new file automatically after"
 ringbuffer is like a loop over previous files instead of creating new file
 
 ## Analysis
+*** This section has a lot of specific frame explanations, maybe covered in Network+ or CCNA ***
+Tooltip will show summary
+
+red means Serious Problem somewhere in the packet capture
+
+yellow means Warn
+
+light blue means Note
+
+blue means Chat (documentation shows gray instead of blue)
