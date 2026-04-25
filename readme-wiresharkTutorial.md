@@ -110,3 +110,14 @@ resolve transport addresses, the transport layer is our layer 4 and
 that's TCP or UDP so if I were to resolve transport addresses, you are 
 going to see those 80s disappear in this column right here and those
 should be replaced by HTTP
+
+## Saving Captures
+Save as .pcap like below (Safest / default):
+filename.pcap
+
+.pcap can be used across a variety of tools
+
+Save as .pcapng for being restricted to Wireshark format
+
+You can also export certain packets instead of all packets
+You can also export by filter for packets instead of all packets 
