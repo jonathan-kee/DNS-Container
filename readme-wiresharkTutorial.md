@@ -169,3 +169,10 @@ ls -la output.pcap
 Check the output
 
 ## Opening Saved Captures
+The folder icon let's you open a Capture file
+
+You can open the previous tcpdump's output.pcap file
+
+.dump is also fairly commonly used for packet capture
+
+After openning the packet capture, Viewing Frame Data appears
