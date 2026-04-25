@@ -97,3 +97,16 @@ Not sure what this part is about
 When you click decode you might get a potential set of rules:
 If the TCP port is actually 80 
 50360 depends on the source port
+
+## Name Resolution
+I do not have reverse DNS resolution set up on my local network
+Name Resolution -> turn on "Resolve Network Addresses", Does DNS lookups on all
+those IP addresses that it can find and then plugs in names so we've got
+"a1755.g.akamai.net" now instead of previous IP address that was there
+
+other thing that we've got going on here is we've got numbers in for 
+Port names, I could also specify if I go to the view menu again I could 
+resolve transport addresses, the transport layer is our layer 4 and 
+that's TCP or UDP so if I were to resolve transport addresses, you are 
+going to see those 80s disappear in this column right here and those
+should be replaced by HTTP
