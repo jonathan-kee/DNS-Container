@@ -125,8 +125,47 @@ You can also export by filter for packets instead of all packets
 ## Capturing From Other Sources
 Cli tools like tcpdump allows performing various filtering activites 
 tcpdump host 172.30.42.1
+^
+Similar to the capture filters we have looked at
+
+tcpdump -w output.pcap
+^
+Store a file, write output.pcap, that's going to write out all  
+the captured packets out to this file output.pcap
+ 
 tcpdump -w output.pcap -i en0
+^
+On this particular system, need to specify the interface that 
+i am capturing on in many cases you're only going to have 
+a single interface so it's probably not going to matter 
+much if you add this parameter or not, in my case i've got
+several interfaces between a wired and a Wi-Fi as well as some
+virtual interfaces for virtual machine and so fourth so in
+this case I need to specify my interface is going to be en0,
+that's pretty much all I need to do.
+
+The other thing I need to be concerned with when I am doing
+a capture here is I may not be grabbing the entire packet. What
+I typically need to do is I might need to actually specify the
+packet length.
+
 tcpdump -w output.pcap -s 0 -i en0
+^
+That's going to say just wrap the entire packet, not going to care what the size is,
+if I wanted to only look at headers I could actually limit the 
+capture size by only capturing say 40 or 60 bytes maybe and then
+I might all that I need in order to do whatever analysis I'm trying
+to do in my case what I want to do is I want to see the entire 
+frame or the entire packet so that I can actually see all of the 
+information that I've got so for example if I want to identify problems
+with a web connection that I've got I really need the entire frame 
+so that I can look at the data portion as well if I'm just capturing 
+the headers I'm not going to get the data portion so I need to set
+my snap length using -s 0 so that I can actually get all of the packet
+rather than some minimal amount that I might otherwise get.
+
 ls -la output.pcap
+^
+Check the output
 
 ## Opening Saved Captures
