@@ -92,3 +92,8 @@ At the expression part:
 tcp.stream eq 471
 ^
 Not sure what this part is about 
+
+## Using Dissectors
+When you click decode you might get a potential set of rules:
+If the TCP port is actually 80 
+50360 depends on the source port
