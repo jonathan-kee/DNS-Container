@@ -77,3 +77,6 @@ UDP, internet protocol,
 We have ethernet header at layer 2
 
 ## Changing The View
+Plenty of settings to chnage how Wireshark looks
+
+## Streams
