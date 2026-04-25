@@ -80,3 +80,15 @@ We have ethernet header at layer 2
 Plenty of settings to chnage how Wireshark looks
 
 ## Streams
+Follow -> TCP Stream
+
+Stream is the process of communicating back & fourth
+Get all the data that is associated frames that is part of that stream
+
+Red highlight is the message you sent off to the website
+Blue highlight is the response
+
+At the expression part:
+tcp.stream eq 471
+^
+Not sure what this part is about 
