@@ -176,3 +176,12 @@ You can open the previous tcpdump's output.pcap file
 .dump is also fairly commonly used for packet capture
 
 After openning the packet capture, Viewing Frame Data appears
+
+## Using Ring Buffers In Capturing
+Not entire sure what it means by "Create a new file automatically after"
+- Megabytes
+- Seconds
+
+ringbuffer is like a loop over previous files instead of creating new file
+
+## Analysis
