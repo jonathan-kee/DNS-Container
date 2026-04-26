@@ -25,6 +25,13 @@ From the labs:
 - Content-Security Policy protects your website against cross-site scripting (XSS).
 - Referrer-Policy is used to send other websites information about where the request came from.
 
+More headers from the labs:
+- proxy header Host is for the domain.
+- proxy header X-Real-IP is to get the original IP when the request goes through one proxy.
+- proxy header X-Forwarded-For is to pass the original IP when the request goes through multiple proxies.
+- proxy header X-Forwarded-Proto so to get the original protocol request.
+
+
 # Keywords need to be familiar
 
 KodeKloud notes link:
