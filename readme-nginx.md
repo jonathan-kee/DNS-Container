@@ -18,6 +18,13 @@ Question: Where do I learn more about HTTP headers like below?
 - cross-site scripting (XSS)
 - Referrer-Policy
 
+Answer:
+From the labs:
+- Strict-Transport-Security enforces HTTPS.
+- X-Frame-Options prevents hackers from being able to embed your website into theirs to trick people.
+- Content-Security Policy protects your website against cross-site scripting (XSS).
+- Referrer-Policy is used to send other websites information about where the request came from.
+
 # Keywords need to be familiar
 
 KodeKloud notes link:
