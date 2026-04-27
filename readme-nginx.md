@@ -509,3 +509,5 @@ https://community.nginx.org/t/nginx-learning-resources/8462
 
 Important nginx feature to track who is accessing the nginx:
 https://notes.kodekloud.com/docs/Nginx-For-Beginners/Performance/Monitoring-Troubleshooting/page
+
+Continue Lab: Rate Limiting part 7
