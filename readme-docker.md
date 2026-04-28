@@ -1,3 +1,5 @@
+*** This setup was broken please refer to readme-dockerTutorial ***
+
 # Project Architecture
 1) ubuntu-host (Nginx Web Server)
 2) node01 (Bind9 DNS Master / Name Server)
