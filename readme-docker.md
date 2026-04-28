@@ -1,3 +1,4 @@
+*** This setup was following Demystifying DNS's Final Project section Lab ***
 *** This setup was broken please refer to readme-dockerTutorial ***
 
 # Project Architecture
