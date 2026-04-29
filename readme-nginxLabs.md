@@ -56,3 +56,19 @@ sudo touch index.html
 echo '<h1> Hello World! </h1>' | sudo tee -a index.html
 
 ## Question 7
+Now that we've created our Hello World site, we need to remove the default NGINX welcome page. Navigate to NGINX system directory and remove it
+
+sudo rm /etc/nginx/sites-enabled/default
+
+## Question 8
+In the /etc/nginx/sites-enabled/ directory, create a symbolic link for our new Hello World configuration file. 
+
+sudo ln -s /etc/nginx/sites-available/helloworld /etc/nginx/sites-enabled/
+
+You can test the configuration by running:
+
+sudo nginx -t
+
+If there are no errors with the NGINX configuration, proceed to reload NGINX using the following command
+
+sudo nginx -s reload
