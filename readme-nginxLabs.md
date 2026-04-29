@@ -106,6 +106,30 @@ systemctl start nginx
 Test Nginx by running "curl localhost" and you should get the Welcome to Nginx message
 
 ## Question 3
+Navigate to Nginx system directory /etc/nginx
+
+Create a new configuration inside the sites-available folder and call it example1
+
+Inside this file add the following configuration:
+
+cd /etc/nginx/sites-available 
+
+sudo bash -c 'cat <<"EOF" > /etc/nginx/sites-available/example1
+server {
+    listen 80;
+    server_name example1.com;
+    root /var/www/example1;
+
+    # Add index.php to the list if you are using PHP
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
+}
+EOF'
 
 ## Question 4
 
