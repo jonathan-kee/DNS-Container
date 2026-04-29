@@ -131,9 +131,18 @@ server {
 }
 EOF'
 
-## Question 4
+## (Skip) Question 4
 
 ## Question 5
+Navigate to /var/www and create a new directory called example1
+
+Now create a new file called index.html inside /var/www/example1/
+
+Add simple HTML code inside the index.html
+
+sudo mkdir -p /var/www/example1
+sudo touch /var/www/example1/index.html
+echo "<h1> Example 1! </h1>" | sudo tee /var/www/example1/index.html > /dev/null
 
 ## Question 6
 
