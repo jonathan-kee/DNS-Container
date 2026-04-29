@@ -179,9 +179,38 @@ sudo touch /var/www/example2/index.html
 echo "<h1> Example 2! </h1>" | sudo tee /var/www/example2/index.html > /dev/null
 
 ## Question 8
+Navigate to Nginx system directory and remove the Welcome to Nginx Page
+
+Now create a symbolic link for both example configurations.
+
+Run below commands to complete the task:
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/example1 /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/example2 /etc/nginx/sites-enabled/
+sudo systemctl restart nginx
 
 ## Question 9
+Check Nginx configuration by running "sudo nginx -t"
+
+If there are no errors proceed to reloading Nginx by running "sudo nginx -s reload"
 
 ## Question 10
+Enable UFW if it’s not enabled already.
+
+Add Firewall Rules for Ports 22 and 80
+
+Enable ufw:
+sudo ufw enable
+
+Add firewall rules:
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+
+Check the firewall status
+sudo ufw status verbose
 
 ## Question 11
+Check if website is running:
+
+curl -sI -H "Host: example1.com" http://localhost
+curl -sI -H "Host: example2.com" http://localhost
