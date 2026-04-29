@@ -46,3 +46,13 @@ server {
                 try_files $uri $uri/ =404;
         }
 }
+
+## Question 6
+cd /var/www
+sudo mkdir helloworld
+
+cd helloworld
+sudo touch index.html
+echo '<h1> Hello World! </h1>' | sudo tee -a index.html
+
+## Question 7
