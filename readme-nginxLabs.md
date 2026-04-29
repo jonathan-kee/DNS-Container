@@ -90,3 +90,35 @@ sudo ufw allow 80/tcp
 
 ## Question 10
 curl localhost
+
+# Lab: Configure Multiple Sites
+
+## Question 1
+Verify Nginx is running by running systemctl status nginx
+
+systemctl status nginx
+
+If it’s not running start it by running systemctl start nginx
+
+systemctl start nginx
+
+## Question 2
+Test Nginx by running "curl localhost" and you should get the Welcome to Nginx message
+
+## Question 3
+
+## Question 4
+
+## Question 5
+
+## Question 6
+
+## Question 7
+
+## Question 8
+
+## Question 9
+
+## Question 10
+
+## Question 11
