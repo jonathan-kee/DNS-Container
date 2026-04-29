@@ -144,9 +144,39 @@ sudo mkdir -p /var/www/example1
 sudo touch /var/www/example1/index.html
 echo "<h1> Example 1! </h1>" | sudo tee /var/www/example1/index.html > /dev/null
 
-## Question 6
+## (Skip) Question 6
 
 ## Question 7
+Now, create copy of /etc/nginx/sites-available /example1 and rename the copied dir to /etc/nginx/sites-available/example2
+
+Make sure to rename the contents inside example2 accordingly.
+
+Create another copy of /var/www/example1/ and rename the copied dir to /var/www/example2/
+
+Make sure to modify the contents inside index.html accordingly, as we did earlier for example1.
+
+cd /etc/nginx/sites-available 
+
+sudo bash -c 'cat <<"EOF" > /etc/nginx/sites-available/example2
+server {
+    listen 80;
+    server_name example2.com;
+    root /var/www/example2;
+
+    # Add index.php to the list if you are using PHP
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
+}
+EOF'
+
+sudo mkdir -p /var/www/example2
+sudo touch /var/www/example2/index.html
+echo "<h1> Example 2! </h1>" | sudo tee /var/www/example2/index.html > /dev/null
 
 ## Question 8
 
