@@ -72,3 +72,21 @@ sudo nginx -t
 If there are no errors with the NGINX configuration, proceed to reload NGINX using the following command
 
 sudo nginx -s reload
+
+## Question 9
+Now, enable ufw if it is not enabled. Add two firewall rules to allow ports 22 and 80 over TCP protocol
+
+Make sure to enable the 22/tcp port on ufw before validating your work by clicking the Check button below
+
+To enable ufw, run:
+sudo ufw enable
+
+To check ufw status, run:
+sudo ufw status
+
+To create the firewall rules, run:
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+
+## Question 10
+curl localhost
