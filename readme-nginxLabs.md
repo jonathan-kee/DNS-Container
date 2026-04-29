@@ -214,3 +214,32 @@ Check if website is running:
 
 curl -sI -H "Host: example1.com" http://localhost
 curl -sI -H "Host: example2.com" http://localhost
+
+# Lab: Configure URL Redirects & Rewrites
+cd /etc/nginx
+
+## Question 1
+
+## Question 2
+
+## Question 3
+
+## Question 4
+
+## Question 5 
+
+## Question 6 
+
+## Question 7
+
+## Question 8 
+
+## Question 9
+
+## Question 10
+
+## Question 11
+
+## Question 12
+
+## Question 13
