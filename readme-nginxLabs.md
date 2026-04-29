@@ -219,8 +219,18 @@ curl -sI -H "Host: example2.com" http://localhost
 cd /etc/nginx
 
 ## Question 1
+Welcome to the NGINX lab. In this lab, you will be able to redirect HTTP to HTTPS traffic and rewrite rules to adjust domain URLs.
+
+To access NGINX UI, click on the NGINX UI tab located on the top right corner above the terminal.
 
 ## Question 2
+1) Navigate to the Nginx system directory by executing the following command:
+cd /etc/nginx
+
+2) Inspect the configuration file located in the sites-available folder named diner.
+
+3) Confirm that the website is functioning correctly by running the following command:
+curl --head -H "Host: diner.com" localhost
 
 ## Question 3
 
