@@ -403,8 +403,42 @@ inside the nginx node check for ip address of eth0
 IP should start with 192.23x.x.x
 
 Make a note of Ip address
+192.168.126.194/32
 
 ## Question 5
+1) In the nginx node, navigate to nginx’s config folder by changing directory to /etc/nginx/sites-available/ and open the apache-app file
+
+2) Open the apache-app file by executing the following command:
+sudo nano sites-available/apache-app
+
+3) Inside this file, add the following configuration above the server { listen 80; } block:
+
+upstream apache_example {
+    server <IP of node01>:80;
+    server <IP of node02>:80;
+}
+
+server {
+    listen 80;
+    server_name apache.example.com;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    location / {
+        try_files $uri $uri/ =404;
+        proxy_pass http://apache_example;
+    }
+}
+
+4) Next, add the proxy_pass directive inside the location / block as follows:
+^
+Already added
+
+5) Check syntax by running
+sudo nginx -t
+
+and if all looks good, reload by running
+
+sudo nginx -s reload
 
 ## Question 6
 
