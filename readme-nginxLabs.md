@@ -268,6 +268,26 @@ server {
 There are already TLS Certificates installed in this server so no need to worry about installing them or configuring anything else.
 
 ## Question 6 
+1) Verify the syntax of the configuration file located at /etc/nginx/sites-available/diner-https by executing the following command:
+sudo nginx -t
+
+2) Create a symbolic link to enable the diner-https configuration
+sudo ln -s /etc/nginx/sites-available/diner-https /etc/nginx/sites-enabled/
+
+3) If the syntax check indicates that everything is correct, proceed to reload the Nginx server with the following command:
+sudo nginx -s reload
+
+4) To confirm the redirection is functioning as intended, run the following command:
+curl -I -H "Host: diner.com" localhost
+
+You should receive a response message stating 301 Moved Permanently.
+
+5) Additionally, run this command to observe the redirection behavior:
+curl -IL -H "Host: diner.com" localhost
+
+Note: The redirect rule is set up to redirect all HTTP requests to HTTPS. This can be observed from the output. You can see the line below from output
+
+Location: https://diner.com/
 
 ## Question 7
 
