@@ -405,7 +405,7 @@ IP should start with 192.23x.x.x
 Make a note of Ip address
 192.168.126.194/32
 
-## Question 5
+(Recheck) ## Question 5
 1) In the nginx node, navigate to nginx’s config folder by changing directory to /etc/nginx/sites-available/ and open the apache-app file
 
 2) Open the apache-app file by executing the following command:
@@ -448,6 +448,25 @@ sudo nginx -s reload
 - Now you have configured a round robin Nginx Load Balancer that distributes traffic to 2 backend Apache Web Servers.
 
 ## Question 7
+Follow the steps below to implement the weighted round robin algorithm in your Nginx configuration:
+
+1) Open the Nginx configuration file for the Apache application located at
+sudo nano /etc/nginx/sites-available/apache-app
+
+2) Update the upstream {} block with the following weights for the nodes:
+- node01: weight=9
+- node02: weight=1
+
+upstream apache_example {
+    server 192.230.X.X:80 weight=9;
+    server 192.230.X.X:80 weight=1;
+ }
+
+3) Save the changes to the file. To check the syntax, run the command:
+sudo nginx -t
+
+4) If there are no errors, proceed to reload Nginx with the following command:
+nginx -s reload
 
 ## Question 8
 
