@@ -474,6 +474,9 @@ sudo nginx -t
 nginx -s reload
 
 ## Question 8
+keep refreshing the website that you opened in the previous step. You should see that 9 times out of 10 the first node listed will display.
+
+## Question 9
 Let’s experiment with another algorithm by with the ip_hash algorithm.
 
 1. Open the apache-app file in Nginx configuration file located in /etc/nginx/sites-available/
@@ -495,10 +498,10 @@ and if all looks good, reload by running
 
 sudo nginx -s reload
 
-## Question 9
+## Question 10
 keep refreshing the website that you opened in the previous step. You will keep hitting the same node over and over again because of the sticky sessions also known as ip_hash.
 
-## Question 10
+## Question 11
 let’s create an issue in one of the Apache Web Servers to see how Nginx handles it.
 
 SSH into node01
