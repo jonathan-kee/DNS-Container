@@ -353,6 +353,31 @@ Browse to any image (there are only 13 jpg files so keep that in mind) and you s
 
 Note: You can access the website from Nginx ICON on the terminal.
 
+# Lab: Load Balancer
+
+## Question 1
+
+## Question 2
+
+## Question 3
+
+## Question 4
+
+## Question 5
+
+## Question 6
+
+## Question 7
+
+## Question 8
+
+## Question 9
+
+## Question 10
+
+## Question 11
+
+
 # Lab: Reverse Proxy
 
 ## Question 1
