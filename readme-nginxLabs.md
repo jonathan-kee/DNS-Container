@@ -469,6 +469,26 @@ sudo nginx -t
 nginx -s reload
 
 ## Question 8
+Let’s experiment with another algorithm by with the ip_hash algorithm.
+
+1. Open the apache-app file in Nginx configuration file located in /etc/nginx/sites-available/
+sudo nano /etc/nginx/sites-available/apache-app
+
+- Remove weights assigned in previous step.
+- Add ip_hash to the upstream {} block.
+
+upstream apache_example {
+    ip_hash;
+    server 192.234.xxx.xx:80;
+    server 192.234.xxx:xx:80;
+  }
+
+2. Check syntax by running
+sudo nginx -t
+
+and if all looks good, reload by running
+
+sudo nginx -s reload
 
 ## Question 9
 
