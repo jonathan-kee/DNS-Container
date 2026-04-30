@@ -290,6 +290,10 @@ Note: The redirect rule is set up to redirect all HTTP requests to HTTPS. This c
 Location: https://diner.com/
 
 ## Question 7
+Now, let's focus on the rewrite module.
+1) Inspect the file located at "/etc/nginx/sites-available/example". It is a straight forward file that contains the directive root /var/www/html;.
+
+2) Navigate to the "/var/www/html/" directory to examine its contents. Within this folder, you will find a directory named images, which contains numerous JPG files.
 
 ## Question 8 
 
