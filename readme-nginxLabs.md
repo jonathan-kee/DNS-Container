@@ -356,8 +356,19 @@ Note: You can access the website from Nginx ICON on the terminal.
 # Lab: Load Balancer
 
 ## Question 1
+Welcome to the NGINX lab. In this lab, you will be Load balance traffic.
+
+To access NGINX UI, click on the NGINX UI tab located on the top right corner above the terminal.
 
 ## Question 2
+1) Navigate to the Nginx system directory by executing the following command:
+cd /etc/nginx
+
+2) Inspect the configuration file located in the sites-available folder named apache-app.
+
+3) Confirm that the website is functioning correctly by running the following command:
+curl -I -H "Host: apache.example.com" http://localhost
+
 
 ## Question 3
 
