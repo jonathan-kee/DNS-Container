@@ -233,8 +233,36 @@ cd /etc/nginx
 curl --head -H "Host: diner.com" localhost
 
 ## Question 3
+1) Note that while the website should be operational, the output of the above command does not redirect to HTTPS.
+
+2) Remove the current configuration, execute the following command to remove current configuration:
+sudo rm /etc/nginx/sites-enabled/diner
 
 ## Question 4
+1) Inspect the file named diner-https located in the /etc/nginx/sites-available/ directory.
+
+2) Note that this configuration contains two server blocks: one for HTTP on Port 80 and another for HTTPS on Port 443.
+
+3) Within the server { listen 80; } block, add configuration to redirect the requests from http requests to https.
+
+sudo nano /etc/nginx/sites-available/diner-https
+
+server {
+    listen 80;
+    server_name diner.com;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name diner.com;
+    ssl_certificate /etc/ssl/certs/diner.com.pem;
+    ssl_certificate_key /etc/ssl/certs/diner.com-key.pem;
+    root /var/www/diner;
+    index index.html index.htm index.nginx-debian.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
 
 ## Question 5 
 
