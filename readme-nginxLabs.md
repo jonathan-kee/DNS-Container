@@ -394,6 +394,15 @@ curl localhost
 - Run ip a command and note ip address of eth0 interface.
 
 ## Question 4
+Get Nginx’s IP address by running
+
+ip a
+
+inside the nginx node check for ip address of eth0
+
+IP should start with 192.23x.x.x
+
+Make a note of Ip address
 
 ## Question 5
 
