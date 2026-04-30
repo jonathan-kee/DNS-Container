@@ -405,7 +405,7 @@ IP should start with 192.23x.x.x
 Make a note of Ip address
 192.168.126.194/32
 
-(Recheck) ## Question 5
+## Question 5
 1) In the nginx node, navigate to nginx’s config folder by changing directory to /etc/nginx/sites-available/ and open the apache-app file
 
 2) Open the apache-app file by executing the following command:
@@ -430,8 +430,13 @@ server {
 }
 
 4) Next, add the proxy_pass directive inside the location / block as follows:
-^
-Already added
+
+location / {
+    # First attempt to serve request as file, then
+    # as directory, then fall back to displaying a 404.
+    try_files $uri $uri/ =404;
+    proxy_pass http://apache_example;
+}
 
 5) Check syntax by running
 sudo nginx -t
