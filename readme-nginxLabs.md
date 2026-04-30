@@ -314,11 +314,41 @@ Try to browse to an image by adding to the URL the following
 and you can try a few other images like pic08.jpg
 
 ## Question 9
+Using the rewrite module, we can have Nginx rewrite the URLs so that instead of seeing images/ we’ll see pics/. This is useful in case users have saved bookmarks and it’s a safe approach into making adjustments to a website without breaking the flow.
 
 ## Question 10
+Return to the terminal and navigate to the directory /var/www/html. Rename the folder images to pics.
+
+1) Navigate to /var/www/html directory
+cd /var/www/html
+
+2) Rename the folder images to pics
+sudo mv images pics
 
 ## Question 11
+Open the website in your browser and observe that the images are not functioning properly. This is an ideal opportunity to utilize the rewrite module.
 
 ## Question 12
+Update example Nginx configuration file in /etc/nginx/sites-available/ to rewrite the location of content to pics folder.
+
+Navigate to /etc/nginx/sites-available/ directory by below command
+cd /etc/nginx/sites-available/
+
+Use VIM to open example file and add the regex code rewrite ^/images/(.*)$ /pics/$1 permanent; in the location block as shown below, save the file and exit.
+sudo nano /etc/nginx/sites-available/example
+
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    location / {
+        rewrite ^/images/(.*)$ /pics/$1 permanent;
+        try_files $uri $uri/ =404;
+    }
+}
 
 ## Question 13
+Browse to any image (there are only 13 jpg files so keep that in mind) and you should see that Nginx is rewriting the requested /images/pic02.jpg to /pics/pic02.jpg.
+
+Note: You can access the website from Nginx ICON on the terminal.
