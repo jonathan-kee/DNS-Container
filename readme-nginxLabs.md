@@ -491,11 +491,20 @@ and if all looks good, reload by running
 sudo nginx -s reload
 
 ## Question 9
+keep refreshing the website that you opened in the previous step. You will keep hitting the same node over and over again because of the sticky sessions also known as ip_hash.
 
 ## Question 10
+let’s create an issue in one of the Apache Web Servers to see how Nginx handles it.
 
-## Question 11
+SSH into node01
+ssh node01
 
+and run the following command to stop Apache on node01
+sudo systemctl stop apache2
+
+Now refresh the website you opened in previous step, you will see the website is served from node02.
+
+Nginx will detect that one of the nodes is not responding when it does its health check and therefore will not redirect traffic to it.
 
 # Lab: Reverse Proxy
 
