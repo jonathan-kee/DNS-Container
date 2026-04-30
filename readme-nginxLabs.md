@@ -614,3 +614,17 @@ sudo nginx -s reload
 
 ## Question 6
 On the right-hand corner of the lab terminal, click NGINX, and You should see the Hello, Human! Response from the Flask applications
+
+# Lab: HTTPS
+
+# Lab: HTTP Headers
+
+# Lab: Authentication
+
+# Lab: Blocking Traffic
+
+# Lab: Rate Limmiting
+
+# Lab: Caching
+
+# Lab: Compression
