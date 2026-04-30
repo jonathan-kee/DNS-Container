@@ -369,8 +369,29 @@ cd /etc/nginx
 3) Confirm that the website is functioning correctly by running the following command:
 curl -I -H "Host: apache.example.com" http://localhost
 
-
 ## Question 3
+In this Lab, there are three nodes.
+1) nginx - Nginx server
+2) node01 - Apache server
+3) node02 - Apache server
+
+You can access node01 and node02 via SSH.
+
+For example:
+ssh node01
+
+On the terminal bar, click on the + button, open new terminal and login into node01 and node02 using
+
+ssh node01
+ssh node02
+
+- These nodes are running Apache with a simple HTML website
+- To verify these Apache Web Servers are running correctly, run
+
+curl localhost
+
+- Both servers should respond with an HTML page
+- Run ip a command and note ip address of eth0 interface.
 
 ## Question 4
 
