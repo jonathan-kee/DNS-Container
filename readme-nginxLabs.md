@@ -265,6 +265,7 @@ server {
 }
 
 ## Question 5 
+There are already TLS Certificates installed in this server so no need to worry about installing them or configuring anything else.
 
 ## Question 6 
 
