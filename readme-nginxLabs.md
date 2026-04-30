@@ -352,3 +352,104 @@ server {
 Browse to any image (there are only 13 jpg files so keep that in mind) and you should see that Nginx is rewriting the requested /images/pic02.jpg to /pics/pic02.jpg.
 
 Note: You can access the website from Nginx ICON on the terminal.
+
+# Lab: Reverse Proxy
+
+## Question 1
+Welcome to the NGINX lab. In this lab, you will be configuring reverse proxy.
+
+To access NGINX UI, click on the NGINX UI tab located on the top right corner above the terminal.
+
+## Question 2
+In this Lab, there are three nodes.
+
+1) nginx - Nginx server
+2) node01 - Flask server
+3) node02 - Flask server
+
+You can access node01 and node02 via SSH.
+
+For example:
+ssh node01
+
+On the terminal bar, click on the + button, open new terminal and login into node01 and node02 using
+
+ssh node01
+ssh node02
+
+- These nodes are running a simple Flask application.
+- To verify these Flask applications are running correctly run below command:
+
+curl localhost:5000
+
+- Both servers should respond with a simple Hello, Human!
+- Run "ip a" command and note the IP address of eth0 interface.
+
+## Question 3
+In the Nginx node, please navigate to the Nginx configuration folder by changing the directory to /etc/nginx/sites-available. Then, open the helloworld file by executing the below command.
+
+cat helloworld
+
+Observe the default configuration.
+
+server {
+  listen 80;
+  server_name helloworld.com;
+  root /var/www/html;
+  index index.html index.htm index.nginx-debian.html;
+  
+  location / {
+    proxy_pass http://hello_world;
+  }
+}
+
+## Question 4
+Get Nginx’s IP address of node01 and node02 by running
+
+Node01:
+ssh node01 "ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+' | head -1"
+
+Node01 Output:
+192.168.25.65
+
+Node02:
+ssh node02 "ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+' | head -1"
+
+Node02 Output:
+192.168.84.190
+
+Note the IP address we need them for next question.
+
+## Question 5
+1. Navigate to the Nginx configuration folder by changing the directory to /etc/nginx.
+
+2. Open the helloworld file by executing the following command:
+sudo nano sites-available/helloworld
+
+3. Inside this file, add the following configuration above the server { listen 80; } block:
+
+upstream hello_world {
+    server 192.168.25.65:5000;
+    server 192.168.84.190:5000;
+}
+
+server {
+  listen 80;
+  server_name helloworld.com;
+  root /var/www/html;
+  index index.html index.htm index.nginx-debian.html;
+
+  location / {
+    proxy_pass http://hello_world;
+  }
+}
+
+4) Check syntax by running
+sudo nginx -t
+
+and if all looks good, reload by running
+
+sudo nginx -s reload
+
+## Question 6
+On the right-hand corner of the lab terminal, click NGINX, and You should see the Hello, Human! Response from the Flask applications
