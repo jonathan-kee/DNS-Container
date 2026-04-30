@@ -441,6 +441,11 @@ and if all looks good, reload by running
 sudo nginx -s reload
 
 ## Question 6
+- On the right-hand corner of the lab terminal, click NGINX, and you should see the HTML website
+
+- If you keep refreshing, you should see this switch between NODE01 HTML5 UP and NODE02 HTML5 UP
+
+- Now you have configured a round robin Nginx Load Balancer that distributes traffic to 2 backend Apache Web Servers.
 
 ## Question 7
 
