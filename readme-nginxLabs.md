@@ -296,6 +296,22 @@ Now, let's focus on the rewrite module.
 2) Navigate to the "/var/www/html/" directory to examine its contents. Within this folder, you will find a directory named images, which contains numerous JPG files.
 
 ## Question 8 
+Enable and reload the example website in Nginx, and browse to a specific image on the site.
+
+Enable this example website by running
+sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/
+
+Reload it by running
+sudo nginx -s reload
+
+On top of the terminal, there is an nginx icon click on it
+
+You should see a fairly simple HTML website with lots boxes and images.
+
+Try to browse to an image by adding to the URL the following
+/images/pic10.jpg
+
+and you can try a few other images like pic08.jpg
 
 ## Question 9
 
