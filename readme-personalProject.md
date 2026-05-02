@@ -18,6 +18,9 @@ Container Name    | IP Address     | Port
 - client          | 172.17.0.6/16  | xx
 
 # Docker setup
+## Docker Run Documentation:
+https://docs.docker.com/reference/cli/docker/container/run/
+
 ## Reverse-Proxy
 docker run --name nginx --detach nginx:stable-alpine3.23-perl
 
@@ -32,10 +35,13 @@ docker run --detach \
         ubuntu/bind9
 
 ## Frontend
+*** Probably have to create your own image in real world project ***
 
 ## Backend
+*** Probably have to create your own image in real world project ***
 
 ## Database
+docker run --name database --env POSTGRES_PASSWORD=mysecretpassword --detach postgres
 
 ## Client
 *** Remove --dns-search=test (This one is working) ***
