@@ -249,5 +249,5 @@ curl 172.17.0.3
 docker restart nginx node01 node02 client
 docker restart nginx node01 client
 
-## Make sure to use static address
+*** Make sure to use static address ***
 

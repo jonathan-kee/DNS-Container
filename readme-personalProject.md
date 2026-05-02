@@ -7,6 +7,8 @@
 6) node02 (DNS Client / Resolvers)
 
 # Project Architecture's IP addresses & Ports
+*** Make sure to use static address, otherwise will break in future ***
+
 Container Name    | IP Address     | Port
 - reverse-proxy   | 172.17.0.1/16  | 443 (HTTPS) (Don't HTTP over internet)
 - frontend        | 172.17.0.2/16  | 80 (HTTP)
