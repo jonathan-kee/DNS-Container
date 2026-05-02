@@ -5,7 +5,7 @@
 1) ubuntu-host (Nginx Web Server)
 2) node01 (Bind9 DNS Master / Name Server)
 3) node02 (Bind9 DNS Slave / Name Server)
-4) node03 (DNS Client / Resolvers)
+4) client (DNS Client / Resolvers)
 
 # Project Architecture's IP addresses & Ports
 Container Name | IP Address     | Port
