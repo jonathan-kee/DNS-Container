@@ -50,8 +50,10 @@ docker run --detach \
         ubuntu/bind9
 
 docker run --name client -it --detach --dns=172.17.0.2 --dns-search=test yauritux/busybox-curl
+^
+This is not working
 
-# Remove --dns-search=test (This one is working)
+*** Remove --dns-search=test (This one is working) ***
 docker run --name client -it --detach --dns=172.17.0.2 yauritux/busybox-curl
 
 docker run --name nginx --detach nginx:stable-alpine3.23-perl
