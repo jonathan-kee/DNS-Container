@@ -1,4 +1,5 @@
 *** There is no final project for Nginx For Beginners course ***
+*** I don't think you have to know everything to setup your first project ***
 
 # Lab: Install NGINX & Configure Hello World Page
 
