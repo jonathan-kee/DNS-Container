@@ -5,6 +5,11 @@
 3) PHP (frontend & backend)
 4) Apache (reverse-proxy)
 
+Repository for Kodeloud's 2 Tier Application:
+https://github.com/kodekloudhub/learning-app-ecommerce/tree/master
+^
+I am guessing you can run a linux docker container then provision it following the README instruction
+
 # Project Architecture
 *** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
 1) reverse-proxy (Nginx)
