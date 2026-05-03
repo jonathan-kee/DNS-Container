@@ -1,4 +1,12 @@
+# Kodeloud's 2 Tier Application Architecture
+*** LAMP stack (Linux, Apache, Mariadb, PHP) ***
+1) CentOS (Install firewalld)
+2) MariaDB (database)
+3) PHP (frontend & backend)
+4) Apache (reverse-proxy)
+
 # Project Architecture
+*** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
 1) reverse-proxy (Nginx)
 2) frontend (React)
 3) backend (Fastify)
