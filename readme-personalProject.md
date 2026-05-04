@@ -15,6 +15,10 @@ https://labs.iximiuz.com/challenges/docker-write-first-dockerfile
 
 *** I think Artifacts like Java's jar, Php code should be copied over to the docker image *** 
 
+Problems I faced when building the image file: 
+- Feeding sql commands to my-sql cli
+- Copying over configuration files like .env
+
 # Project Architecture
 *** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
 1) reverse-proxy (Nginx)
