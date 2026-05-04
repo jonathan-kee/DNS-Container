@@ -10,6 +10,11 @@ https://github.com/kodekloudhub/learning-app-ecommerce/tree/master
 ^
 I am guessing you can run a linux docker container then provision it following the README instruction
 
+Guide on building a dockerfile:
+https://labs.iximiuz.com/challenges/docker-write-first-dockerfile
+
+*** I think Artifacts like Java's jar, Php code should be copied over to the docker image *** 
+
 # Project Architecture
 *** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
 1) reverse-proxy (Nginx)
