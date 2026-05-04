@@ -17,7 +17,18 @@ https://labs.iximiuz.com/challenges/docker-write-first-dockerfile
 
 Problems I faced when building the image file: 
 - Feeding sql commands to my-sql cli
+^
+Because you are still in the building phase, this might a Bash issue instead of a docker command issue like below:
+https://labs.iximiuz.com/challenges/docker-101-container-run-interactive
+
+Example to pass data to a running container:
+cat ~/avatar.png | \
+  docker run -i redis \
+    redis-cli -h 172.16.0.3 -x set avatar:user123
+
 - Copying over configuration files like .env
+^
+I think copying over is a docker issue
 
 # Project Architecture
 *** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
