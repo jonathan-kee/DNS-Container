@@ -1,6 +1,13 @@
 *** This setup was following Demystifying DNS's Final Project section Lab ***
 *** This setup was broken please refer to readme-dockerTutorial ***
 
+Guide on how to make ubuntu image not exit:
+https://stackoverflow.com/questions/63697495/ubuntu-container-immediately-exits-after-docker-run-ubuntu
+
+Example Code to make ubuntu image not exit, then login into it:
+docker run -d ubuntu bash -c "tail -f /dev/null"
+docker exec -it ubuntu sh
+
 # Project Architecture
 1) ubuntu-host (Nginx Web Server)
 2) node01 (Bind9 DNS Master / Name Server)
