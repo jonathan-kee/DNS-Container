@@ -4,8 +4,15 @@
 Guide on how to make ubuntu image not exit:
 https://stackoverflow.com/questions/63697495/ubuntu-container-immediately-exits-after-docker-run-ubuntu
 
+Docker run command documentation:
+https://docs.docker.com/reference/cli/docker/container/run/
+
 Example Code to make ubuntu image not exit, then login into it:
-docker run -d ubuntu bash -c "tail -f /dev/null"
+docker run --detach \
+        --name=ubuntu \
+        --restart=always \
+        ubuntu bash -c "tail -f /dev/null"
+
 docker exec -it ubuntu sh
 
 # Project Architecture
