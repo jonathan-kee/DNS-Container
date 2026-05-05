@@ -14,6 +14,7 @@ Guide on building a dockerfile:
 https://labs.iximiuz.com/challenges/docker-write-first-dockerfile
 
 *** I think Artifacts like Java's jar, Php code should be copied over to the docker image *** 
+*** Before building the docker image, try to run the commands in the docker image first ***
 
 Problems I faced when building the image file: 
 - Feeding sql commands to my-sql cli
