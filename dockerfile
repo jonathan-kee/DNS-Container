@@ -17,10 +17,12 @@ RUN sudo firewall-cmd --permanent --zone=public --add-port=3306/tcp
 RUN sudo firewall-cmd --reload
 
 # Configure Database (I think you put the commands below into a SQL file)
-RUN sudo mysql < db-configure.sql
+COPY ./2tier/db-configure.sql /
+RUN sudo mysql < /db-configure.sql
 
 # Run sql script
-RUN sudo mysql < db-load-script.sql
+COPY ./2tier/db-load-script.sql /
+RUN sudo mysql < /db-load-script.sql
 
 # Install required packages
 RUN sudo yum install -y httpd php php-mysqlnd
@@ -33,14 +35,11 @@ RUN sudo sed -i 's/index.html/index.php/g' /etc/httpd/conf/httpd.conf
 # Download code
 # You can fork the repository, than make changes to the index.php so the below code would be unnessary
 RUN sudo yum install -y git
-RUN sudo git clone https://github.com/kodekloudhub/learning-app-ecommerce.git /var/www/html/
+RUN sudo git clone https://github.com/jonathan-kee/learning-app-ecommerce.git /var/www/html/
 
 # Create and Configure the .env File
 # Copy syntax is from -> to 
 COPY ./2tier/.env /var/www/html/
-
-# Update index.php
-COPY index.php
 
 # Test
 RUN curl http://localhost
