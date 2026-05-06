@@ -17,8 +17,20 @@ docker exec -it ubuntu sh
 ^
 Missing some commands like systemctl
 
-Docker Ubuntu with Ubuntu installed example:
+Docker Ubuntu with Ubuntu utilies like systemctl installed example:
 https://github.com/eniocarboni/docker-ubuntu-systemd
+
+Commands to follow
+cd 2tier
+docker build -t docker-ubuntu-systemd:22.04 -t docker-ubuntu-systemd:latest .
+docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro docker-ubuntu-systemd:latest
+docker ps
+docker exec -it 1a4398cafe0e bash
+^
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+^
+Apparently you should just use service instead of systemctl because not supported on MacOS
 
 # Project Architecture
 1) ubuntu-host (Nginx Web Server)
