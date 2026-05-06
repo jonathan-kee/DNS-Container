@@ -1,8 +1,9 @@
 FROM ubuntu AS base
 
 # Install MariaDB (Missing the configuration for vi command)
-RUN sudo apt install -y mariadb-server
-RUN sudo service mariadb start
+RUN apt update
+RUN apt install -y mariadb-server
+RUN service mariadb start
 
 # Configure Database (I think you put the commands below into a SQL file)
 
@@ -10,31 +11,37 @@ RUN sudo service mariadb start
 
 # Configure Database (I think you put the commands below into a SQL file)
 COPY ./2tier/db-configure.sql /
-RUN sudo mysql < /db-configure.sql
+RUN mysql < /db-configure.sql
 
 # Run sql script
 COPY ./2tier/db-load-script.sql /
-RUN sudo mysql < /db-load-script.sql
+RUN mysql < /db-load-script.sql
 
 # Install required packages
-RUN sudo apt install -y apache2
-RUN sudo apt install -y php 
-RUN sudo apt install -y php-mysqlnd 
+RUN apt install -y apache2
+RUN apt install -y php 
+# Need to feed into cli 
+# 5. Asia
+# 46. Kuala_Lumpur
 # Skipped the firewall installation
+RUN apt install -y php-mysqlnd 
 
 # Configure httpd
-RUN sudo sed -i 's/index.html/index.php/g' /etc/apache2/apache2.conf
+RUN sed -i 's/index.html/index.php/g' /etc/apache2/apache2.conf
 
 # Start apache2
-RUN sudo service apache2 start
+RUN service apache2 start
 
 # Download code
 # You can fork the repository, than make changes to the index.php so the below code would be unnessary
-RUN sudo apt install -y git
-RUN sudo git clone https://github.com/jonathan-kee/learning-app-ecommerce.git /var/www/html/
+RUN apt install -y git
+
+# Need to clean directory before can clone
+RUN rm -r /var/www/html/
+RUN git clone https://github.com/jonathan-kee/learning-app-ecommerce.git /var/www/html/
 
 # Test
-RUN sudo apt install -y curl
+RUN apt install -y curl
 
 # Test
 RUN curl http://localhost

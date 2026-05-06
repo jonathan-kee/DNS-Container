@@ -10,12 +10,15 @@ https://docs.docker.com/reference/cli/docker/container/run/
 Example Code to make ubuntu image not exit, then login into it:
 docker run --detach \
         --name=ubuntu \
+        --privileged \
         --restart=always \
         ubuntu bash -c "tail -f /dev/null"
 
-docker exec -it ubuntu sh
+docker exec -it ubuntu bash
 ^
 Missing some commands like systemctl
+^
+Cannot use sudo for some reason
 
 Docker Ubuntu with Ubuntu utilies like systemctl installed example:
 https://github.com/eniocarboni/docker-ubuntu-systemd
@@ -23,7 +26,12 @@ https://github.com/eniocarboni/docker-ubuntu-systemd
 Commands to follow
 cd 2tier
 docker build -t docker-ubuntu-systemd:22.04 -t docker-ubuntu-systemd:latest .
-docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro docker-ubuntu-systemd:latest
+docker run --detach \
+    --name=test \ 
+    --privileged \
+    --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro \
+    docker-ubuntu-systemd:latest bash -c "tail -f /dev/null"
+
 docker ps
 docker exec -it 1a4398cafe0e bash
 ^
