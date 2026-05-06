@@ -8,6 +8,7 @@ RUN sudo systemctl status firewalld
 
 # Install MariaDB (Missing the configuration for vi command)
 RUN sudo yum install -y mariadb-server
+# The tutorial did not make any changes & leaved at default
 RUN sudo vi /etc/my.cnf
 RUN sudo systemctl start mariadb
 RUN sudo systemctl enable mariadb
@@ -31,6 +32,9 @@ RUN sudo firewall-cmd --reload
 
 # Configure httpd
 RUN sudo sed -i 's/index.html/index.php/g' /etc/httpd/conf/httpd.conf
+# Start httpd
+RUN sudo systemctl start httpd
+RUN sudo systemctl enable httpd
 
 # Download code
 # You can fork the repository, than make changes to the index.php so the below code would be unnessary
