@@ -1,0 +1,41 @@
+# Install FirewallD
+sudo apt install -y firewalld
+# (Skip firewalld) service also not working, need systemctl but not exist in docker
+sudo service firewalld start
+
+# Install MariaDB (Missing the configuration for vi command)
+sudo apt install -y mariadb-server
+sudo service mariadb start
+sudo service mariadb status
+
+# Configure Database (I think you put the commands below into a SQL file)
+
+# (Skip, not working) Configure firewall for Database
+
+# Type SQL commands
+sudo apt install httpd
+# Above not working for Ubuntu
+sudo apt install -y apache2
+sudo apt install -y php 
+sudo apt install -y php-mysqlnd 
+# Skipped the firewall installation
+
+# Configure httpd
+sudo sed -i 's/index.html/index.php/g' /etc/httpd/conf/httpd.conf
+# Above need to change to apache2
+sudo sed -i 's/index.html/index.php/g' /etc/apache2/apache2.conf
+
+# Start apache2
+sudo service apache2 start
+sudo service apache2 status
+
+# Download code
+# You can fork the repository, than make changes to the index.php so the below code would be unnessary
+sudo apt install -y git
+sudo git clone https://github.com/jonathan-kee/learning-app-ecommerce.git /var/www/html/
+
+# Test
+sudo apt install -y curl
+
+# Test
+curl http://localhost
