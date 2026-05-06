@@ -14,6 +14,11 @@ docker run --detach \
         ubuntu bash -c "tail -f /dev/null"
 
 docker exec -it ubuntu sh
+^
+Missing some commands like systemctl
+
+Docker Ubuntu with Ubuntu installed example:
+https://github.com/eniocarboni/docker-ubuntu-systemd
 
 # Project Architecture
 1) ubuntu-host (Nginx Web Server)
