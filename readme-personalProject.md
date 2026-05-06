@@ -33,10 +33,10 @@ I think copying over is a docker issue
 
 # Project Architecture
 *** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
-1) reverse-proxy (Nginx)
-2) frontend (React)
-3) backend (Fastify)
-4) database (Postgres)
+1) reverse-proxy (Nginx) / (2 Tier's Apache)
+2) frontend (React) / (2 Tier's PHP)
+3) backend (Fastify) / (2 Tier's PHP)
+4) database (Postgres) / (2 Tier's MariaDB)
 5) node01 (Bind9 DNS Master / Name Server)
 6) node02 (DNS Client / Resolvers)
 
