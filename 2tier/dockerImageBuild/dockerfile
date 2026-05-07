@@ -40,6 +40,14 @@ RUN apt install -y git
 RUN rm -r /var/www/html/
 RUN git clone https://github.com/jonathan-kee/learning-app-ecommerce.git /var/www/html/
 
+# Add .env file for index.php to connect to database 
+RUN cat > /var/www/html/.env <<-EOF
+DB_HOST=localhost
+DB_USER=ecomuser
+DB_PASSWORD=ecompassword
+DB_NAME=ecomdb
+EOF
+
 # Test
 RUN apt install -y curl
 
