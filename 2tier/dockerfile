@@ -47,7 +47,5 @@ RUN git clone https://github.com/jonathan-kee/learning-app-ecommerce.git /var/ww
 COPY ./.env /var/www/html/
 
 # Test
-RUN apt install -y curl
-
-# Test
-RUN curl http://localhost
+# RUN apt install -y curl
+# RUN curl http://localhost
