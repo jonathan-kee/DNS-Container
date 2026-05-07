@@ -48,6 +48,9 @@ DB_PASSWORD=ecompassword
 DB_NAME=ecomdb
 EOF
 
+# Add .env file for index.php to connect to database 
+COPY ./2tier/.env /var/www/html/
+
 # Test
 RUN apt install -y curl
 
