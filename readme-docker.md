@@ -13,6 +13,7 @@ docker run --detach \
         --privileged \
         --restart=always \
         --publish 127.0.0.1:80:80/tcp \
+        --publish 127.0.0.1:3306:3306/tcp \
         ubuntu bash -c "tail -f /dev/null"
 
 docker exec -it ubuntu bash
@@ -31,6 +32,8 @@ Answer: ss -tulpn
 Output of ss -tulpn:
 mariadb tcp 127.0.0.1:3306
 apache2 tcp 0.0.0.0:80 
+^
+Try to expose the mariadb port as well so you can see whether you can login or not.
 
 Docker Ubuntu with Ubuntu utilies like systemctl installed example:
 https://github.com/eniocarboni/docker-ubuntu-systemd
