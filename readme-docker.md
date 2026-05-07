@@ -7,6 +7,9 @@ https://stackoverflow.com/questions/63697495/ubuntu-container-immediately-exits-
 Docker run command documentation:
 https://docs.docker.com/reference/cli/docker/container/run/
 
+Iximiuz labs guide on building docker images:
+https://labs.iximiuz.com/skill-paths/docker-101-build-images#introduction
+
 Example Code to make ubuntu image not exit, then login into it:
 docker run --detach \
         --name=ubuntu \
