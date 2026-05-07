@@ -19,6 +19,12 @@ docker exec -it ubuntu bash
 Missing some commands like systemctl
 ^
 Cannot use sudo for some reason
+^
+I need to: 
+1) Do port mapping for the docker container
+2) Need to start mariadb, apache2 on startup
+^
+Question: How do i find out what is the port for apache2 & mariadb?
 
 Docker Ubuntu with Ubuntu utilies like systemctl installed example:
 https://github.com/eniocarboni/docker-ubuntu-systemd
