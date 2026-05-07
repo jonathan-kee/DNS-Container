@@ -25,6 +25,11 @@ I need to:
 2) Need to start mariadb, apache2 on startup
 ^
 Question: How do i find out what is the port for apache2 & mariadb?
+Answer: ss -tulpn
+
+Output of ss -tulpn:
+mariadb 127.0.0.1:3306
+apache2 0.0.0.0:80 
 
 Docker Ubuntu with Ubuntu utilies like systemctl installed example:
 https://github.com/eniocarboni/docker-ubuntu-systemd
