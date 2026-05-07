@@ -12,6 +12,7 @@ docker run --detach \
         --name=ubuntu \
         --privileged \
         --restart=always \
+        --publish 127.0.0.1:80:80/tcp \
         ubuntu bash -c "tail -f /dev/null"
 
 docker exec -it ubuntu bash
@@ -28,8 +29,8 @@ Question: How do i find out what is the port for apache2 & mariadb?
 Answer: ss -tulpn
 
 Output of ss -tulpn:
-mariadb 127.0.0.1:3306
-apache2 0.0.0.0:80 
+mariadb tcp 127.0.0.1:3306
+apache2 tcp 0.0.0.0:80 
 
 Docker Ubuntu with Ubuntu utilies like systemctl installed example:
 https://github.com/eniocarboni/docker-ubuntu-systemd
