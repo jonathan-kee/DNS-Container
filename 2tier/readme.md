@@ -14,3 +14,7 @@ docker run --detach \
         --publish 127.0.0.1:3306:3306/tcp \
         2tier:latest bash -c "tail -f /dev/null"
 
+I have to run the below commands after Docker run to work:
+docker exec -it 2tier bash
+bash start.sh
+ss -tulpn

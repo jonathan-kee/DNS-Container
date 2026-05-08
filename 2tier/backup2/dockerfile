@@ -6,7 +6,7 @@ RUN export DEBIAN_FRONTEND=noninteractive
 # Install MariaDB (Missing the configuration for vi command)
 RUN apt update
 RUN apt install -y mariadb-server
-# RUN service mariadb start
+RUN service mariadb start
 
 # Configure Database (I think you put the commands below into a SQL file)
 
@@ -14,11 +14,11 @@ RUN apt install -y mariadb-server
 
 # Configure Database (I think you put the commands below into a SQL file)
 COPY ./db-configure.sql /
-# RUN mysql < /db-configure.sql
+RUN mysql < /db-configure.sql
 
 # Run sql script
 COPY ./db-load-script.sql /
-# RUN mysql < /db-load-script.sql
+RUN mysql < /db-load-script.sql
 
 # Install required packages
 RUN apt install -y apache2
@@ -33,7 +33,7 @@ RUN apt install -y php-mysqlnd
 RUN sed -i 's/index.html/index.php/g' /etc/apache2/apache2.conf
 
 # Start apache2
-# RUN service apache2 start
+RUN service apache2 start
 
 # Download code
 # You can fork the repository, than make changes to the index.php so the below code would be unnessary
@@ -49,9 +49,3 @@ COPY ./.env /var/www/html/
 # Test
 # RUN apt install -y curl
 # RUN curl http://localhost
-
-COPY ./start.sh /
-RUN chmod +x /start.sh
-
-# This replaces your four RUN lines
-CMD ["/bin/bash", "/start.sh"]
