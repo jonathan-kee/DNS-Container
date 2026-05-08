@@ -65,3 +65,6 @@ docker cp \
 
 # Restart DNS servers
 docker restart dns
+
+Question: How do I configure my computer to connect to container dns? At the same time also connect to the internet?
+Question: Should I do a port mapping for the bind9 DNS container? Then configure my local computer to point a localhost DNS server?
