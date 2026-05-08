@@ -31,6 +31,8 @@ cat ~/avatar.png | \
 ^
 I think copying over is a docker issue
 
+Question: How do I configure my computer to connect to container dns? At the same time also connect to the internet?
+
 # Project Architecture
 *** Follow Kodekloud's 2 Tier Applications because currently lacking frontend & backend ***
 1) reverse-proxy (Nginx) / (2 Tier's Apache)

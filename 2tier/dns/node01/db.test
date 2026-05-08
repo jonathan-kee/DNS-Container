@@ -1,0 +1,19 @@
+$TTL 604800
+; The "@" symbol here refers to the zone "test."
+@       IN      SOA     test. root.test. (
+                    1     ; Serial
+                    604800         ; Refresh
+                    86400          ; Retry
+                    2419200        ; Expire
+                    604800 )       ; Negative Cache TTL
+
+; Name Servers for the domain "test."
+@       IN      NS      test.
+
+; IP addresses for those Name Servers
+@  IN      A       172.17.0.2
+www IN A 172.17.0.2
+@ IN AAAA 1234:1234::1
+
+; Apache Server
+apache   IN      A       172.17.0.3
