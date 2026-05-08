@@ -21,9 +21,14 @@ bash start.sh
 ss -tulpn
 
 # DNS setup
+*** The port mapping I follow internetsystemsconsortium/bind9 ***
+
 docker run --detach \
         --name=dns \
         --restart=always \
+        --publish 53:53/udp \
+        --publish 53:53/tcp \
+        --publish 127.0.0.1:953:953/tcp \
         --volume /etc/bind \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
