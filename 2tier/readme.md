@@ -22,7 +22,7 @@ ss -tulpn
 
 # DNS setup
 docker run --detach \
-        --name=node01 \
+        --name=dns \
         --restart=always \
         --volume /etc/bind \
         --volume /var/cache/bind \
@@ -31,31 +31,37 @@ docker run --detach \
         ubuntu/bind9
 
 # Test Connection & note down IPv4 Address
-docker exec -it node01 sh
+docker exec -it dns sh
 ip a
 exit
+
+ip a output:
+172.17.0.3/16
 
 docker exec -it 2tier sh
 ip a
 exit
+
+ip a output:
+172.17.0.2/16 
 
 *** Make appropriate changes to the dns configuration files ***
 
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
 docker cp \
-    ./node01/db.test \
-    node01:/etc/bind/db.test
+    ./dns/node01/db.test \
+    dns:/etc/bind/db.test
 
 ## Configure BIND to use our new zone file
 docker cp \
-    ./node01/named.conf.local \
-    node01:/etc/bind/named.conf.local
+    ./dns/node01/named.conf.local \
+    dns:/etc/bind/named.conf.local
 
 ## Configure BIND options
 docker cp \
-    ./node01/named.conf.options \
-    node01:/etc/bind/named.conf.options
+    ./dns/node01/named.conf.options \
+    dns:/etc/bind/named.conf.options
 
 # Restart DNS servers
-docker restart node01
+docker restart dns
