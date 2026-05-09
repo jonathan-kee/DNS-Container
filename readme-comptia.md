@@ -56,6 +56,16 @@ With bridged networking, external devices can communicate with the VM directly, 
 Internet Connectivity and IP Forwarding:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#internet-connectivity-and-ip-forwarding
 
+*** For your archiecture diagram, you also need to include your container / vm network diagram ***
+
+VMs configured with NAT (or NAT Network) automatically receive internet connectivity if the host machine has internet access. In bridged mode, since the VM is recognized as a standard network host, internet connectivity is handled in the same way as for any physical machine on the LAN.
+
+However, VMs on a host-only network are isolated from external networks. To allow these VMs to access the internet, you can configure IP forwarding on the host machine. This process essentially converts your host into a router, directing traffic from the host-only network to the external network.
+
+Alternatively, you can add a second adapter to each VM configured for NAT, ensuring continuous internet access.
+^
+Not sure what does second adapter means
+
 Port Forwarding:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#port-forwarding
 
