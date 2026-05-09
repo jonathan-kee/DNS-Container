@@ -9,6 +9,70 @@ docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
+## Virtual Box Connectivity
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Connectivity/page
+
+Connecting to Your Virtual Machine:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Connectivity/page#connecting-to-your-virtual-machine
+
+After installing Oracle VirtualBox on your host laptop (running macOS, Windows, or Linux) and creating a VM using a CentOS image, you have two primary options to start the VM:
+
+1) Normal Mode – Displays the VM console as if it were a physical machine.
+2) Headless Mode – Runs the VM without opening a console window, enabling remote access via SSH or remote desktop tools.
+
+Normal Mode Explained:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Connectivity/page#normal-mode-explained
+
+When you start your VM in normal mode, you see the console on your screen.
+
+While this mode is useful for initial exploration or testing, it can become cumbersome for advanced tasks. Switching between the host UI and VM console is slow, and file transfers between the two are not straightforward. Therefore, using CLI access via SSH is generally recommended for routine management.
+
+Additionally, if you close the console window in normal mode, VirtualBox prompts you with options such as suspending the VM, sending a shutdown signal, or powering it off.
+
+Headless Mode: A More Efficient Approach:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Connectivity/page#headless-mode-a-more-efficient-approach
+
+Headless mode starts your VM without a console window. This allows you to access it remotely using SSH (for Linux VMs like CentOS) or remote desktop tools (for Windows VMs). 
+
+Enabling and Verifying Remote Access:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Connectivity/page#enabling-and-verifying-remote-access
+
+To treat your VM as a separate machine on a network, ensure the following:
+
+- Each VM has a configured IP address.
+- Essential services (e.g., the SSH server for Linux or Remote Desktop Service for Windows) are installed and running.
+
+For a CentOS VM, first verify that the SSH server is active by running this command on the VM’s console:
+
+guest> service sshd status
+
+Checking the VM’s IP Address:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Connectivity/page#checking-the-vm%E2%80%99s-ip-address
+
+Before connecting via SSH, ensure that your VM is assigned a valid IP address. Use this command to list all network interfaces and their corresponding IP addresses:
+
+guest> ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 52:54:00:8a:fe:e6 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.10/24 brd 192.168.1.255 scope global noprefixroute dynamic eth0
+       valid_lft 86387sec preferred_lft 86387sec
+
+In the example above, the loopback interface (lo) is assigned 127.0.0.1, and the primary network interface (eth0) holds the IP address 192.168.1.10. If no IP address is assigned to eth0, configure it accordingly based on your operating system.
+
+Note: Starting SSH Service If the SSH service is not already running, start it with:
+guest> service sshd start
+
+Once the VM has a valid IP address and the SSH daemon is running, you can easily connect from your host system by running:
+host> ssh 192.168.1.10
+
+This initial configuration is usually done via the VM’s console. Once SSH is enabled, you can manage the VM entirely through terminal sessions on your host system.
+
 ## Virtual Box Networking
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page
 
