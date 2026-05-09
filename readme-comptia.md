@@ -24,6 +24,7 @@ https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-B
 IT foundation Recap:
 host only which provides no internet access. The VM can only talk to your host machine which is ideal for secure local testing.
 
+Kodekloud notes:
 Question: What is external network?
 Answer: I think external network is reffering to LAN.
 - LAN ip address is 192.168.1.0
@@ -34,6 +35,13 @@ https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-B
 
 IT foundation Recap:
 The default method is NAT standing for Network Address Translation which lets your VM use your host’s internet connection. Simple and safe. From the outside it looks just like your main machine is doing everything.
+
+Kodekloud notes:
+In some scenarios, VMs need the ability to access external systems, such as when a host machine (with an IP like 192.168.1.10) runs a service hosted at 192.168.1.11. While a host-only network restricts VMs to internal communication, a NAT (Network Address Translation) network allows VMs to access external resources.
+
+Note that VirtualBox provides two NAT modes:
+- NAT (default): Each VM is isolated; they can access the external network but not each other.
+- NAT Network: All VMs share the same NAT engine, allowing communication between VMs on the same network.
 
 Bridged Networking:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#bridged-networking
