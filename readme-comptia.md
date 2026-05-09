@@ -9,6 +9,30 @@ docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
+Kodekloud notes link:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page
+
+Computers such as laptops and servers connect using different types of network interfaces or adapters. For example, a wired Ethernet adapter uses a cable connected to a hub or switch, while a wireless adapter connects via Wi-Fi. Every network interface is assigned an IP address—either manually or automatically through a DHCP server.
+^
+This implies a computer can have multiple IP addresses assigned.
+
+VirtualBox allows up to four adapters, each of which can be configured with different network types (NAT, bridged, or host-only) based on your requirements.
+
+Host-Only Networking:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#host-only-networking
+
+NAT Networking:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#nat-networking
+
+Bridged Networking:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#bridged-networking
+
+Internet Connectivity and IP Forwarding:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#internet-connectivity-and-ip-forwarding
+
+Port Forwarding:
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#port-forwarding
+
 # Youtube video
 Youtube playlist on Vagrant
 https://www.youtube.com/playlist?list=PLhW3qG5bs-L9S272lwi9encQOL9nMOnRa
