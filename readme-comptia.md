@@ -49,6 +49,10 @@ https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-B
 IT foundation Recap:
 bridged. The VM gets its own IP address on the same network as your host. Other devices can talk to it which is useful for running servers or simulating real devices.
 
+Bridged networking is used when a VM needs to appear as a separate machine on the physical LAN—ideal for hosting services like a web server. With bridged mode, the VM connects directly to the LAN and receives an IP address from the network’s DHCP server (e.g., 192.168.1.12 or 192.168.1.13), just like any other physical host.
+
+With bridged networking, external devices can communicate with the VM directly, making it suitable for production services that require network accessibility.
+
 Internet Connectivity and IP Forwarding:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#internet-connectivity-and-ip-forwarding
 
