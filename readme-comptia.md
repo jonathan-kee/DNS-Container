@@ -21,11 +21,20 @@ VirtualBox allows up to four adapters, each of which can be configured with diff
 Host-Only Networking:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#host-only-networking
 
+IT foundation Recap:
+host only which provides no internet access. The VM can only talk to your host machine which is ideal for secure local testing.
+
 NAT Networking:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#nat-networking
 
+IT foundation Recap:
+The default method is NAT standing for Network Address Translation which lets your VM use your host’s internet connection. Simple and safe. From the outside it looks just like your main machine is doing everything.
+
 Bridged Networking:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#bridged-networking
+
+IT foundation Recap:
+bridged. The VM gets its own IP address on the same network as your host. Other devices can talk to it which is useful for running servers or simulating real devices.
 
 Internet Connectivity and IP Forwarding:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#internet-connectivity-and-ip-forwarding
