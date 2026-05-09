@@ -63,11 +63,13 @@ VMs configured with NAT (or NAT Network) automatically receive internet connecti
 However, VMs on a host-only network are isolated from external networks. To allow these VMs to access the internet, you can configure IP forwarding on the host machine. This process essentially converts your host into a router, directing traffic from the host-only network to the external network.
 
 Alternatively, you can add a second adapter to each VM configured for NAT, ensuring continuous internet access.
-^
-Not sure what does second adapter means
+
+Question: Not sure what does second adapter means
 
 Port Forwarding:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#port-forwarding
+
+Question: What is the reasoning behind TCP / UDP to a specific port.
 
 # Youtube video
 Youtube playlist on Vagrant
