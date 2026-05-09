@@ -24,6 +24,11 @@ https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-B
 IT foundation Recap:
 host only which provides no internet access. The VM can only talk to your host machine which is ideal for secure local testing.
 
+Question: What is external network?
+Answer: I think external network is reffering to LAN.
+- LAN ip address is 192.168.1.0
+- Host machine ip address is 192.168.1.10, which is connected to LAN which is 192.168.1.0
+
 NAT Networking:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#nat-networking
 
