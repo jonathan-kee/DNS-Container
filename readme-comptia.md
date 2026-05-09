@@ -9,7 +9,7 @@ docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
-Kodekloud notes link:
+## Virtual Box Networking
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page
 
 Computers such as laptops and servers connect using different types of network interfaces or adapters. For example, a wired Ethernet adapter uses a cable connected to a hub or switch, while a wireless adapter connects via Wi-Fi. Every network interface is assigned an IP address—either manually or automatically through a DHCP server.
@@ -70,6 +70,41 @@ Port Forwarding:
 https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Virtual-Box-Networking/page#port-forwarding
 
 Question: What is the reasoning behind TCP / UDP to a specific port.
+
+## Vagrant
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Vagrant/page
+
+Customizing the Vagrantfile
+https://notes.kodekloud.com/docs/DevOps-Pre-Requisite-Course/Lab-Setup/Vagrant/page#customizing-the-vagrantfile
+
+The Vagrantfile begins with a configuration block that defines the box image—in this lesson, CentOS 7. This file is highly customizable; you can modify it to include additional settings such as port forwarding, synced folders, resource allocation, and provisioning scripts.
+
+For example, to forward port 8080 on your host to port 80 on the guest, add the following configuration:
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+end
+
+Additionally, you can sync a directory between your host and VM for simpler file transfers. To adjust CPU and memory settings for VirtualBox, include a provider block, and use a shell provisioner for running startup scripts. Here is a more comprehensive example of a customized Vagrantfile:
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.synced_folder "../data", "/vagrant_data"
+  
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    yum update
+    yum install -y httpd
+  SHELL
+end
+
+This configuration provisions a CentOS 7 VM with port forwarding, a synced folder, a 1024 MB memory allocation in VirtualBox, and a shell script that updates the system while installing the HTTP server.
+
 
 # Youtube video
 Youtube playlist on Vagrant
