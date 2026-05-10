@@ -257,6 +257,8 @@ allows unsolicited SSH traffic (port 22) inbound to your system. This
 is needed since Windows Defender Firewall is stateful and will not
 allow anything unsolicited inbound otherwise.
 
+Question: How do I check the firewall rule?
+
 Step 4
 Start-Service sshd
 
