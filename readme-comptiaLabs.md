@@ -1,3 +1,6 @@
+Install Wireshark inside VMs
+https://www.youtube.com/watch?v=lhskk9WEvMo
+
 (Continue) 30 min video on Wireshark for Docker
 https://www.youtube.com/watch?v=IU9C8H0My0w&t=166s
 ^
