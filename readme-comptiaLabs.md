@@ -244,6 +244,19 @@ Port            Protocol / Service
 Step 3
 Question: Does this mean most server software requires firewall rules when installed?
 
+Settings -> Optional features -> View features
+-> See available features -> Install OpenSSH Server
+
+[Install OpenSSH Server](./screenshots/InstallOpenSSHServer.png)
+
+![Install OpenSSH Server](./screenshots/InstallOpenSSHServer.png)
+
+Installing the OpenSSH Server automatically will create and
+enable the firewall rule named OpenSSH-Server-In-TCP, which
+allows unsolicited SSH traffic (port 22) inbound to your system. This
+is needed since Windows Defender Firewall is stateful and will not
+allow anything unsolicited inbound otherwise.
+
 Step 4
 Start-Service sshd
 
