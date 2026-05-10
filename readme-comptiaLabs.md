@@ -270,6 +270,7 @@ New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled Tru
 -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 
 Step 5
+*** I think installing Wireshark inside the Windows WM will be more easier ***
 tcp.port == 22.
 
 *** I wonder if I can use wireshark as an api to collect sniffing logs ***
