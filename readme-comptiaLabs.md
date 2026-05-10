@@ -176,7 +176,10 @@ used more than once:
 • Either an IPv4 or an IPv6 address
 
 Lab Exercise 9.03: DNS Client and DNS Server
-*** Am I able to setup Windows Server on my existing vm ***
+*** I had configure DNS client on my Mac ***
+*** I had configure DNS server on a docker container using bind9 ***
+
+Question: Does Microsoft Windows 11 Enterprise for vagrant have the same software as Windows Server 2019 system?
 
 Step 1
 • IP address: 192.168.1.18
@@ -192,6 +195,12 @@ Step 2
 
 Step 3
 *** Not sure what DNS role means ***
+
+Question: Does Bind9 have a concept of a role?
+
+Step 4
+
+Question: Is the concept of a zone in Windows Server 2019 system & Bind9 the same?
 
 Step 6
 *** Windows Defender Firewall is involved ***
