@@ -227,6 +227,20 @@ I think it will be a good idea to note down all the different CAs
 Lab Exercise 10.02: Secure Ports, OpenSSH, and TLS
 Question: Does Windows 10 not have OpenSSH server & OpenSSH client installed?
 
+Step 1
+https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?&page=1
+
+Port            Protocol / Service
+22              The Secure Shell (SSH) Protocol (tcp / udp)
+49              Login Host Protocol (TACACS) (tcp / udp)   
+88              Kerberos (tcp / udp) 
+443             http protocol over TLS/SSL (tcp / udp / sctp)
+587             Message Submission (tcp / udp)
+636             ldap protocol over TLS/SSL (was sldap) (tcp / udp)
+993             IMAP over TLS protocol (tcp) (udp is Reserved)
+1812            RADIUS (tcp / udp)
+1813            RADIUS Accounting (tcp / udp)
+
 Step 3
 Question: Does this mean most server software requires firewall rules when installed?
 
