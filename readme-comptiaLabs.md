@@ -1,5 +1,8 @@
-Install Wireshark inside VMs
+Install Wireshark inside VMs (You can actually use wireshark from host computer)
 https://www.youtube.com/watch?v=lhskk9WEvMo
+^
+From one the video's comment
+You can monitor the VM trafic from the host computer. Filter for the ip of the VM and boom you get what happens when the VM first boot too
 
 (Continue) 30 min video on Wireshark for Docker
 https://www.youtube.com/watch?v=IU9C8H0My0w&t=166s
