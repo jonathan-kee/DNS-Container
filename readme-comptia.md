@@ -1,3 +1,8 @@
+# Commands to setup windows vm for Comptia Labs
+cd windows
+vagrant up
+vagrant rdp
+
 Github link:
 https://github.com/dockur/windows?tab=readme-ov-file
 ^
