@@ -9,6 +9,15 @@ I think you have to understand Host only, NAT, Bridged. I think the easiest way 
 Let's say my VM's IP address is 10.0.2.15, how do I filter for this in Wireshark?
 ^
 I think just follow the video below is easier
+^
+Try to provision the Windows VM to install SSH server.
+^
+Vagrant shell documentation:
+https://developer.hashicorp.com/vagrant/docs/provisioning/shell
+
+Microsoft Windows OpenSSH documentation:
+https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell&pivots=windows-11#install-openssh-server--client
+
 
 More video on capturing vm traffic
 https://www.youtube.com/watch?v=YodIWG0N8_0
