@@ -18,6 +18,15 @@ https://developer.hashicorp.com/vagrant/docs/provisioning/shell
 Microsoft Windows OpenSSH documentation:
 https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell&pivots=windows-11#install-openssh-server--client
 
+[Provision OpenSSH Server](./screenshots/RunningVagrantProvisionCommand.png)
+
+![Provision OpenSSH Server](./screenshots/RunningVagrantProvisionCommand.png)
+
+Commands to run to provision Windows VM:
+- cd windows
+- vagrant up
+- vagrant rdp
+- vagrant provision
 
 More video on capturing vm traffic
 https://www.youtube.com/watch?v=YodIWG0N8_0
