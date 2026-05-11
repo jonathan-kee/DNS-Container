@@ -2,4 +2,8 @@ Vagrant.configure("2") do |config|
   # A box is a pre-configured virtual machine image that you can use as a starting point for your virtual machine  
   config.vm.box = "stromweld/windows-11"
   config.vm.box_version = "202511.21.0"
+
+  # Using bridge mode, this will ask you what network interface to attach to.
+  # Try to choose 1) en0: Wi-Fi
+  # config.vm.network "public_network"
 end

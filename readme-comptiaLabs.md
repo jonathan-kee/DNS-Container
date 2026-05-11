@@ -3,6 +3,19 @@ https://www.youtube.com/watch?v=lhskk9WEvMo
 ^
 From one the video's comment
 You can monitor the VM trafic from the host computer. Filter for the ip of the VM and boom you get what happens when the VM first boot too
+^
+I think you have to understand Host only, NAT, Bridged. I think the easiest way to use Bridge mode.
+^
+Let's say my VM's IP address is 10.0.2.15, how do I filter for this in Wireshark?
+^
+I think just follow the video below is easier
+
+More video on capturing vm traffic
+https://www.youtube.com/watch?v=YodIWG0N8_0
+^
+You suppose to select SSH remote capture.
+^
+But then my Windows VM have to install SSH server as well.
 
 (Continue) 30 min video on Wireshark for Docker
 https://www.youtube.com/watch?v=IU9C8H0My0w&t=166s
