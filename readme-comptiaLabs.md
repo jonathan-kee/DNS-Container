@@ -1,3 +1,18 @@
+# Analyse packet from VM
+1) Make sure Windows VM is using NAT
+
+2) Make Wireshark sniff on en0: wifi
+
+3) Ping 8.8.8.8 from Windows VM
+
+4) Filter with below (192.168.1.100 is en0 ip on host computer, not windows VM)
+ip.src == 192.168.1.100 && ip.dst == 8.8.8.8
+
+[WiresharkFilterWifiWithVM](./screenshots/WiresharkFilterWifiWithVM.png)
+
+![WiresharkFilterWifiWithVM](./screenshots/WiresharkFilterWifiWithVM.png)
+
+# Installing Wireshark for Comptia Network+ Labs
 Install Wireshark inside VMs (You can actually use wireshark from host computer)
 https://www.youtube.com/watch?v=lhskk9WEvMo
 ^
@@ -40,6 +55,7 @@ https://www.youtube.com/watch?v=IU9C8H0My0w&t=166s
 ^
 I finished the video, it's hard to understand why he did the things he did.
 
+# Comptia Network+ Labs
 Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
 
 Step 2:
@@ -353,3 +369,23 @@ Lab Exercise 15.03: Traffic Between the Host System and the VM
 Lab Exercise 15.04: Traffic from the VM to the Internet
 
 Lab Exercise 15.05: Cloud Computing with Google Drive
+
+# Extra
+Command to copy:
+cp * /Users/jonathankee/DNS-Container/windows/drivers/arm64
+
+Command to add driver:
+pnputil /add-driver "C:\Users\vagrant\Desktop\drivers\arm64\netkvm.inf"
+
+Command Output:
+Microsoft PnP Utility
+
+Adding driver package:  netkvm.inf
+Driver package added successfully.
+Published Name:         oem15.inf
+
+Total driver packages:  1
+Added driver packages:  1
+
+Command to check driver installed:
+pnputil /e
