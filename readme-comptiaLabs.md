@@ -121,6 +121,50 @@ Windows IP Configuration
 
 *** WireShark section ***
 
+Step 4: b. & c.
+dns.qry.name == www.flcc.edu
+ping www.flcc.edu.
+
+Question: What is Packet List pane?
+Answer:
+https://www.wireshark.org/docs/wsug_html_chunked/ChUsePacketListPaneSection.html
+
+Question: What is Packet Details pane?
+Answer:
+https://www.wireshark.org/docs/wsug_html_chunked/ChUsePacketDetailsPaneSection.html
+
+In the Packet Details pane,
+expand the Domain Name System (response) section in the
+UDP datagram, and then expand the Answers section to
+reveal the IP address given to your system for www.flcc.edu
+^
+I just know the DNS response destination is my computer wifi IP 192.168.1.103
+
+a DNS query and DNS response for the AAAA (IPv6 host
+address) record for www.flcc.edu. In this case, the FLCC Web
+server isn’t enabled for IPv6, so there is no answer in the
+DNS response for the AAAA resource record, but rather the
+SOA (start of authority) resource record, which contains
+domain/zone information.
+^
+I don't see any AAAA resource record or IPv6 address 
+
+Referring to the OSI model, DNS, at Layer 7, is in the UDP
+datagram at Layer 4. The data is then encapsulated by a
+Layer 3 IP packet. Finally, the IP packet is encapsulated by a
+Layer 2 frame.
+^
+This is what the OSI model is reffering to:
+FRAME(IP(UDP(DNS)))
+
+Why do you think DNS uses UDP for DNS queries and replies
+(aside from responses greater than 512 bytes, which are rare,
+and a zone transfer, which is when a primary DNS server
+sends a copy of its zone containing DNS records to a
+secondary DNS server for that domain, which both use TCP)?
+^
+Not sure
+
 Lab Exercise 9.02: nslookup
 *** WireShark section ***
 

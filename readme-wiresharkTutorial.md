@@ -30,6 +30,7 @@ Each interface like
 - Wi-Fi: en1 
 Has IPv4 & IPv6 addresses
 
+Question: What is Ethernet?
 Question: What is Pipes?
 Question: What is Remote Interfaces?
 
