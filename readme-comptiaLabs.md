@@ -165,10 +165,36 @@ secondary DNS server for that domain, which both use TCP)?
 ^
 Not sure
 
+(Continue here) Step 5
+What port do DNS servers use?
+What ports do DNS clients use?
+What’s the IP address of www.flcc.edu?
+
+Step 6
+a.
+Question: What is ICMP?
+
+b. 
+ipconfig /flushdns
+ping www.syracuse.edu
+
+c.
+
+d.
+ipconfig /displaydns
+
 Lab Exercise 9.02: nslookup
 *** WireShark section ***
 
-Step 1, c.
+Step 1, 
+a.
+In wireshark, use display filter of dns
+
+b.
+nslookup
+Question: What is interactive & non-interactive mode?
+
+c.
 type set q=ns and press ENTER, which will set the query type to NS, 
 the name server DNS resource record type that identifies authoritative DNS
 servers (DNS servers that have zone files to consult for responses 
