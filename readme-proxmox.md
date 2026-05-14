@@ -10,6 +10,10 @@ Thos does not work
 
 7 hour video on Proxmox:
 https://www.youtube.com/watch?v=Iz76KqzloJY
+^
+Proxmox is type 1 hypervixor
+^
+Compared to Virtualbox, which is type 2 hypervisor
 
 Virtual Machines vs LXC vs Docker: What’s the Real Difference?
 https://www.youtube.com/watch?v=RB4ZEZ3I3tA
