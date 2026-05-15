@@ -111,6 +111,26 @@ Step 1 (Follow Download for Wireshark)
 Step 2 (Select the NIC you want to capture traffic from)
 
 Question: What is NIC?
+Answer:
+
+Comptia A+ link:
+https://github.com/rjmsecurity/ontologia/blob/main/CompTIA%20A%2B%201101.md
+
+Network interface card (NIC) ⟹ the fundamental network device
+- every device on a network has a NIC
+- computers, servers, printers, routers, switches, phones, tablets, cameras
+- if you are connecting to a copper Ethernet connection, you're using a NIC to provide that connectivity
+- all devices discussed in this section that are connecting to a wired Ethernet connection have a NIC inside of them
+- see image at 18:00 of a NIC you would plug into a server, with four separate Ethernet connectors on the back
+- if you have a laptop or desktop computer with an Ethernet interface, that too is a NIC
+- there are NICs for other types of topologies too: if you're plugging into a WAN serial connection, or you have a wireless interface, those also have interface cards
+- these are sometimes built in to the motherboard or it may be a separate adapter, an expansion card, that you plug in to an expansion slot to increase the capabilities of your device
+- so whether you need copper connectivity, fiber connectivity, or anything in between, you will need a NIC on your device to make that connection to the rest of the network
+- copper, fiber, single port, multi-port, many options
+
+Video on Ethernet Card (3:30):
+https://www.youtube.com/watch?v=KtipbKR8rqo&list=PLG49S3nxzAnnes8ZGI-OBlKEukHCX46N8&index=43
+
 Question: How do I know which NIC to choose?
 
 Step 3
