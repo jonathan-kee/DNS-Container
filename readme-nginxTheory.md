@@ -1,3 +1,8 @@
+# Important update on Nginx
+https://kubernetes.io/docs/concepts/services-networking/ingress/
+^
+Not sure whether you have to configure the DSL or not.
+
 # Labs QNA
 Question: What is EOF in bash?
 
