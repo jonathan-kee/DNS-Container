@@ -132,6 +132,7 @@ Video on Ethernet Card (3:30):
 https://www.youtube.com/watch?v=KtipbKR8rqo&list=PLG49S3nxzAnnes8ZGI-OBlKEukHCX46N8&index=43
 
 Question: How do I know which NIC to choose?
+Answer: For my vagrant NAT setup, you choose Wi-Fi:en0 NIC
 
 Step 3
 *** Data Modelling concepts applies here ***
