@@ -38,6 +38,10 @@ For Key Terminology section, I am not familiar with all of them:
 - Source: IP address or network range for rule targeting
 - Target: Default action for traffic not matching any rules in a zone
 
+Question: How does the GUI for firewall look like?  
+All I remember about Firewall is that after installing servers, 
+you should use Firewall for your servers.
+
 # Sander Red Hat RHCSA 9 (EX200) Book
 ## Part IV Managing Network Services
 ### Chapter 23, Configuring a Firewall
