@@ -170,6 +170,13 @@ Step 6
 exit the command prompt
 
 Step 7
+The important information you are interested in for this lab exercise are the frames
+containing ARP or ICMP. There should be two lines of ARP frames
+(an ARP request, which is a broadcast, looking for the MAC address
+of the destination, and an ARP reply, which is a unicast, answering
+the ARP request with the MAC address of the destination) followed
+by eight lines of ICMP packets (four ICMP Echo requests and four ICMP Echo replies).
+
 Question: What is promiscuous mode?
 Question: What is ARP?
 Question: What is ICMP? 
@@ -205,6 +212,7 @@ To verify the ARP cache is cleared, type arp -a and press ENTER
 once again. Your results should match the following output:
 
 arp -a
+No ARP Entries Found
 
 Step 8
 ping www.google.com
