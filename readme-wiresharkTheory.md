@@ -18,6 +18,9 @@ Ethernet frames. On wireless LANs, they are 802.11 frames. In the
 context of capturing and analyzing network traffic, though, even
 though the lowest unit to capture and analyze is the frame, it’s still
 called packet sniffing.
+^
+This impleos that If you were to connect wireshark to different NICs,
+the structure might be different.
 
 Question: Does wired LANs & wireless LANs have different NICs?
 Question: what is Layer 3 of the OSI model?
