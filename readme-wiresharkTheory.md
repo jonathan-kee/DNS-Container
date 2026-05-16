@@ -269,6 +269,11 @@ Destination
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
+Routers:    192.168.5.1     -   192.168.5.10
+Clients:    192.168.5.11    -   192.168.5.199
+Printers:   192.168.5.200   -   192.168.5.210
+Servers:    192.168.5.201   -   192.168.5.254
+
 Lab Exercise 6.07: DHCP Client and DHCP Server
 197, 
 
