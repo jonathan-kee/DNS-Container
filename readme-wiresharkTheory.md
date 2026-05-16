@@ -164,7 +164,21 @@ This will filter out all other traffic except ARP frames (ARP exists at Layer 2)
 packets (ICMP exists at Layer 3) from the displayed traffic, although Wireshark will continue to capture everything.
 
 Step 5
-ping some computer
+*** I think section can be easily setup by using VMs ***
+Now, open a command prompt by typing cmd in the search box,
+right-clicking Command Prompt and selecting Run As Administrator.
+Type ping, followed by a space and then the IP address of another
+device (PC, phone, tablet, etc.) on your network. 
+^
+How can you discover the other devices on your network?
+^
+Like my laptop, phone when connect to router will be given an IP by DHCP. 
+
+Press ENTER to execute the command. The ping command can be followed by either
+an IP address, a hostname, or an FQDN. You don’t need to run the
+command prompt as an administrator to send pings or view your
+ARP cache (coming up), but you do need to run it as an
+administrator to clear your ARP cache (coming up as well).
 
 Step 6
 exit the command prompt
@@ -342,7 +356,7 @@ Type
 How do the Destination in the Ethernet header and the Target
 MAC address in the ARP frame compare, now? Why is this so?
 
-(Continuie) Step 12
+(Continue) Step 12
 Ethernet II Row Field   Local Communication         Remote Communication
 Destination
 Source
