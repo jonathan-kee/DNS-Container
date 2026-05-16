@@ -242,7 +242,26 @@ Length
 Info
 
 Step 11
+ARP Row Field           Local Communication         Remote Communication
+Sender MAC address
+Sener IP address
+Target MAC address
+Target IP address
 
+Ethernet II Row Field   Local Communication         Remote Communication
+Destination
+Source
+Type
+
+Step 12
+Ethernet II Row Field   Local Communication         Remote Communication
+Destination
+Source
+Type
+
+Internet Protocol Version 4     Local Communication     Remote Communication
+Source
+Destination
 
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply *** 
