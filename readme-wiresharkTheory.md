@@ -188,6 +188,24 @@ Interface: 192.168.5.12 --- 0x3
 Internet Address            Physical Address
 192.168.5.12                00-0e-28-92-ac-b7
 
+Once two systems have communicated, they will place entries
+into the ARP cache to avoid generating more broadcast traffic. The
+entries remain in the cache in widely varying amounts of time
+depending on the operating system. Since these steps require you to
+create ARP broadcast traffic to capture, you’ll want to delete the
+entries in the ARP cache. To clear the ARP cache entries, use the
+following command (-d stands for delete):
+
+arp -d
+
+To verify the ARP cache is cleared, type arp -a and press ENTER
+once again. Your results should match the following output:
+
+arp -a
+
+Step 8
+
+
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply *** 
 
