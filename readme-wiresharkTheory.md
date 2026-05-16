@@ -181,7 +181,11 @@ ARP cache (coming up), but you do need to run it as an
 administrator to clear your ARP cache (coming up as well).
 
 Step 6
-exit the command prompt
+Close the command prompt window by typing exit at the
+prompt and pressing ENTER. In Wireshark, click the Stop button (the
+red square, second from the left on the toolbar) to stop the capture.
+Now it’s time to analyze the captured traffic for the ping operation
+you just ran.
 
 Step 7
 The important information you are interested in for this lab exercise are the frames
