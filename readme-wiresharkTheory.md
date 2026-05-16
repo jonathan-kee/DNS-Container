@@ -214,9 +214,33 @@ once again. Your results should match the following output:
 arp -a
 No ARP Entries Found
 
-Step 8
+(Continue) Step 8
+Local destination ARP & ICMP capture:
+For the following steps up to Step 12, you will be recording
+information in the Local Communication column in the tables.
+
+Remote destination ARP & ICMP capture:
+Then, when you get to Step 13, you will go back and perform Steps 5 to 12
+a second time with a remote destination, this time filling in the
+Remote Communication column in the same tables. The remote
+destination could be www.google.com (which will be resolved into its
+IP address by DNS, coming up in Chapter 9), for example. If your
+ISP is giving you native IP connectivity, you’ll see IPv6 addresses in
+the replies for Web sites that are configured to use IPv6 addresses.
+If so, use ping -4 (followed by an FQDN) to force IPv4. IPv6 doesn’t
+use ARP. IPv6 actually uses a completely different IP header, as well
+as ICMPv6 (ICMP for IPv6), not ICMP. See Figure 6-4.
+
+FIGURE 6-4 IPv6 and IPv4 results from a ping to www.google.com:
 ping www.google.com
 ping -4 www.google.com
+
+Also, ICMP can be filtered in multiple places, so if you see results
+like the ones shown for a ping to www.flcc.edu (which does filter
+ICMP) in Figure 6-5, pick another Web site.
+
+FIGURE 6-5 www.flcc.edu is filtering ICMP.
+ping www.flcc.edu
 
 In the Packet List pane, select the first ARP frame listed and fill in
 the information displayed in the following column fields:
