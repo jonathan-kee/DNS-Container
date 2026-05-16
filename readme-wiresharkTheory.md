@@ -204,7 +204,21 @@ once again. Your results should match the following output:
 arp -a
 
 Step 8
+ping www.google.com
+ping -4 www.google.com
 
+In the Packet List pane, select the first ARP frame listed and fill in
+the information displayed in the following column fields:
+
+Packet List Column      Local Communication     Remote Communication
+No. (Number)
+Time
+Source
+Destination
+Protocol
+Length
+Info
+         
 
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply *** 
