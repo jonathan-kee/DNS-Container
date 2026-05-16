@@ -286,12 +286,24 @@ Sener IP address
 Target MAC address
 Target IP address
 
+Now look just above the Address Resolution Protocol (request) section, 
+and you’ll notice the Ethernet II section. This is the actual Ethernet frame. 
+Fill in the information displayed in the following row fields:
+
 Ethernet II Row Field   Local Communication         Remote Communication
 Destination
 Source
 Type
 
+What’s the difference between Destination in the Ethernet header
+and Target MAC address in the ARP frame? Why is this so?
+
 Step 10
+In the Packet List pane, select the very next ARP frame
+listed (which should be an ARP reply to the ARP request; if it isn’t,
+find it someplace below) and fill in the information displayed in the
+following column fields:
+
 Packet List Column      Local Communication     Remote Communication
 No. (Number)
 Time
@@ -302,18 +314,35 @@ Length
 Info
 
 Step 11
+In the Packet Details pane, expand the Frame (summary
+information from Wireshark), Ethernet II (the actual Ethernet frame),
+and Address Resolution Protocol (reply) sections (ARP is
+encapsulated inside the Ethernet frame at Layer 2).
+
+Look at the fields in the Address Resolution Protocol (reply)
+section, and fill in the information displayed in the following row
+fields:
+
 ARP Row Field           Local Communication         Remote Communication
 Sender MAC address
 Sener IP address
 Target MAC address
 Target IP address
 
+Now look just above the Address Resolution Protocol (reply)
+section, and you’ll notice the Ethernet II section. This is the actual
+Ethernet frame. Fill in the information displayed in the following row
+fields:
+
 Ethernet II Row Field   Local Communication         Remote Communication
 Destination
 Source
 Type
 
-Step 12
+How do the Destination in the Ethernet header and the Target
+MAC address in the ARP frame compare, now? Why is this so?
+
+(Continuie) Step 12
 Ethernet II Row Field   Local Communication         Remote Communication
 Destination
 Source
