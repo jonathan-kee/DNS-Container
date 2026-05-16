@@ -9,8 +9,10 @@ Pages 20,
 Lab Exercise 1.01: Network Hardware and Software
 34, 
 
-Lab Exercise 6.04: Packet Sniffing
+# Lab Exercise 6.04: Packet Sniffing
 161, 163, 164, 165, 166, 167, 168, 171, 173, 
+
+*** I think this section can be easily setup by using multiple VMs ***
 
 Of course, IP packets, which exist at Layer 3 of the OSI model,
 are encapsulated inside of Layer 2 frames. On wired LANs, they are
@@ -164,7 +166,6 @@ This will filter out all other traffic except ARP frames (ARP exists at Layer 2)
 packets (ICMP exists at Layer 3) from the displayed traffic, although Wireshark will continue to capture everything.
 
 Step 5
-*** I think section can be easily setup by using VMs ***
 Now, open a command prompt by typing cmd in the search box,
 right-clicking Command Prompt and selecting Run As Administrator.
 Type ping, followed by a space and then the IP address of another
