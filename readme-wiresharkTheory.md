@@ -161,7 +161,10 @@ This will filter out all other traffic except ARP frames (ARP exists at Layer 2)
 packets (ICMP exists at Layer 3) from the displayed traffic, although Wireshark will continue to capture everything.
 
 Step 5
+ping some computer
 
+Step 6
+exit the command prompt
 
 Step 7
 Question: What is promiscuous mode?
