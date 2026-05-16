@@ -214,7 +214,7 @@ once again. Your results should match the following output:
 arp -a
 No ARP Entries Found
 
-(Continue) Step 8
+Step 8
 Local destination ARP & ICMP capture:
 For the following steps up to Step 12, you will be recording
 information in the Local Communication column in the tables.
@@ -254,7 +254,32 @@ Protocol
 Length
 Info
 
-Step 9
+(Continue) Step 9
+Look at the fields in the Address Resolution Protocol (request)
+section. The Hardware type is Ethernet. This might strike you as odd
+if you captured on a wireless device, especially when you notice in
+the capture that the ARP frame is encapsulated inside of an Ethernet
+frame. This is explained on the Wireshark Wiki page:
+
+802.11 adapters often transform 802.11 data packets into fake
+Ethernet packets before supplying them to the host, and, even
+if they don’t, the drivers for the adapters often do so before
+supplying the packets to the operating system’s networking
+stack and packet capture mechanism.
+
+This means that if you capture on an 802.11 network, the
+packets will look like Ethernet packets, and you won’t be able
+to see all the fields in the 802.11 header. (Wireshark Wiki,
+“Packet Types,”
+https://wiki.wireshark.org/CaptureSetup/WLAN#Packet_Types)
+
+• The Protocol type field lists IPv4.
+• Hardware size (6) and Protocol size (4) list how long MAC
+addresses (hardware) and IP addresses (protocol) are in bytes.
+• The Opcode for a request is 1, while the Opcode for a reply is 2.
+
+Using the other fields in the ARP frame, fill in the following information:
+
 ARP Row Field           Local Communication         Remote Communication
 Sender MAC address
 Sener IP address
