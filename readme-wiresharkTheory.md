@@ -13,6 +13,7 @@ Lab Exercise 1.01: Network Hardware and Software
 161, 163, 164, 165, 166, 167, 168, 171, 173, 
 
 *** I think this section can be easily setup by using multiple VMs ***
+*** Try setting up a NAT Network in Vagrant, then ping each other ***
 
 Of course, IP packets, which exist at Layer 3 of the OSI model,
 are encapsulated inside of Layer 2 frames. On wired LANs, they are

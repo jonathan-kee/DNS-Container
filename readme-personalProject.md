@@ -82,3 +82,6 @@ docker run --name database --env POSTGRES_PASSWORD=mysecretpassword --detach pos
 ## Client
 *** Remove --dns-search=test (This one is working) ***
 docker run --name client -it --detach --dns=172.17.0.2 yauritux/busybox-curl
+
+# Project Ideas
+*** Concert ticket project, how to make sure the backend handle how actually bought the ticket ***
