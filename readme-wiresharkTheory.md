@@ -154,6 +154,15 @@ row you selected in the Packet List pane. When you click a field/value in the Pa
 highlight the corresponding hex digits and ASCII/Unicode representation. You can even turn that hex into binary by right-
 clicking in the Packet Bytes pane and selecting …As Bits.
 
+Step 4
+arp || icmp
+
+This will filter out all other traffic except ARP frames (ARP exists at Layer 2) or ICMP
+packets (ICMP exists at Layer 3) from the displayed traffic, although Wireshark will continue to capture everything.
+
+Step 5
+
+
 Step 7
 Question: What is promiscuous mode?
 Question: What is ARP?
