@@ -56,6 +56,13 @@ https://www.youtube.com/watch?v=IU9C8H0My0w&t=166s
 I finished the video, it's hard to understand why he did the things he did.
 
 # Comptia Network+ Labs
+Lab Exercise 6.05: Static IP Address Configuration
+
+Routers:    192.168.5.1     -   192.168.5.10
+Clients:    192.168.5.11    -   192.168.5.199
+Printers:   192.168.5.200   -   192.168.5.210
+Servers:    192.168.5.201   -   192.168.5.254
+
 Lab Exercise 9.01: DNS Queries, DNS Responses, and DNS Resolver Cache
 
 Step 2:

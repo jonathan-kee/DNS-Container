@@ -266,13 +266,6 @@ Destination
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply *** 
 
-Lab Exercise 6.05: Static IP Address Configuration
-
-Routers:    192.168.5.1     -   192.168.5.10
-Clients:    192.168.5.11    -   192.168.5.199
-Printers:   192.168.5.200   -   192.168.5.210
-Servers:    192.168.5.201   -   192.168.5.254
-
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
 
