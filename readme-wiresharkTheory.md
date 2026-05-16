@@ -187,6 +187,21 @@ red square, second from the left on the toolbar) to stop the capture.
 Now it’s time to analyze the captured traffic for the ping operation
 you just ran.
 
+Notes:
+After you stop a capture, you can click File from the menu
+bar, then click Save, then give the file a name (the extension
+will be .pcapng—PCAP Next Generation, a derivative of .pcap
+that allows for captures from multiple interfaces and more
+extras, as explained here:
+https://www.qacafe.com/resources/5-reasons-to-move-to-
+pcapng/), and then select a location. Now you have a saved
+capture file! When you open it up (Wireshark will default as
+the application it opens in, of course), it will look exactly the
+same, with all panes, fields, and values. Start a packet
+capture library that you can learn from, review with, and
+reference in the future. I’ve got hundreds of saved packet
+captures organized in folders by various categories.
+
 Step 7
 The important information you are interested in for this lab exercise are the frames
 containing ARP or ICMP. There should be two lines of ARP frames
