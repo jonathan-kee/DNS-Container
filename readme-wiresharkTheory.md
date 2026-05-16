@@ -170,6 +170,23 @@ Step 7
 Question: What is promiscuous mode?
 Question: What is ARP?
 Question: What is ICMP? 
+Question: How does broadcast work?
+
+If, when you display the capture information, no ARP frames are
+displayed, it may be caused by one of two situations. First, if you
+have been communicating with the target system prior to the
+capture, there may be entries in the ARP cache. Open a command
+prompt and run the following command to see all entries in the ARP
+cache (-a stands for all):
+
+arp -a
+
+If the following information (or similar with the IP address of your
+target system) is displayed, you have an entry in the ARP cache:
+
+Interface: 192.168.5.12 --- 0x3
+Internet Address            Physical Address
+192.168.5.12                00-0e-28-92-ac-b7
 
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply *** 
