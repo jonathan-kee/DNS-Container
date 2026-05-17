@@ -16,6 +16,24 @@ cd windows/multiplehosts
 vagrant up --provider virtualbox
 vagrant provision
 
+# Commands to setup multiple ubuntu vm
+You need to enable the setting below for vmware to work:
+Privacy & Security -> Full Disk Access -> vagrant-vmware-utility
+
+cd linux/multiplehosts
+vagrant up --provider vmware_desktop
+vagrant ssh Server1
+ping 192.168.56.151
+ping 192.168.56.152
+
+vagrant ssh Server2
+ping 192.168.56.150
+ping 192.168.56.152
+
+vagrant ssh Server3
+ping 192.168.56.150
+ping 192.168.56.151
+
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
