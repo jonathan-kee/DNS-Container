@@ -1,80 +1,22 @@
 Vagrant.configure("2") do |config|
   # A box is a pre-configured virtual machine image that you can use as a starting point for your virtual machine  
-  # config.vm.box = "stromweld/windows-11"
-  # config.vm.box_version = "202511.21.0"
+  config.vm.define "server1" do |server1|
+    server1.vm.box = "stromweld/windows-11"
+    server1.vm.box_version = "202511.21.0"
+  end
 
-  # ----------------- Bridge mode (Not working) -----------------
-  # Using bridge mode, this will ask you what network interface to attach to.
-  # Try to choose 1) en0: Wi-Fi
-  # So instead of 10.0.0.x , should now be 192.168.1.x
-  
-  #config.vm.network "public_network", 
-  #use_dhcp_assigned_default_route: true,
-  #bridge: "en0: Wi-Fi"
-  # ----------------- Bridge mode (Not working) -----------------
-  
+  # A box is a pre-configured virtual machine image that you can use as a starting point for your virtual machine  
+  config.vm.define "server2" do |server2|
+    server2.vm.box = "stromweld/windows-11"
+    server2.vm.box_version = "202511.21.0"
+  end
 
-
-  # ----------------- SSH remote capture (Not working) -----------------
-  # Map host port 2222 to guest port 22
-  # config.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh"
-
-  # Ensure the Windows Firewall allows SSH (Optional but helpful)
-  # config.vm.provision "shell", inline: "netsh advfirewall firewall add rule name='Allow SSH' dir=in action=allow protocol=TCP localport=22"
-  # ----------------- SSH remote capture (Not working) -----------------
-
-
-
-  # ----------------- Fix Device manager issue (Not working) -----------------
-  # https://developer.hashicorp.com/vagrant/docs/provisioning/file
-  # config.vm.provision "file", source: "drivers/arm64", destination: "~/Desktop/drivers/arm64"
-  # ----------------- Fix Device manager issue (Not working) -----------------
-  
   # https://developer.hashicorp.com/vagrant/docs/provisioning/shell#external-script
-  # config.vm.provision "shell" do |ps|
-  #   ps.privileged = true
-  #   ps.powershell_elevated_interactive = true
-  #   ps.path = "scripts/installOpenSSH.ps1"
-  # end
-
-  servers = [
-    {
-      :hostname => "Server1",
-      :box => "stromweld/windows-11",
-      :box_version => "202511.21.0",
-      :ip => "172.16.1.50",
-      :ssh_port => '2200'
-    },
-    {
-      :hostname => "Server2",
-      :box => "stromweld/windows-11",
-      :box_version => "202511.21.0",
-      :ip => "172.16.1.51",
-      :ssh_port => '2201'
-    }
-  ]
-
-  servers.each do |machine|
-        config.vm.define machine[:hostname] do |node|
-            node.vm.box = machine[:box]
-            node.vm.box_version = machine[:box_version]
-            node.vm.hostname = machine[:hostname]
-            node.vm.network :private_network, ip: machine[:ip]
-            node.vm.network "forwarded_port", guest: 22, host: machine[:ssh_port], id: "ssh"
-            # node.vm.synced_folder "../data", "/home/vagrant/data"
-            # node.vm.provision "file", source: "./copiedfile.txt", destination: "/home/vagrant/copiedfile.txt"
-
-            node.vm.provision "shell" do |ps|
-              ps.privileged = true
-              ps.powershell_elevated_interactive = true
-              ps.path = "scripts/installOpenSSH.ps1"
-            end
-
-            node.vm.provider :virtualbox do |vb|
-                vb.customize ["modifyvm", :id, "--memory", 512]
-                vb.customize ["modifyvm", :id, "--cpus", 1]
-            end
-        end
-    end
+  config.vm.provision "shell" do |ps|
+    ps.privileged = true
+    # Apparently the below line is causing error when provisioning
+    # ps.powershell_elevated_interactive = true
+    ps.path = "scripts/installOpenSSH.ps1"
+  end
 
 end

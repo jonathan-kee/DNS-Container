@@ -13,7 +13,7 @@ docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/
 
 # Commands to setup multiple windows vm for Comptia Labs
 cd windows/multiplehosts
-vagrant up
+vagrant up --provider virtualbox
 vagrant provision
 
 # Kodekloud's DevOps Pre-Requisite Course
