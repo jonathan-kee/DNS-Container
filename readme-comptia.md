@@ -11,6 +11,11 @@ Apparently MacOs does not support kvm, so I have to try out Vagrant
 docker command for Windows Server 2019
 docker run -it --rm --name windows -e "VERSION=2019" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
 
+# Commands to setup multiple windows vm for Comptia Labs
+cd windows/multiplehosts
+vagrant up
+vagrant provision
+
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
