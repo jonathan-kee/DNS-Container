@@ -43,6 +43,9 @@ bash manuallyInstallPowershell.sh
 https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-on-arm?view=powershell-7.6
 https://learn.microsoft.com/en-us/powershell/scripting/install/alternate-install-methods?view=powershell-7.6#dependencies
 
+# (Have not test yet) Nested virtualization
+https://www.youtube.com/watch?v=sieDrofaaDU
+
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
