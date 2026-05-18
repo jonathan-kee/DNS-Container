@@ -34,6 +34,15 @@ vagrant ssh Server3
 ping 192.168.56.150
 ping 192.168.56.151
 
+# Provision ubuntu vm
+*** Windows specific commands like ipconfig is still available after installation ***
+sudo nano manuallyInstallPowershell.sh
+sudo chmod +x manuallyInstallPowershell.sh
+bash manuallyInstallPowershell.sh
+
+https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-on-arm?view=powershell-7.6
+https://learn.microsoft.com/en-us/powershell/scripting/install/alternate-install-methods?view=powershell-7.6#dependencies
+
 # Kodekloud's DevOps Pre-Requisite Course
 The Lab Setup section goes through Vagrant, Virtual Box, Virtual Box Networking
 
