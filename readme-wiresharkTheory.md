@@ -159,15 +159,14 @@ Context/Interpretation of the data:
 ![Wireshark Packet Details pane](./screenshots/ws-details-pane.png)
 
 - The bottom section is the Packet Bytes pane, which shows hexadecimal values of captured data. 
-
-[Wireshark Packet Bytes pane](./screenshots/ws-bytes-pane.png)
-
-![Wireshark Packet Bytes pane](./screenshots/ws-bytes-pane.png)
-
-- The right side of the bottom section will show the ASCII/Unicode values for the hex values, 
+The right side of the bottom section will show the ASCII/Unicode values for the hex values, 
 even if the hex values are not meant to be translated into ASCII/Unicode. When you see a dot, 
 it means that there is no ASCII/Unicode equivalent. Other times you’ll see ASCII/Unicode translations that
 make no sense because they weren’t meant to be translated, but coincidentally can be interpreted as an ASCII/Unicode character.
+
+[Wireshark Packet Bytes pane](./screenshots/ws-bytes-pane.png)
+
+![Wireshark Packet Bytes pane](./screenshots/ws-bytes-pane.png) 
 
 Step 3
 - When you click a row in the Packet List pane, the Packet Details pane changes to fields and values for all protocols involved in the
