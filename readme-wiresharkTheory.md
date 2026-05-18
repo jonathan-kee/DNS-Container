@@ -17,8 +17,11 @@ Lab Exercise 1.01: Network Hardware and Software
 
 Of course, IP packets, which exist at Layer 3 of the OSI model,
 are encapsulated inside of Layer 2 frames. On wired LANs, they are
-Ethernet frames. On wireless LANs, they are 802.11 frames. In the
-context of capturing and analyzing network traffic, though, even
+Ethernet frames. On wireless LANs, they are 802.11 frames. 
+^
+Question: Can wireshark show me it's 802.11 frame?
+
+In the context of capturing and analyzing network traffic, though, even
 though the lowest unit to capture and analyze is the frame, it’s still
 called packet sniffing.
 ^
@@ -145,9 +148,21 @@ Step 3
 Context/Interpretation of the data:
 - The top section is the Packet List pane, which lists a summary of each frame captured. 
 
+[Wireshark Packet List pane](./screenshots/ws-list-pane.png)
+
+![Wireshark Packet List pane](./screenshots/ws-list-pane.png)
+
 - The middle section is the Packet Details pane, which displays details of each captured frame.
 
+[Wireshark Packet Details pane](./screenshots/ws-details-pane.png)
+
+![Wireshark Packet Details pane](./screenshots/ws-details-pane.png)
+
 - The bottom section is the Packet Bytes pane, which shows hexadecimal values of captured data. 
+
+[Wireshark Packet Bytes pane](./screenshots/ws-bytes-pane.png)
+
+![Wireshark Packet Bytes pane](./screenshots/ws-bytes-pane.png)
 
 - The right side of the bottom section will show the ASCII/Unicode values for the hex values, 
 even if the hex values are not meant to be translated into ASCII/Unicode. When you see a dot, 

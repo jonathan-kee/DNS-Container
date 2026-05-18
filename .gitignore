@@ -2,3 +2,4 @@ windows/.vagrant
 windows/multiplehosts/.vagrant
 linux/multiplehosts/.vagrant
 .idea
+.DS_Store
