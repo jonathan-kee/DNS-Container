@@ -429,6 +429,31 @@ How do the Destination in the Ethernet header and the Target
 MAC address in the ARP frame compare, now? Why is this so?
 
 (Continue) Step 12
+In the Packet List section, directly underneath the ARP
+request and ARP reply, you should see the four sets of ICMP Echo
+requests and ICMP Echo replies. In the Info column they are listed
+as Echo (ping) request and Echo (ping) reply.
+
+In the Packet Details section, you’ll notice that, unlike before (with
+the ARPs), there is now an IP header inside of the Ethernet frame.
+Inside the IP header is the ICMP header and the ICMP data.
+
+For now, just look at the gray section headers, without expanding
+the > signs. If you expanded them and they are now down arrow
+signs, you can click the down arrow signs to collapse them back, or
+just view the gray section headers with the fields and values
+expanded.
+
+The purpose of ARP (and of this exercise up until now) is to find
+the MAC address for the IP address that the source of traffic wanted
+to contact. ICMP is used for informational and error reporting,
+providing connection-related information to IP. ICMP Echo requests
+and ICMP Echo replies are used under the hood by the ping utility.
+
+Now, while the ICMP Echo request is selected, using the
+information in the Ethernet II frame header and the Internet Protocol
+Version 4 header, fill in the following information:
+
 Ethernet II Row Field   Local Communication         Remote Communication
 Destination
 Source
@@ -442,6 +467,93 @@ Destination
 *** Apparently wireshark can track unicast request like ARP reply *** 
 
 ## Remote destination ARP & ICMP capture:
+Question: I am note entire sure what is Remote destination is reffing to, is it a computer on a different network?
+
+Step 13:
+Now you are going to repeat Steps 3 through 12. However,
+this time you will use the address of a computer on a remote
+network. Fill in the previous tables again, but this time use the
+Remote Communication column. Review the instructions for this next
+part in Step 8.
+
+To make sure you see the ARPs, this time, make sure to start the
+capture first, then execute arp -d (you must run the command
+prompt as an administrator to execute arp -d by right-clicking the
+Command Prompt icon and selecting Run As Administrator), and
+immediately after execute ping www.google.com (or ping -4
+www.google.com). This is necessary because some routers are
+configured to send gratuitous ARPs every two seconds (to prevent
+an attack called ARP spoofing and ARP cache poisoning). If that
+ARP gets to your system after you clear your ARP cache but before
+you send the ping to the remote host, your system will not send an
+ARP, because it will already have the gateway’s MAC address from
+the gratuitous ARP. Another way to do this would be to make a batch
+file by typing notepad pinger.bat at the command prompt. When
+Notepad opens up, add the following two lines:
+
+arp -d
+ping -4 www.google.com
+
+Save the file and exit Notepad.
+
+Now, from the command prompt, type pinger (with or without the
+.bat extension, it makes no difference) and press ENTER. This is a
+guaranteed way to capture the relevant ARPs!
+
+Step 14:
+Using your results from this lab exercise, compare local
+communication and remote communication with these questions.
+Record your answers in the table that follows after these instructions.
+
+a. Who is the ARP request sent to?
+
+b. Whose MAC address is being looked for in the ARP request?
+
+c. Who is the ARP reply sent to?
+
+d. Who’s MAC address is contained in the ARP reply as an answer to the ARP request?
+
+e. For the outgoing ICMP Echo requests, which device’s source MAC is used?
+
+f. For the outgoing ICMP Echo requests, which device’s source IP address is used?
+
+g. For the outgoing ICMP Echo requests, which device’s destination MAC is used?
+
+h. For the outgoing ICMP Echo requests, which device’s destination IP is used?
+
+i. For the incoming ICMP Echo replies, which device’s source MAC address is used?
+
+j. For the incoming ICMP Echo replies, which device’s source IP address is used?
+
+k. For the incoming ICMP Echo replies, which device’s destination MAC is used?
+
+l. For the incoming ICMP Echo replies, which device’s destination IP is used?
+
+m. What is the use of the router?
+
+For rows a–l in the table, only use the following to fill in the blank cells:
+
+Source of the ping
+Destination of the ping
+Default gateway
+
+Keep in mind that the source of the ping will be the destination of
+certain traffic and that the destination of the ping will be the source of
+certain traffic. In these cases, refer to them by the same references,
+source of the ping and destination of the ping.
+
+For row m, provide your own answers.
+
+Step 15:
+Write multiple paragraphs clearly explaining how local
+communication is different than remote communication, based on
+your answers from Step 14. You must include an explanation on how
+ARP, ICMP, source and destination MAC addresses, and source and
+destination IP addresses are used in both local communication and
+remote communication. Also include a correlation between each
+component in the two stories (the Smiths and the art projects) in the
+“Getting Down to Business” section and the lab exercise you just
+performed.
 
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
