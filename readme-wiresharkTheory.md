@@ -275,8 +275,6 @@ following command (-d stands for delete):
 
 arp -d
 
-Question: What is the Linux equivalent of Windows's arp -d?
-
 To verify the ARP cache is cleared, type arp -a and press ENTER
 once again. Your results should match the following output:
 
