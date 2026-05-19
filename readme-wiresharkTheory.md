@@ -240,6 +240,24 @@ cache (-a stands for all):
 
 arp -a
 
+Question: What is the Linux equivalent of Windows's arp -a and arp -d?
+Answer: (Gemini)
+
+The modern, native Linux way to manage and view networking configuration is through the iproute2 suite of tools, centered around the powerhouse ip command.
+
+For decades, Linux relied on traditional tools like ifconfig, route, arp, and netstat (from the old net-tools package). However, these have been officially deprecated for years because they can't keep up with modern networking features like policy routing, traffic control, and advanced tunneling.
+
+Here is how the old tools map to the modern, native ip (and friend) commands:
+Old Tool                        Modern Native Command               What it Does
+arp -a                      ==  ip neigh                      ==    Views and manages the ARP/Neighbor cache.     
+ifconfig                    ==  ip addr (or ip a)             ==    Displays and configures IP addresses and interfaces.
+ifconfig eth0 up/down       ==  ip link set eth0 up/down      ==    Enables or disables a network interface.
+route -n                    ==  ip route (or ip r)            ==    Views and alters the routing table.
+netstat -tuln               ==  ss -tuln                      ==    Displays active network sockets and ports (uses ss, also part of iproute2).
+
+The modern, native Linux equivalent for deleting an ARP cache entry for Window' arp -d is:
+sudo ip neigh del <ip_address> dev <interface>
+
 If the following information (or similar with the IP address of your
 target system) is displayed, you have an entry in the ARP cache:
 
@@ -256,6 +274,8 @@ entries in the ARP cache. To clear the ARP cache entries, use the
 following command (-d stands for delete):
 
 arp -d
+
+Question: What is the Linux equivalent of Windows's arp -d?
 
 To verify the ARP cache is cleared, type arp -a and press ENTER
 once again. Your results should match the following output:
@@ -331,7 +351,7 @@ Using the other fields in the ARP frame, fill in the following information:
 
 ARP Row Field           Local Communication         Remote Communication
 Sender MAC address
-Sener IP address
+Sender IP address
 Target MAC address
 Target IP address
 
