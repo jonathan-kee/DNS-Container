@@ -180,6 +180,20 @@ arp || icmp
 This will filter out all other traffic except ARP frames (ARP exists at Layer 2) or ICMP
 packets (ICMP exists at Layer 3) from the displayed traffic, although Wireshark will continue to capture everything.
 
+Question: What is ARP?
+Answer: It's part of Comptia Network+ Chapter 6 IP and Ethernet chapter.
+
+An Address Resolution Protocol (ARP) broadcast is used to determine the MAC address of the destination computer or router based on its IP address.
+
+For Computer A to get Computer B’s MAC address, Computer A sends a special query called an ARP request to MAC address FF-FF-FF-FF-FF-FF, the universal MAC address for broadcast (Figure 6.9). The switch forwards the broadcast to every connected node.
+
+The process and protocol used in resolving an IP address to an Ethernet MAC address is called Address Resolution Protocol (ARP).
+
+Computer B responds to the ARP request by sending Computer A an ARP reply (Figure 6.10) through the switch. Once Computer A has Computer B’s MAC address, it starts sending unicast Ethernet frames to Computer B through the switch.
+
+Question: What is ICMP? 
+Answer: Not sure which Comptia Network+ Chapter goes into detail for ICMP
+
 Step 5
 Now, open a command prompt by typing cmd in the search box,
 right-clicking Command Prompt and selecting Run As Administrator.
@@ -227,8 +241,6 @@ the ARP request with the MAC address of the destination) followed
 by eight lines of ICMP packets (four ICMP Echo requests and four ICMP Echo replies).
 
 Question: What is promiscuous mode?
-Question: What is ARP?
-Question: What is ICMP? 
 Question: How does broadcast work?
 
 If, when you display the capture information, no ARP frames are
