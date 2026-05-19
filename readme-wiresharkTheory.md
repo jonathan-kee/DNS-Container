@@ -210,6 +210,8 @@ command prompt as an administrator to send pings or view your
 ARP cache (coming up), but you do need to run it as an
 administrator to clear your ARP cache (coming up as well).
 
+Question: Since FQDN require DNS like Bind9, will the output be different?
+
 Step 6
 Close the command prompt window by typing exit at the
 prompt and pressing ENTER. In Wireshark, click the Stop button (the
@@ -241,7 +243,11 @@ the ARP request with the MAC address of the destination) followed
 by eight lines of ICMP packets (four ICMP Echo requests and four ICMP Echo replies).
 
 Question: What is promiscuous mode?
+
 Question: How does broadcast work?
+Answer: 
+Website with nice graphic and explanation:
+https://www.networkacademy.io/ccna/ethernet/broadcast-domains
 
 If, when you display the capture information, no ARP frames are
 displayed, it may be caused by one of two situations. First, if you
