@@ -115,6 +115,7 @@ understand the differences between local communication and
 remote communication, as well as understand the relationship
 between IP addresses and MAC addresses.
 
+## Local destination ARP & ICMP capture (Step 1 to Step 12):
 Step 1 (Follow Download for Wireshark)
 
 Step 2 (Select the NIC you want to capture traffic from)
@@ -439,6 +440,8 @@ Destination
 
 *** Apparently wireshark can track broadcast request like ARP request ***
 *** Apparently wireshark can track unicast request like ARP reply *** 
+
+## Remote destination ARP & ICMP capture:
 
 Lab Exercise 6.06: Dynamic IP Address Configuration
 188, 190, 
