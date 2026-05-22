@@ -1,9 +1,12 @@
 # Addtional resources to learn Git
 https://gitgame-4f0eb.web.app/
 ^
-Continue Level 11
+Continue Level 12
 ^
 Try to recap all the commands below
+^
+Try to compare if it has touch all the topics form Kodekloud's Git for beginners
+https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
 
 # GIT for Beginners
 Kodekloud link:
