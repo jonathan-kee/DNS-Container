@@ -561,11 +561,70 @@ Lab Exercise 6.06: Dynamic IP Address Configuration
 Lab Exercise 6.07: DHCP Client and DHCP Server
 197, 
 
-Lab Exercise 7.01: tracert
+(Continue) Lab Exercise 7.01: tracert
 202, 204, 205, 206, 207, 209, 
+
+When you send a packet to a destination IP address that’s not on your LAN (which is considered remote
+communication), the packet will need to exit your network through
+your default gateway. What happens after that? Each router consults
+its routing table to decide on the next router to send the packet to.
+Within an autonomous system, Open Shortest Path First (OSPF)
+and Enhanced Interior Gateway Routing Protocol (EIGRP) are the
+most likely interior gateway protocol (IGP) routing protocols to be
+used between routers to exchange routes and keep track of
+destination networks and how best to get to them. Between different
+autonomous systems, Border Gateway Protocol (BGP) is the only
+exterior gateway protocol (EGP) that’s used, connecting the routers
+of the largest wide area network (WAN) known as… the Internet. At
+home, instead of running a dynamic routing protocol, your router has
+a static route for all packets not on the home LAN to be sent to your
+Internet service provider (ISP).
+
+A packet is routed through multiple routers until it reaches the
+destination network. The way the Internet router hierarchy is set up,
+it doesn’t matter if you’re sending traffic to a system one state away
+or thousands of miles away in another country—somehow,
+someway, the number of routers that your packet passes through will
+always be somewhere between 10 and 20.
+
+(LAB)
+Step 1
+tracert www.google.com
+tracert -4 www.google.com
+
+Step 2
+
+
+Step 3
+a. tracert sina.com.cn
+b. tracert -4 yandex.ru
+c. tracert fnb.co.za
+d. tracert netsys.hn
+
+Step 4
+
+Step 5
+a. tracert -h 50 bad.horse
+b. tracert /?
 
 Lab Exercise 7.02: NAT and Port Forwarding
 217, 219, 
+
+Step 1
+
+Step 2
+ipconfig /all
+
+Step 3
+a. 
+b. 
+c. 
+
+Step 4
+a. 
+b. 
+c. 
+d. 
 
 Lab Exercise 8.03: HTTP
 235, 240, 241, 
