@@ -1,14 +1,14 @@
 # Addtional resources to learn Git
 https://gitgame-4f0eb.web.app/
 ^
-Continue Level 16 (Stuck here, don't really understand rebase)
+Continue Level 21
 ^
 Try to recap all the commands below
 ^
 Try to compare if it has touch all the topics form Kodekloud's Git for beginners
 https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
 
-## Level 15
+## Level 15 (Was stuck here for awhile)
 Additional learning resource:
 https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
 
