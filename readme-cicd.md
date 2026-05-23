@@ -1,7 +1,7 @@
 # Addtional resources to learn Git
 https://gitgame-4f0eb.web.app/
 ^
-Continue Level 12
+Continue Level 15 (Stuck here, don't really understand rebase)
 ^
 Try to recap all the commands below
 ^
