@@ -1,12 +1,30 @@
 # Addtional resources to learn Git
 https://gitgame-4f0eb.web.app/
 ^
-Continue Level 15 (Stuck here, don't really understand rebase)
+Continue Level 16 (Stuck here, don't really understand rebase)
 ^
 Try to recap all the commands below
 ^
 Try to compare if it has touch all the topics form Kodekloud's Git for beginners
 https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
+
+## Level 15
+Additional learning resource:
+https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+
+git log
+git branch
+
+git branch output:
+main
+* feature-header
+
+git rebase main
+
+Choose Head or manually edit it to Head
+
+git add styles.css
+git rebase --continue
 
 # GIT for Beginners
 Kodekloud link:
