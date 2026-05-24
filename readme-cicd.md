@@ -87,6 +87,8 @@ Below are the concepts I am not familiar:
 - Vulnerability Scan like Trivy, Snyk to Detect known security issues
 - Integration tests
 - End to End tests
+^
+You can actually use AI to review code in the CI
 
 Question: How does continuous deployment handle UAT, SIT, PROD?
 
@@ -94,3 +96,10 @@ Question: How does continuous deployment handle UAT, SIT, PROD?
 Kodekloud link:
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Create-Explore-GitHub-Account/page
 
+## What are Actions
+Kodekloud link:
+https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/What-are-Actions/page
+
+## GitHub Action Core Components
+Kodekloud link:
+https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
