@@ -1,7 +1,10 @@
 # Addtional resources to learn Git
+*** Level 24 about bisect is poorly explained ***
+
+Link to the Git exercises
 https://gitgame-4f0eb.web.app/
 ^
-Continue Level 21
+Continue Level 24
 ^
 Try to recap all the commands below
 ^
