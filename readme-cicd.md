@@ -71,6 +71,8 @@ https://gitlab.com/kodekloudhub/stories.git
 https://bitbucket.org/kodekloudhub/stories.git
 
 # GitHub Actions Certification
+*** There's a bit too much information for simple ci/cd project automation ***
+
 Kodekloud link:
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Introducing-Github-Actions/page#introducing-github-actions
 
@@ -103,3 +105,31 @@ https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Cor
 ## GitHub Action Core Components
 Kodekloud link:
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
+
+## Configure Checkout Action
+
+## Multi Line commands and Executing Third Party Libraries
+
+## Workflow to Generate ASCII Artwork
+
+## Executing Shell Scripts in Workflow
+
+## Workflow with multiple Jobs
+
+## Execute multiple jobs in Sequence using needs
+
+## Storing workflow data as artifacts
+
+## Working with Variables at different levels
+
+## Working with Repository Level Secrets
+
+## Triggering a workflow
+
+## Using Job concurrency
+
+## Timeout for Jobs and Steps
+
+## Using a matrix for your jbos
+
+## Additional Matrix Configuration
