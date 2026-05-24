@@ -69,3 +69,20 @@ Below are some examples of connection strings from popular platforms:
 https://github.com/kodekloudhub/stories.git
 https://gitlab.com/kodekloudhub/stories.git
 https://bitbucket.org/kodekloudhub/stories.git
+
+# GitHub Actions Certification
+Kodekloud link:
+https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Introducing-Github-Actions/page#introducing-github-actions
+
+## Basics of CI CD
+Kodekloud link:
+https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Basics-of-CI-CD/page
+^
+Below are the concepts I am not familiar:
+- Pull Request (I think it's a specific GIT platform feature, not part of GIT)
+- Review
+- Approve
+- Deploy
+- Static Analysis like ESLint, SonarQube to Enforce code standards
+- Vulnerability Scan like Trivy, Snyk to Detect known security issues
+
