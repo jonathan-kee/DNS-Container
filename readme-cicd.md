@@ -1,5 +1,6 @@
 # Addtional resources to learn Git
 *** Level 24 about bisect is poorly explained ***
+*** I just know bisect is good for testing purposes ***
 
 Link to the Git exercises
 https://gitgame-4f0eb.web.app/
