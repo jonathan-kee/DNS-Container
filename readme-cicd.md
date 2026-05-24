@@ -85,4 +85,12 @@ Below are the concepts I am not familiar:
 - Deploy
 - Static Analysis like ESLint, SonarQube to Enforce code standards
 - Vulnerability Scan like Trivy, Snyk to Detect known security issues
+- Integration tests
+- End to End tests
+
+Question: How does continuous deployment handle UAT, SIT, PROD?
+
+## (Skip, Optional) Create Explore GitHub Account
+Kodekloud link:
+https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Create-Explore-GitHub-Account/page
 
