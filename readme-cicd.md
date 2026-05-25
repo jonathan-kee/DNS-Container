@@ -1,3 +1,7 @@
+# Pre-requisite to Github Actions
+- Git
+- YML
+
 # Addtional resources to learn Git
 *** Level 24 about bisect is poorly explained ***
 *** I just know bisect is good for testing purposes ***
