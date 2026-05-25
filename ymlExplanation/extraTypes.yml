@@ -1,0 +1,31 @@
+####################
+# EXTRA YAML TYPES #
+####################
+
+# Strings and numbers aren't the only scalars that YAML can understand.
+# ISO-formatted date and datetime literals are also parsed.
+datetime_canonical: 2001-12-15T02:59:43.1Z
+datetime_space_separated_with_time_zone: 2001-12-14 21:59:43.10 -5
+date_implicit: 2002-12-14
+date_explicit: !!timestamp 2002-12-14
+
+# The !!binary tag indicates that a string is actually a base64-encoded
+# representation of a binary blob.
+gif_file: !!binary |
+  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
+  OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
+  +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
+  AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+
+# YAML also has a set type, which looks like this:
+set:
+  ? item1
+  ? item2
+  ? item3
+or: { item1, item2, item3 }
+
+# Sets are just maps with null values; the above is equivalent to:
+set2:
+  item1: null
+  item2: null
+  item3: null

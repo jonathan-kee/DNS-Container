@@ -1,0 +1,47 @@
+#######################
+# EXTRA YAML FEATURES #
+#######################
+
+# YAML also has a handy feature called 'anchors', which let you easily duplicate
+# content across your document.
+# Anchors identified by & character which define the value.
+# Aliases identified by * character which acts as "see above" command.
+# Both of these keys will have the same value:
+anchored_content: &anchor_name This string will appear as the value of two keys.
+other_anchor: *anchor_name
+
+# Anchors can be used to duplicate/inherit properties
+base: &base
+  name: Everyone has same name
+
+# The expression << is called 'Merge Key Language-Independent Type'. It is used to
+# indicate that all the keys of one or more specified maps should be inserted
+# into the current map.
+# NOTE: If key already exists alias will not be merged
+foo:
+  <<: *base # doesn't merge the anchor
+  age: 10
+  name: John
+bar:
+  <<: *base # base anchor will be merged
+  age: 20
+
+# foo name won't be changed and it will be: John. On the other hand, bar's name will be changed to the base one: Everyone has same name
+
+# YAML also has tags, which you can use to explicitly declare types.
+# Syntax: !![typeName] [value]
+explicit_boolean: !!bool true
+explicit_integer: !!int 42
+explicit_float: !!float -42.24
+explicit_string: !!str 0.5
+explicit_datetime: !!timestamp 2022-11-17 12:34:56.78 +9
+explicit_null: !!null null
+
+# Some parsers implement language specific tags, like this one for Python's
+# complex number type.
+python_complex_number: !!python/complex 1+2j
+
+# We can also use yaml complex keys with language specific tags
+? !!python/tuple [ 5, 7 ]
+: Fifty Seven
+# Would be {(5, 7): 'Fifty Seven'} in Python
