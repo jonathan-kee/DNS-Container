@@ -37,7 +37,32 @@ Here is exactly how that mapping looks under the hood:
 
 ---
 
-## 1. YAML Maps $\approx$ Java Objects / HashMaps
+## 1. YAML Key to Scalar
+
+**YAML:**
+
+```yaml
+name: My First Workflow
+
+```
+
+**Java Equivalent:**
+
+```java
+// As a field in a configuration class
+public class WorkflowConfig {
+    public String name = "My First Workflow";
+}
+
+// Or as a generic Map entry
+Map<String, String> config = new HashMap<>();
+config.put("name", "My First Workflow");
+
+```
+
+---
+
+## 2. YAML Maps $\approx$ Java Objects / HashMaps
 
 When you use nesting with indentation in YAML, you are defining fields and values, just like the fields in a Java class or the keys in a `HashMap<String, Object>`.
 
@@ -53,17 +78,24 @@ user:
 **Java Equivalent:**
 
 ```java
+// Strongly Typed Approach
+public class Config {
+    public User user; // Matches the root "user:" key
+}
+
 public class User {
     public String name = "Alice";
     public int age = 30;
 }
-// Or alternatively: Map<String, Object> user = new HashMap<>();
+
+// Generic/Dynamic Approach
+Map<String, Map<String, Object>> config = new HashMap<>();
 
 ```
 
 ---
 
-## 2. YAML Sequences $\approx$ Java Arrays / Lists
+## 3. YAML Sequences $\approx$ Java Arrays / Lists
 
 The dashes represent an ordered collection, exactly like a `String[]` array or an `ArrayList<String>`.
 
@@ -79,16 +111,21 @@ fruits:
 **Java Equivalent:**
 
 ```java
-String[] fruits = {"Apple", "Banana"};
-// Or: List<String> fruits = Arrays.asList("Apple", "Banana");
+// Strongly Typed Approach
+public class FruitConfig {
+    public String[] fruits = {"Apple", "Banana"};
+}
+
+// Generic/Dynamic Approach
+Map<String, List<String>> config = new HashMap<>();
 
 ```
 
 ---
 
-## 3. Combining Them $\approx$ An Array of Objects
+## 4. Combining Them $\approx$ An Array of Objects
 
-When you see a sequence where each item contains indented key-value pairs, it is precisely an **array of objects** (or a `List<User>`).
+When you see a sequence where each item contains indented key-value pairs, it is precisely an **array of objects** (or a `List<Employee>`).
 
 **YAML:**
 
@@ -105,9 +142,16 @@ employees:
 **Java Equivalent:**
 
 ```java
+// Strongly Typed Approach (Best Practice)
+public class RootConfig {
+    public Employee[] employees; // Matches the root "employees:" key
+}
+
 public class Employee {
     public String name;
     public String role;
+    
+    public Employee() {} // Default constructor used by parsers
     
     public Employee(String name, String role) {
         this.name = name;
@@ -115,11 +159,8 @@ public class Employee {
     }
 }
 
-// Combining them into an array
-Employee[] employees = {
-    new Employee("Alice", "DevOps"),
-    new Employee("Bob", "QA")
-};
+// Generic Approach (How parsers handle YAML's dynamic typing under the hood)
+Map<String, List<Map<String, Object>>> config = new HashMap<>();
 
 ```
 
