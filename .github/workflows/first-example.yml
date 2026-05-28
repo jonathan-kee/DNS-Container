@@ -1,0 +1,71 @@
+# Name (Key to Scalar)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#name
+# The name of the workflow. GitHub displays the names of your workflows under your repository's "Actions" tab. 
+# If you omit name, GitHub displays the workflow file path relative to the root of the repository.
+name: My First Workflow
+
+# On (Key to Scalar)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#on
+# To automatically trigger a workflow, use on to define which events can cause the workflow to run. 
+# For a list of available events, see Events that trigger workflows.
+
+# You can define single or multiple events that can trigger a workflow, or set a time schedule. 
+# You can also restrict the execution of a workflow to only occur for specific files, tags, or branch changes. 
+# These options are described in the following sections.
+on: push
+
+# Jobs (Key to Key)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobs
+# A workflow run is made up of one or more jobs, which run in parallel by default. 
+# To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.
+
+# Each job runs in a runner environment specified by runs-on.
+
+# You can run an unlimited number of jobs as long as you are within the workflow usage limits. 
+# For more information, see Billing and usage for GitHub-hosted runners and Actions limits for self-hosted runner usage limits.
+
+# If you need to find the unique identifier of a job running in a workflow run, you can use the GitHub API. 
+# For more information, see REST API endpoints for GitHub Actions.
+jobs:
+
+# jobs.<job_id> (Key to Key)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_id
+# Use jobs.<job_id> to give your job a unique identifier. The key job_id is a string and its value is a map of the job's configuration data. 
+# You must replace <job_id> with a string that is unique to the jobs object. The <job_id> must start with a letter or _ and contain only alphanumeric characters, -, or _.
+    first_job:
+
+# jobs.<job_id>.runs-on (Key to Scalar)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idruns-on
+        runs-on: ubuntu-latest
+
+# Jobs (Key to Sequences)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idsteps
+# A job contains a sequence of tasks called steps. Steps can run commands, run setup tasks, or run 
+# an action in your repository, a public repository, or an action published in a Docker registry. 
+# Not all steps run actions, but all actions run as a step. 
+# Each step runs in its own process in the runner environment and has access to the workspace and filesystem. 
+# Because steps run in their own process, changes to environment variables are not preserved between steps. 
+# GitHub provides built-in steps to set up and complete a job.
+
+# GitHub only displays the first 1,000 checks, however, you can run an unlimited number of steps as 
+# long as you are within the workflow usage limits. For more information, see Billing and usage for 
+# GitHub-hosted runners and Actions limits for self-hosted runner usage limits.
+        steps:
+
+# Name (Key to Scalar)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsname
+# A name for your step to display on GitHub.
+        - name: Welcome message 
+
+# Run (Key to Scalar)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsrun
+# Runs command-line programs that do not exceed 21,000 characters using the operating system's shell. If you do not provide a name, the step name will default to the text specified in the run command.
+# Commands run using non-login shells by default. You can choose a different shell and customize the shell used to run commands. For more information, see jobs.<job_id>.steps[*].shell.
+# Each run keyword represents a new process and shell in the runner environment. When you provide multi-line commands, each line runs in the same shell. For example:
+          run: echo "My first Github Actions"
+        
+        - name: List files
+          run: ls
+
+        - name: Read file
+          run: cat README.md
