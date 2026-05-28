@@ -1,0 +1,22 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Configure-Checkout-Action/page
+
+name: My Third Workflow
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Welcome message
+        run: echo "My first GitHub Actions Job"
+
+      - name: List files
+        run: ls
+
+      - name: Read file
+        run: cat README.md

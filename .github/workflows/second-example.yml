@@ -1,3 +1,6 @@
+# Link to code:
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
+
 # Covered before
 name: My Awesome App
 # Covered before
@@ -25,6 +28,7 @@ jobs:
       - name: Checkout Repository
         # Uses (Key to Scalar)
         # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsuses
+        # Checkout Repository: Fetches your code.
         uses: actions/checkout@v3
 
       - name: Setup Node.js
