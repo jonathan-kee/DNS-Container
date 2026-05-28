@@ -1,3 +1,14 @@
+# Learning Resources
+- https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+
+# How to setup Github Actions Extension
+Download Github Actions extension for documentation 
+
+[GHActionsExtension](../../screenshots/GHActionsExtension.png)
+
+![GHActionsExtension](../../screenshots/GHActionsExtension.png)
+
+# Java analogy for Github Actions
 How first-example.yml look like in Java
 
 ```java
