@@ -4,21 +4,20 @@
 
 # Addtional resources to learn Git
 *** Level 24 about bisect is poorly explained ***
+
 *** I just know bisect is good for testing purposes ***
 
-Link to the Git exercises
-https://gitgame-4f0eb.web.app/
-^
-Continue Level 24
-^
-Try to recap all the commands below
-^
-Try to compare if it has touch all the topics form Kodekloud's Git for beginners
-https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
+Link to the Git exercises:
+- https://gitgame-4f0eb.web.app/
 
-## Level 15 (Was stuck here for awhile)
+Link to more Git resources:
+- https://learngitbranching.js.org/?locale=en_US
+- https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
+- https://www.atlassian.com/git/tutorials
+
+## gitgame, Level 15 (Was stuck here for awhile)
 Additional learning resource:
-https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+- https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
 
 git log
 git branch
