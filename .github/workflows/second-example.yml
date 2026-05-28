@@ -1,0 +1,41 @@
+# Covered before
+name: My Awesome App
+# Covered before
+on: 
+# Push (Key to Key)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushbranchestagsbranches-ignoretags-ignore
+  push:
+# Branches (Key to Sequences)
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushbranchestagsbranches-ignoretags-ignore
+    branches:
+      - main
+
+# Covered before
+jobs:
+  # Covered before
+  unit-testing:
+    # Name (Key to Scalar)
+    # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idname
+    name: Unit Testing
+    # Covered before
+    runs-on: ubuntu-latest
+    # Covered before
+    steps:
+        # Covered before  
+      - name: Checkout Repository
+        # Uses (Key to Scalar)
+        # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsuses
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        # With (Key to Key)
+        # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepswith
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Execute Unit Tests
+        run: npm test
