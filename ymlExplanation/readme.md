@@ -1,4 +1,10 @@
+# Yaml Learning Resources
+- https://yaml.org/spec/1.2.2/#chapter-2-language-overview
+- https://learnxinyminutes.com/yaml/
+
 # Syntax Reference
+Link to yaml syntax Reference:
+
 https://yaml.org/spec/1.2.2/#chapter-2-language-overview
 
 There are many kinds of data structures, but they can all be adequately represented with three basic primitives: 
@@ -165,8 +171,3 @@ Map<String, List<Map<String, Object>>> config = new HashMap<>();
 ```
 
 Because YAML is dynamically typed, a YAML sequence can technically hold completely different classes in the same array (e.g., item 1 is a `User`, item 2 is a plain `String`, item 3 is an `Integer`), which is like a Java `Object[]` array. But in practice, especially in configuration management, you'll almost always see them used as a clean array of a specific object type.
-
-# More References
-https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
-
-https://learnxinyminutes.com/yaml/
