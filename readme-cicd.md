@@ -110,30 +110,36 @@ https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Cor
 Kodekloud link:
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
 
-## Configure Checkout Action
+## Understanding DevOps Pipeline
+Kodekloud link:
+https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Continuous-Integration-with-GitHub-Actions/Understanding-DevOps-Pipeline/page#continuous-delivery-cdel
 
-## Multi Line commands and Executing Third Party Libraries
+### 1. Workflows
+A workflow is a configurable automated process defined by a YAML file. It listens for one or more events in your repository and runs one or more jobs.
+Key elements in the example above:
+name: My Awesome App
+A custom label visible in the Actions tab.
+on: push
+Defines the event(s) that trigger the workflow. You can specify multiple events and filters.
+You can also trigger workflows via:
+pull_request
+schedule (cron jobs)
+workflow_dispatch (manual run)
+For more triggers, see Events that trigger workflows.
 
-## Workflow to Generate ASCII Artwork
+### 2. Jobs
+A job is a collection of steps executed on the same runner. By default, jobs run in parallel, but you can coordinate them using dependencies.
 
-## Executing Shell Scripts in Workflow
+jobs:
+  unit-testing:
+    name: Unit Testing
+    runs-on: ubuntu-latest
+    steps:
+      # Individual steps go here...
 
-## Workflow with multiple Jobs
+- Job identifier (unit-testing): used to set dependencies.
+- runs-on: selects the runner environment (ubuntu-latest, windows-latest, etc.).
 
-## Execute multiple jobs in Sequence using needs
+If you need to share data between jobs, use artifacts or caches.
 
-## Storing workflow data as artifacts
-
-## Working with Variables at different levels
-
-## Working with Repository Level Secrets
-
-## Triggering a workflow
-
-## Using Job concurrency
-
-## Timeout for Jobs and Steps
-
-## Using a matrix for your jbos
-
-## Additional Matrix Configuration
+### 3. Steps
