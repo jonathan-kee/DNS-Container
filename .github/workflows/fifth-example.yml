@@ -1,0 +1,31 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Workflow-to-Generate-ASCII-Artwork/page
+
+name: Generate ASCII Artwork
+
+on:
+  push:
+
+jobs:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install cowsay
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
+
+      - name: Generate ASCII Art
+        run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+
+      - name: Verify Output
+        run: grep -i "dragon" dragon.txt
+
+      - name: Display Artwork
+        run: cat dragon.txt
+
+      - name: List Workspace Files
+        run: ls -ltra

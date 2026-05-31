@@ -1,3 +1,10 @@
+# How to avoid triggering Github Actions on push
+*** Because the commit message contains [skip ci], GitHub Actions will skip every workflow for that push. Visit the Actions tab in your repository to confirm there are no new runs. ***
+
+1) git add .github/workflows/*
+2) git commit -m "Upload yml from kodekloud notes [skip ci]"
+3) git push
+
 # Learning Resources
 - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 

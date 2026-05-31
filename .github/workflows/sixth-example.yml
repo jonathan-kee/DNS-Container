@@ -1,0 +1,23 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Executing-Shell-Scripts-in-Workflow/page
+
+name: Generate ASCII Artwork
+
+on:
+  push:
+
+
+jobs:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: List Current Files
+        run: ls -ltra
+
+      - name: Run ASCII Art Script
+        run: |
+          chmod +x ascii-script.sh
+          ./ascii-script.sh

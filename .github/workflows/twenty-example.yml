@@ -1,0 +1,19 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Enable-step-debug-logging-in-a-workflow/page
+
+# Types of Debug Logging
+# Use one or both of the following:
+# Debug Type                        Purpose                                                 Secret/Variable Name
+# Runner Diagnostic Logging         Captures the runner’s internal execution details        ACTIONS_RUNNER_DEBUG
+# Step Debug Logging                Increases verbosity around each step’s execution        ACTIONS_STEP_DEBUG
+
+# Enable runner diagnostic logging
+# To activate debug logging for a run, add one or both keys as repository secrets or repository variables:
+# ACTIONS_RUNNER_DEBUG = true
+
+# Enable step debug logging
+# ACTIONS_STEP_DEBUG  = true
+
+# If both secret and variable exist for the same key, the secret value overrides the variable.
+
+# *** The below shows how to debug using the Github's GUI ***

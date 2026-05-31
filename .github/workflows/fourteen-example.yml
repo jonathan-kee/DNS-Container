@@ -1,0 +1,50 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Timeout-for-Jobs-and-Steps/page
+
+# Timeout Comparison
+# Scope             Applies To          Syntax Location                             Example Duration
+# Step-level        Single step only    Under a steps item                          timeout-minutes: 1
+# Job-level         All steps in a job  Under a jobs item                           timeout-minutes: 5
+# Workflow-level*   Entire workflow     Not user-configurable (360 min default)     360 min
+
+name: CI
+on:
+  workflow_dispatch:
+
+env:
+  CONTAINER_REGISTRY: docker.io
+  IMAGE_NAME: github-actions-nginx
+
+jobs:
+# No Timeout Specified
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Run with Timeout
+        run: |
+          echo "Starting container"
+          docker run -d -p 8080:80 $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/${{ IMAGE_NAME }}:latest
+          # This step will be canceled after 1 minute
+          sleep 6000s
+
+# Step-Level Timeout
+  deploy2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Run with Timeout
+        timeout-minutes: 1
+        run: |
+          echo "Starting container"
+          docker run -d -p 8080:80 $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/${{ IMAGE_NAME }}:latest
+          # This step will be canceled after 1 minute
+          sleep 6000s
+  
+# Job-Level Timeout
+  deploy3:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step A
+        run: sleep 300s
+      - name: Step B
+        run: sleep 300s

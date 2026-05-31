@@ -1,0 +1,19 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Cancelling-and-Skipping-Workflows/page
+
+# Supported Keywords
+# Pattern               Description
+# skip ci               Basic skip command
+# ci skip               Alternate skip command
+# [skip ci]             Bracketed skip
+# [ci skip]             Bracketed alternate skip
+
+# You can also place a footer after two blank lines in your commit message:
+# skip-checks: true
+
+# Imagine you only changed the documentation in README.md and want to skip all workflows:
+# git add README.md
+# git commit -m "Update README.md [skip ci]"
+# git push
+
+# Because the commit message contains [skip ci], GitHub Actions will skip every workflow for that push. Visit the Actions tab in your repository to confirm there are no new runs.

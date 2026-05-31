@@ -1,0 +1,56 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Access-workflow-context-information/page
+
+# Context   Description                             Example Property
+# github    Repository, run, and event details      github.sha
+# job       Job-level metadata                      job.status
+# steps     Output and status of previous steps     steps.step_id.outcome
+# runner    Runner environment information          runner.os
+# secrets   Encrypted secrets available to jobs     secrets.DOCKER_PASSWORD
+
+# Never expose secrets in public or shared logs. Printing toJson(secrets) can reveal sensitive data if your repository or runner is not private.
+
+# Context Output Explained
+# GitHub context:       repo details, event information, commit SHA.
+# Job context:          job status (success, failure, etc.).
+# Steps context:        empty until steps define outputs.
+# Runner context:       VM details like OS, architecture, workspace paths.
+# Secrets context:      all accessible secrets (values are masked).
+
+# GitHub Actions offers additional contexts for advanced workflows:
+# matrix:               Values from a strategy matrix.
+# needs:                Outputs and statuses of dependent jobs.
+# inputs:               Action inputs for reusable workflows.
+# env:                  Custom environment variables.
+
+name: Context testing
+on: push
+
+jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+
+      - name: Dump secrets context
+        env:
+          SECRET_CONTEXT: ${{ toJson(secrets) }}
+        run: echo "$SECRET_CONTEXT"

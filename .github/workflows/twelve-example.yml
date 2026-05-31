@@ -1,0 +1,128 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Triggering-a-workflow/page
+
+# 1. Push Event
+# Event Type            Description                                             Example Usage
+# push                  Fires on git push to branches or tags                   Trigger tests on new commits
+on:
+  push:
+    branches:
+      - main
+      - release/*
+
+# 2. Pull Request Event
+# Event Type            Description                                             Example Usage
+# pull_request          Runs when a PR is opened, edited, or merged             Validate code before merging
+on:
+  pull_request:
+    types: [opened, edited, synchronize, closed]
+    branches:
+      - main
+
+# 3. Registry Package Event
+# Event Type            Description                                             Example Usage
+# registry_package      Occurs on package publication in GitHub Registry        Post-publish validations or notifications
+on:
+  registry_package:
+    types: [published]
+
+# 4. Scheduled Workflows with Cron
+# Event Type            Description                                             Example Usage
+# schedule              Cron-based schedules                                    Nightly builds or cleanup tasks
+
+## Example: Twice Daily at 05:30 & 17:30 UTC
+on:
+  schedule:
+    - cron: '30 5,17 * * *'
+
+## Example: Specific Weekdays
+on:
+  schedule:
+    - cron: '30 5 * * 1,3'   # Monday & Wednesday
+    - cron: '30 5 * * 2,4'   # Tuesday & Thursday
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip on specific days
+        if: github.event.schedule == '30 5 * * 1,3'
+        run: echo "Skipped on Mon & Wed"
+      - name: Always run
+        run: echo "This step always executes"
+
+## Example: Every Minute Build & Publish
+name: Exploring Variables and Secrets
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+env:
+  CONTAINER_REGISTRY: docker.io
+  IMAGE_NAME: github-actions-nginx
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Build
+        run: |
+          docker build -t ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+
+      - name: Docker Login
+        run: |
+          docker login \
+            --username=${{ vars.DOCKER_USERNAME }} \
+            --password=${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Publish
+        run: |
+          docker push \
+            ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+
+
+# 5. Manual Trigger with workflow_dispatch
+
+## Minimal workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      loglevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+## Advanced Inputs Example
+name: Exploring Variables and Secrets
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options: [info, warning, debug]
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display inputs
+        run: |
+          echo "Log level: $LEVEL"
+          echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
+          ENVIRONMENT: ${{ inputs.environment }}

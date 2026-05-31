@@ -1,0 +1,27 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Multi-Line-commands-and-Executing-Third-Party-Libraries/page
+
+name: My Fourth Workflow
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: List and Read Files
+        run: |
+          echo "My first GitHub Actions Job"
+          ls -ltra
+          cat README.md
+
+      - name: Install Cowsay
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
+
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt

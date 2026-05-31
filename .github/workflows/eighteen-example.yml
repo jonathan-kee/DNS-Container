@@ -1,0 +1,37 @@
+# Link to code
+# https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Workflow-Event-Filters-and-Activity-Types/page
+
+# Key Filter Options
+# Filter Key            Description                                 Applies To
+# branches              Only run on listed branches                 push, pull_request
+# branches-ignore       Skip listed branches                        push, pull_request
+# paths-ignore          Exclude specific files or directories       push, pull_request   
+# types                 Limit to certain activity types             pull_request
+
+name: Workflow Filters and Activities
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    branches-ignore:
+      - 'feature/*'
+      - 'test/**'
+
+  pull_request:
+    types:
+      - opened
+      - closed
+    paths-ignore:
+      - README.md
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Event
+        run: echo "This workflow ran for event: ${{ github.event_name }}"
