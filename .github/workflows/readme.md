@@ -5,6 +5,10 @@
 2) git commit -m "Upload yml from kodekloud notes [skip ci]"
 3) git push
 
+[No new runs after commit message contains [skip ci]](../../screenshots/WorkflowNotRunningAfterPush.png)
+
+![No new runs after commit message contains [skip ci]](../../screenshots/WorkflowNotRunningAfterPush.png)
+
 # Learning Resources
 - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 
