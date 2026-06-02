@@ -124,6 +124,15 @@ Try to follow to self hosted for your project, then follow the above:
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Self-Hosted-Runner/Types-of-Runners/page
 ^
 Try to follow setup Rocky VM using Vagrant
+^
+Try to adapt the CI pipeline for my current 2tier app
+^
+I have to transfer the docker artifact to the VM, I also have to install docker in the VM as well.
+^
+I don't think you have to transfer because Github Actions Checkout will clone the repo, you can build the artifact in the vm.
+^
+Follow below docker installation guide for Rocky:
+https://docs.docker.com/engine/install/centos/#install-using-the-repository
 
 Question: For self hosted, how to I prevent it from requesting github.com?
 

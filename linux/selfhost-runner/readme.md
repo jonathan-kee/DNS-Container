@@ -90,3 +90,6 @@ runs-on: [self-hosted, linux, x64, gpu]
 - gpu - This custom label has been manually assigned to self-hosted runners with the GPU hardware installed.
 
 These labels operate cumulatively, so a self-hosted runner must have all four labels to be eligible to process the job.
+
+Question: How to see the GUI for VM
+Answer: https://developer.hashicorp.com/vagrant/docs/providers/virtualbox/configuration#gui-vs-headless
