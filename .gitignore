@@ -1,5 +1,6 @@
 windows/.vagrant
 windows/multiplehosts/.vagrant
 linux/multiplehosts/.vagrant
+linux/selfhost-runner/.vagrant
 .idea
 .DS_Store
