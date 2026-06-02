@@ -1,8 +1,10 @@
-name: My Awesome App
-on: push
+name: 2 Tier
+
+on:
+  workflow_dispatch:
 
 jobs:
-  unit-testing:
+  job-one:
     runs-on: [self-hosted, Linux, ARM64]
     steps:
       - name: Checkout Repository
