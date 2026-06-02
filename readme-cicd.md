@@ -122,6 +122,8 @@ https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Reusable-Workflows
 ^
 Try to follow to self hosted for your project, then follow the above:
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Self-Hosted-Runner/Types-of-Runners/page
+^
+Try to follow setup Rocky VM using Vagrant
 
 Question: For self hosted, how to I prevent it from requesting github.com?
 

@@ -43,6 +43,15 @@ bash manuallyInstallPowershell.sh
 https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-on-arm?view=powershell-7.6
 https://learn.microsoft.com/en-us/powershell/scripting/install/alternate-install-methods?view=powershell-7.6#dependencies
 
+# Commands to setup rocky vm
+You need to enable the setting below for vmware to work:
+Privacy & Security -> Full Disk Access -> vagrant-vmware-utility
+
+cd linux/selfhost-runner
+vagrant up --provider vmware_desktop
+vagrant provision
+vagrant ssh Server1
+
 # (Have not test yet) Nested virtualization
 https://www.youtube.com/watch?v=sieDrofaaDU
 
