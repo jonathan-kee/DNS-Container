@@ -1,0 +1,9 @@
+name: My Awesome App
+on: push
+
+jobs:
+  unit-testing:
+    runs-on: [self-hosted, Linux, ARM64]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
