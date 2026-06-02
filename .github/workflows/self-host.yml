@@ -1,0 +1,13 @@
+name: Testing Self-Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testing:
+    runs-on: [self-hosted, Linux, ARM64]
+    steps:
+      - name: Print Host Name
+        run: |
+          whoami
+          sleep 15s
