@@ -9,6 +9,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
+      
+      # Output for the below command
+      # /home/vagrant/actions-runner/_work/DNS-Container/DNS-Container
       - name: Print Working Directory
         run: pwd  
+
+      - name: Change Working Directory & Print dockerfile
+        run: | 
+          cd 2tier
+          cat dockerfile
