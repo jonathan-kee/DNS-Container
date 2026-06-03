@@ -19,3 +19,16 @@ jobs:
         run: | 
           cd 2tier
           cat dockerfile
+
+      - name: Docker Build
+        run: docker build --tag 2tier:latest .
+
+      - name: Docker Run
+        run: |
+          docker run --detach \
+          --name=2tier \
+          --privileged \
+          --restart=always \
+          --publish 127.0.0.1:80:80/tcp \
+          --publish 127.0.0.1:3306:3306/tcp \
+          2tier:latest bash -c "tail -f /dev/null"
