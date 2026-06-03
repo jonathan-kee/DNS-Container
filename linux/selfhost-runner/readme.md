@@ -93,3 +93,9 @@ These labels operate cumulatively, so a self-hosted runner must have all four la
 
 Question: How to see the GUI for VM
 Answer: https://developer.hashicorp.com/vagrant/docs/providers/virtualbox/configuration#gui-vs-headless
+
+Question: After Github Actions Checkout, where is the source code located?
+Answer /home/vagrant/actions-runner/_work/DNS-Container/DNS-Container
+
+Question: Will write workflow file be different now that self hosted?
+Answer: I think the best way to find out is to write pwd command, so that your path is precise
