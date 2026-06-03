@@ -89,3 +89,40 @@ Answer: Yes, after setup bind9 DNS container, make local computer point to itsel
 The issue you're hitting is a classic Docker "gotcha": Each RUN command in a Dockerfile executes in a completely new, temporary container.
 
 When you ran RUN service mariadb start in Step 5, it started the database, but as soon as that step finished, the temporary container was shut down. By the time you reached Step 7, MariaDB was no longer running, which is why you got the "Can't connect to local server" error.
+
+Question: How to fix ERROR: permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+Answer:
+Link to documentation:
+https://docs.docker.com/engine/install/linux-postinstall/
+
+1. Create the docker group.
+sudo groupadd docker
+^
+groupadd: group 'docker' already exists
+
+2. Add your user to the docker group.
+sudo usermod -aG docker $USER
+
+If you're running Linux in a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
+
+3. Run the following command to activate the changes to groups:
+newgrp docker
+
+4. Verify that you can run docker commands without sudo:
+docker run hello-world
+
+5. (Optional) If got permission errors:
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+
+- (Not working) Another issue related to DNS:
+Answer: Gemini
+echo '{"dns": ["8.8.8.8", "1.1.1.1"]}' | sudo tee /etc/docker/daemon.json
+
+sudo systemctl restart docker
+sudo systemctl status docker
+
+- (This is the Fix) Another issue related to DNS:
+Answer: Gemini
+sudo sh -c 'printf "nameserver 8.8.8.8\nnameserver 1.1.1.1\n" > /etc/resolv.conf'
+docker run hello-world
