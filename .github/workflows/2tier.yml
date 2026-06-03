@@ -19,12 +19,16 @@ jobs:
         run: | 
           cd 2tier
           cat dockerfile
-
+      
+      # The below command did not go to 2tier
       - name: Docker Build
-        run: docker build --tag 2tier:latest .
+        run: |
+          cd 2tier
+          docker build --tag 2tier:latest .
 
       - name: Docker Run
         run: |
+          cd 2tier
           docker run --detach \
           --name=2tier \
           --privileged \
