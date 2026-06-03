@@ -3,15 +3,19 @@
 
 # Covered before
 name: My Awesome App
+
 # Covered before
-on: 
+#on: 
 # Push (Key to Key)
 # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushbranchestagsbranches-ignoretags-ignore
-  push:
+  #push:
 # Branches (Key to Sequences)
 # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushbranchestagsbranches-ignoretags-ignore
-    branches:
-      - main
+    #branches:
+      #- main
+
+on:
+  workflow_dispatch:
 
 # Covered before
 jobs:

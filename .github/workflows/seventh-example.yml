@@ -3,10 +3,9 @@
 
 # .github/workflows/generate-ascii.yml
 name: Generate ASCII Artwork
+
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build_job_1:

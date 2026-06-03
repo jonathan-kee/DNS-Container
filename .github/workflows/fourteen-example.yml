@@ -8,6 +8,7 @@
 # Workflow-level*   Entire workflow     Not user-configurable (360 min default)     360 min
 
 name: CI
+
 on:
   workflow_dispatch:
 

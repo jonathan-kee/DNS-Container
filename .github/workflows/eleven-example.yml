@@ -14,7 +14,9 @@
 # Question: Not sure what it means by Expand the Docker Login step to verify masking
 
 name: Exploring Variables and Secrets
-on: [push]
+
+on: 
+  workflow_dispatch:
 
 env:
   CONTAINER_REGISTRY: docker.io

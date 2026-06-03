@@ -3,7 +3,8 @@
 
 name: My Third Workflow
 
-on: push
+on:
+  workflow_dispatch:
 
 jobs:
   first_job:

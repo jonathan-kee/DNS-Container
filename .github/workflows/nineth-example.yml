@@ -2,8 +2,9 @@
 # https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/Storing-workflow-data-as-artifacts/page
 
 name: Generate ASCII Artwork
+
 on:
-  push:
+  workflow_dispatch:
     
 jobs:
   build_job_1:
