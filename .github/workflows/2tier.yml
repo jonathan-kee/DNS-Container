@@ -9,23 +9,29 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-      
+
       # Output for the below command
       # /home/vagrant/actions-runner/_work/DNS-Container/DNS-Container
       - name: Print Working Directory
-        run: pwd  
+        run: pwd
 
       - name: Change Working Directory & Print dockerfile
-        run: | 
+        run: |
           cd 2tier
           cat dockerfile
-      
+
       # The below command did not go to 2tier
-      - name: Docker Build
+      - name: Docker Build Image
         run: |
           cd 2tier
           docker build --tag 2tier:latest .
 
+      # The below command might have to include error handling
+      - name: Docker Remove Existing Container
+        run: |
+          cd 2tier
+          docker rm 2tier
+      
       - name: Docker Run
         run: |
           cd 2tier
@@ -33,6 +39,6 @@ jobs:
           --name=2tier \
           --privileged \
           --restart=always \
-          --publish 127.0.0.1:80:80/tcp \
-          --publish 127.0.0.1:3306:3306/tcp \
+          --publish 0.0.0.0:80:80/tcp \
+          --publish 0.0.0.0:3306:3306/tcp \
           2tier:latest bash -c "tail -f /dev/null"
