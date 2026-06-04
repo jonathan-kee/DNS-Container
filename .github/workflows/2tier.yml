@@ -30,6 +30,7 @@ jobs:
       - name: Docker Remove Existing Container
         run: |
           cd 2tier
+          docker stop 2tier
           docker rm 2tier
       
       - name: Docker Run
