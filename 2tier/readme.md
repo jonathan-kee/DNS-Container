@@ -126,3 +126,18 @@ sudo systemctl status docker
 Answer: Gemini
 sudo sh -c 'printf "nameserver 8.8.8.8\nnameserver 1.1.1.1\n" > /etc/resolv.conf'
 docker run hello-world
+
+Question: Why was my curl http://localhost:80 out my VM stuck? 
+Answer: Gemini
+
+docker stop 2tier
+docker rm 2tier
+docker run --detach \
+    --name=2tier \
+    --privileged \
+    --restart=always \
+    --publish 0.0.0.0:80:80/tcp \
+    --publish 0.0.0.0:3306:3306/tcp \
+    2tier:latest bash -c "tail -f /dev/null"
+
+Question: What is the difference between 127.0.0.1 and 0.0.0.0?
