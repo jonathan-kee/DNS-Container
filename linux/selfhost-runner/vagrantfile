@@ -34,6 +34,12 @@ Vagrant.configure("2") do |config|
         ps.privileged = true
         ps.path = "scripts/installRunnerArm.sh"
       end
+
+      # https://developer.hashicorp.com/vagrant/docs/networking/forwarded_ports
+      # Need to port map 80:80 tcp, 3306:3306 tcp
+      node.vm.network "forwarded_port", guest: 80, host: 80, protocol: "tcp"
+      node.vm.network "forwarded_port", guest: 3306, host: 3306, protocol: "tcp"
+
     end
   end
 end
