@@ -27,13 +27,13 @@ jobs:
           docker build --tag 2tier:latest .
 
       # The below command might have to include error handling
-      - name: Docker Remove Existing Container
+      - name: Docker Remove Existing 2tier Container
         run: |
           cd 2tier
           docker stop 2tier
           docker rm 2tier
       
-      - name: Docker Run
+      - name: Docker Run 2tier app
         run: |
           cd 2tier
           docker run --detach \

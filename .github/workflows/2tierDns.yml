@@ -1,0 +1,92 @@
+name: 2 Tier DNS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-one:
+    runs-on: [self-hosted, Linux, ARM64]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Output for the below command
+      # /home/vagrant/actions-runner/_work/DNS-Container/DNS-Container
+      - name: Print Working Directory
+        run: pwd
+
+      - name: Change Working Directory & Print dockerfile
+        run: |
+          cd 2tier
+          cat dockerfile
+
+      # The below command did not go to 2tier
+      - name: Docker Build Image
+        run: |
+          cd 2tier
+          docker build --tag 2tier:latest .
+
+      # The below command might have to include error handling
+      - name: Docker Remove Existing 2tier Container
+        run: |
+          cd 2tier
+          docker stop 2tier
+          docker rm 2tier
+      
+      - name: Docker Run 2tier app
+        run: |
+          cd 2tier
+          docker run --detach \
+          --name=2tier \
+          --privileged \
+          --restart=always \
+          --publish 0.0.0.0:80:80/tcp \
+          --publish 0.0.0.0:3306:3306/tcp \
+          2tier:latest bash -c "tail -f /dev/null"
+
+      - name: Docker Remove Existing dns Container
+        run: |
+          cd 2tier
+          docker stop dns
+          docker rm dns
+
+      - name: Docker Run 2tier app
+        run: |
+          cd 2tier
+          docker run --detach \
+          --name=dns \
+          --restart=always \
+          --publish 0.0.0.0:53:53/udp \
+          --publish 0.0.0.0:53:53/tcp \
+          --publish 0.0.0.0:953:953/tcp \
+          --volume /etc/bind \
+          --volume /var/cache/bind \
+          --volume /var/lib/bind \
+          --volume /var/log \
+          ubuntu/bind9
+
+      - name: Copy over zone file
+        run: | 
+          cd 2tier
+          docker cp \
+          ./dns/node01/db.test \
+          dns:/etc/bind/db.test
+          
+      - name: Configure BIND to use our new zone file
+        run: |
+          cd 2tier
+          docker cp \
+          ./dns/node01/named.conf.local \
+          dns:/etc/bind/named.conf.local
+
+      - name: Configure BIND options
+        run: |
+          cd 2tier
+          docker cp \
+          ./dns/node01/named.conf.options \
+          dns:/etc/bind/named.conf.options
+      
+      - name: Restart DNS servers
+        run: |
+          cd 2tier
+          docker restart dns
