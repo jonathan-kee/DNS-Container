@@ -1,4 +1,4 @@
-zone "test" {
+zone "company" {
     type master;
-    file "/etc/bind/db.test";
+    file "/etc/bind/db.company";
 };

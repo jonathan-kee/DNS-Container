@@ -15,6 +15,11 @@ options {
   9.9.9.9;
  };
 
+ // ADD THESE LINES TO ALLOW YOUR MAC TO QUERY BIND
+ allow-query { any; };
+ allow-recursion { any; };
+ recursion yes;
+
  //========================================================================
  // If BIND logs error messages about the root key being expired,
  // you will need to update your keys.  See https://www.isc.org/bind-keys

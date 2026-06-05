@@ -1,0 +1,24 @@
+$TTL 604800
+; The "@" symbol here refers to the zone "company."
+; Note the trailing dots below to ensure they are interpreted as absolute domain names
+@        IN      SOA     company. root.company. (
+                            1         ; Serial
+                       604800         ; Refresh
+                        86400         ; Retry
+                      2419200         ; Expire
+                       604800 )       ; Negative Cache TTL
+
+; Name Servers for the domain "company."
+; Name Servers (Added trailing dot)
+@        IN      NS      company.
+
+; IP addresses for those Name Servers
+; IP addresses for the root zone (company.)
+@        IN      A       172.17.0.2
+www      IN      A       172.17.0.2
+@        IN      AAAA    1234:1234::1
+
+; Apache Server (uat.company)
+uat      IN      A       127.0.0.1
+sit      IN      A       127.0.0.1
+prod     IN      A       127.0.0.1
