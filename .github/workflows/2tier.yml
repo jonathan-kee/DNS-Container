@@ -20,6 +20,9 @@ jobs:
           cd 2tier
           cat dockerfile
 
+      - name: Configure Virtual Machine's DNS resolver to reach internet
+        run: sudo sh -c 'printf "nameserver 8.8.8.8\nnameserver 1.1.1.1\n" > /etc/resolv.conf'
+
       # The below command did not go to 2tier
       - name: Docker Build Image
         run: |
