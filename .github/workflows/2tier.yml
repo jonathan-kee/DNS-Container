@@ -47,9 +47,14 @@ jobs:
           --publish 0.0.0.0:3306:3306/tcp \
           2tier:latest bash -c "tail -f /dev/null"
 
-      - name: Docker start mariadb & apache
+      - name: Docker Stop Existing mariadb service & apache2 service
         run: |
           cd 2tier
-          docker exec -it 2tier bash
-          bash start.sh
-          ss -tulpn
+          docker exec 2tier bash stop.sh
+          docker exec 2tier ss -tulpn
+
+      - name: Docker Start mariadb service & apache2 service
+        run: |
+          cd 2tier
+          docker exec 2tier bash start.sh
+          docker exec 2tier ss -tulpn
