@@ -57,8 +57,8 @@ ip a output:
 # Node01 (Bind9 DNS Master)
 ## Copy over zone file
 docker cp \
-    ./dns/node01/db.test \
-    dns:/etc/bind/db.test
+    ./dns/node01/db.company \
+    dns:/etc/bind/db.company
 
 ## Configure BIND to use our new zone file
 docker cp \
@@ -126,6 +126,8 @@ sudo systemctl status docker
 Answer: Gemini
 sudo sh -c 'printf "nameserver 8.8.8.8\nnameserver 1.1.1.1\n" > /etc/resolv.conf'
 docker run hello-world
+^
+I think this can be resolve with vagrantfile
 
 Question: Why was my curl http://localhost:80 out my VM stuck? 
 Answer: Gemini
@@ -141,3 +143,38 @@ docker run --detach \
     2tier:latest bash -c "tail -f /dev/null"
 
 Question: What is the difference between 127.0.0.1 and 0.0.0.0?
+
+Question: How do I modify docker run command for DNS to work?
+
+docker run --detach \
+        --name=dns \
+        --restart=always \
+        --publish 0.0.0.0:53:53/udp \
+        --publish 0.0.0.0:53:53/tcp \
+        --publish 0.0.0.0:953:953/tcp \
+        --volume /etc/bind \
+        --volume /var/cache/bind \
+        --volume /var/lib/bind \
+        --volume /var/log \
+        ubuntu/bind9
+
+Question: How do I fix DNS issue in VM?
+sudo sh -c 'printf "nameserver 127.0.0.1" > /etc/resolv.conf'
+cat /etc/resolv.conf
+
+Question: 
+There several layers of networking:
+Host 
+^
+I had to clear DNS cache recommended by Gemeni:
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+dig uat.company
+
+VM
+^
+I had to run the below command for docker to run build command successfuly:
+sudo sh -c 'printf "nameserver 8.8.8.8\nnameserver 1.1.1.1\n" > /etc/resolv.conf'
+
+Docker
+^
+I had to run Bind9 DNS container on host level instead of VM level for my app to work
