@@ -6,11 +6,69 @@ Follow below for personalized installation:
 https://github.com/jonathan-kee/DNS-Container/settings/actions/runners/new?arch=arm64&os=linux
 
 # Vagrant After Setup & Provisioning 
-cd linux/selfhost-runner
-vagrant up --provider vmware_desktop
-vagrant ssh Server1
-cd actions-runner
-./run.sh
+1) cd linux/selfhost-runner
+2) vagrant up --provider vmware_desktop
+3) vagrant ssh Server1
+4) cd actions-runner
+5) ./run.sh
+
+# Run Github Actions
+Link to Github Actions workflow:
+https://github.com/jonathan-kee/DNS-Container/actions/workflows/2tier.yml
+
+- Click Run Workflow
+
+# Setup DNS with Docker on Host computer
+1) Open docker desktop on Host computer
+
+2) docker run --detach \
+        --name=dns \
+        --restart=always \
+        --publish 53:53/udp \
+        --publish 53:53/tcp \
+        --publish 127.0.0.1:953:953/tcp \
+        --volume /etc/bind \
+        --volume /var/cache/bind \
+        --volume /var/lib/bind \
+        --volume /var/log \
+        ubuntu/bind9
+
+# Test Connection & note down IPv4 Address
+- docker exec -it dns sh
+- ip a
+- exit
+
+ip a output:
+172.17.0.2/16 
+
+# Node01 (Bind9 DNS Master)
+cd 2tier
+
+## Copy over zone file
+docker cp \
+    ./dns/node01/db.company \
+    dns:/etc/bind/db.company
+
+## Configure BIND to use our new zone file
+docker cp \
+    ./dns/node01/named.conf.local \
+    dns:/etc/bind/named.conf.local
+
+## Configure BIND options
+docker cp \
+    ./dns/node01/named.conf.options \
+    dns:/etc/bind/named.conf.options
+
+## Restart DNS servers
+docker restart dns
+
+## Clear Host DNS cache
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+
+## Test Host DNS connection
+dig uat.company
+dig sit.company
+dig prod.company
 
 # Vagrant Setup & Provisioning
 You need to enable the setting below for vmware to work:
@@ -99,3 +157,18 @@ Answer /home/vagrant/actions-runner/_work/DNS-Container/DNS-Container
 
 Question: Will write workflow file be different now that self hosted?
 Answer: I think the best way to find out is to write pwd command, so that your path is precise
+
+*** It's kind of interesting to see theory (from kodekloud's foundation) come to life, because I was aware of the theory at the beginning ***
+*** Before you jump to any conclusion, try to setup the DNS container outside the vm first, could be networking issue ***
+*** Try to setup DNS now ***
+^
+Is the DNS outside the VM or inside the VM?
+^
+If I do port mapping, it does not matter I guess.
+
+Question: What is port 53 & 953 for Bind9 DNS?
+
+Question: The thing that confuses me about the Bind9 DNS files are the mix of different IP addreses like 172.17.0.3 for the Nameserver & 127.0.0.1 for the Apache server.
+
+Question: What is the command vagrant did the port mapping?
+Answer: vagrant port
