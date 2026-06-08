@@ -1,9 +1,13 @@
+# Project Highlights
+[Different Environments like uat, sit, prod](../../screenshots/DifferentEnvironments.png)
+![Different Environments like uat, sit, prod](../../screenshots/DifferentEnvironments.png)
+
 # Installation Guide
 Follow the official github documentation:
-https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners#adding-a-self-hosted-runner-to-a-repository
+- https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners#adding-a-self-hosted-runner-to-a-repository
 
 Follow below for personalized installation:
-https://github.com/jonathan-kee/DNS-Container/settings/actions/runners/new?arch=arm64&os=linux
+- https://github.com/jonathan-kee/DNS-Container/settings/actions/runners/new?arch=arm64&os=linux
 
 # Vagrant After Setup & Provisioning 
 1) cd linux/selfhost-runner
@@ -14,7 +18,7 @@ https://github.com/jonathan-kee/DNS-Container/settings/actions/runners/new?arch=
 
 # Run Github Actions
 Link to Github Actions workflow:
-https://github.com/jonathan-kee/DNS-Container/actions/workflows/2tier.yml
+- https://github.com/jonathan-kee/DNS-Container/actions/workflows/2tier.yml
 
 - Click Run Workflow
 
@@ -34,6 +38,8 @@ https://github.com/jonathan-kee/DNS-Container/actions/workflows/2tier.yml
         ubuntu/bind9
 
 # Test Connection & note down IPv4 Address
+*** Try to set static ip 172.17.0.2 ***
+
 - docker exec -it dns sh
 - ip a
 - exit
