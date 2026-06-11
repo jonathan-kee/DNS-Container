@@ -104,6 +104,25 @@ Reusable and sharable blocks of code that can be called over and over again
 
 ![Slide 5](./screenshots/WorkingWithTerraformDirectory.png)
 
+## Terraform Plan
+
+[Slide](./screenshots/TerraformPlan.png)
+
+![Slide](./screenshots/TerraformPlan.png)
+
+[Slide 2](./screenshots/TerraformPlanTwo.png)
+
+![Slide 2](./screenshots/TerraformPlanTwo.png)
+
+[Slide 3](./screenshots/TerraformPlanThree.png)
+
+![Slide 3](./screenshots/TerraformPlanThree.png)
+
+[Slide 4](./screenshots/TerraformPlanFour.png)
+
+![Slide 4](./screenshots/TerraformPlanFour.png)
+
+
 1) Should the .terraform directory be in version control?
 - No, add to your .gitignore file
 - Contains easily recreatable files
