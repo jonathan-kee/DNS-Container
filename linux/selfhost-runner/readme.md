@@ -11,6 +11,17 @@
 
 ![Port mapping for Docker](../../screenshots/DockerPortMapping.png)
 
+# Explanation of tools
+- Vagrant is Hosted / Type 2 virtual machine
+- You can take snapshots & cloning that you can roll back to incase of disaster
+- Containers like docker are isolated, each container runs in its own space so apps and dependencies don't clash. 
+(In my opinion, container based development lead to less clutter host computer)
+- Containers share the host OS so isolation isn't as strong as with virtual machines.
+- To enforce organization wide security policies and full OS control we need to deploy these containers inside VMs.
+
+# Future Direction
+I think when you develop an app around container like docker, you have to make sure it’s still functioning after you start, stop, restart
+
 # Installation Guide
 Follow the official github documentation:
 - https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners#adding-a-self-hosted-runner-to-a-repository
