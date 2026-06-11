@@ -76,7 +76,34 @@ resources on the target platform
 ## Modules
 Reusable and sharable blocks of code that can be called over and over again
 
-# Terraform Init
+## Intro to the Terraform Workflow
+
+[Slide](./screenshots/DevelopingTFConfiguration.png)
+
+![Slide](./screenshots/DevelopingTFConfiguration.png)
+
+## Terraform Init
+
+[Slide](./screenshots/TerraformInit.png)
+
+![Slide](./screenshots/TerraformInit.png)
+
+[Slide 2](./screenshots/TerraformLockFile.png)
+
+![Slide 2](./screenshots/TerraformLockFile.png)
+
+[Slide 3](./screenshots/TerraformDirectory.png)
+
+![Slide 3](./screenshots/TerraformDirectory.png)
+
+[Slide 4](./screenshots/TerraformDirectory.png)
+
+![Slide 4](./screenshots/TerraformDirectory.png)
+
+[Slide 5](./screenshots/WorkingWithTerraformDirectory.png)
+
+![Slide 5](./screenshots/WorkingWithTerraformDirectory.png)
+
 1) Should the .terraform directory be in version control?
 - No, add to your .gitignore file
 - Contains easily recreatable files
