@@ -20,7 +20,8 @@
 - To enforce organization wide security policies and full OS control we need to deploy these containers inside VMs.
 
 # Future Direction
-I think when you develop an app around container like docker, you have to make sure it’s still functioning after you start, stop, restart
+- I think when you develop an app around container like docker, you have to make sure it’s still functioning (like docker volume) after you start, stop, restart
+- My self hosted github actions runner expired, try to automate that
 
 # Installation Guide
 Follow the official github documentation:
