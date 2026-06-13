@@ -1,3 +1,6 @@
+# Resources to learn
+- https://notes.kodekloud.com/docs/HashiCorp-Certified-Terraform-Associate-004/Course-Introduction/Course-Introduction/page
+
 # Terraform Extensions to Install
 
 [Terraform Extension](./screenshots/TerraformExtension.png)
@@ -19,6 +22,53 @@ https://www.youtube.com/watch?v=_PD4j5Ra3kY
 Run 45 AWS Services Locally FREE: Floci, Quarkus and GraalVM-Powered, LocalStack Alternative (#96):
 https://www.youtube.com/watch?v=dvyDakgeMig
 
+# Terraform Foundations
+## Section Introduction Terraform Foundations
+
+### What is Terraform?
+Key verbs you’ll use frequently:
+- terraform init — initialize a working directory
+- terraform plan — preview changes before applying
+- terraform apply — execute the planned changes
+- terraform destroy — remove managed infrastructure
+
+### (Skip) Why organizations use Terraform
+
+### Core Terraform concepts
+Concept           Purpose                               Example/Notes
+Configuration     Declare resources and settings        Files with .tf using HCL (HashiCorp Configuration Language)
+Provider          Plugin for a target platform          provider "aws" { region = "us-east-1" }
+Resource          A managed infrastructure object       resource "aws_instance" "web" { ... }
+State             Maps config to real resources         Stored locally or remotely (S3, Terraform Cloud)
+Plan/Apply        Preview and enact changes             terraform plan → terraform apply
+Module            Reusable configuration unit           Local or registry-based modules for reuse
+
+Terraform state contains the authoritative mapping of resources. Protect and manage state carefully (use remote backends and locking for teams) to avoid resource drift and corruption.
+
+### How Terraform improves workflows
+- Automation and CI/CD: Integrate Terraform into pipelines to provision and update infrastructure automatically.
+
+- Collaboration: Use remote state backends and workspaces to coordinate changes among teams.
+
+- Drift detection: terraform plan surfaces differences between configuration and real infrastructure.
+
+- Idempotence: Reapplying the same configuration converges the environment to the declared state.
+​
+### Common usage pattern
+1. Write configuration (*.tf files).
+2. Initialize the working directory:
+- terraform init
+
+3. Validate and preview changes:
+- terraform validate
+- terraform plan
+
+4. Apply changes:
+- terraform apply
+
+5. Maintain and update through version control and CI.
+
+# Extra
 # single-line comment
 block_type "block_label" "block_label" {
     first_argument  = expression or value
