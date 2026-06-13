@@ -73,7 +73,7 @@ Terraform state contains the authoritative mapping of resources. Protect and man
 ## Learn the Basics of HashiCorp Configuration Language HCL
 HCL is declarative: you describe the desired end state (for example, “a VPC with CIDR 10.0.0.0/16”) and Terraform determines how to create or update resources to match that state. Think of it like ordering a dish at a restaurant — you specify the final result, not every step required to cook it.
 
-## HCL structure and basic syntax
+### HCL structure and basic syntax
 HCL configurations are organized into blocks that group related configuration items. Each block has:
 - A block type (for example, resource, data, variable, output)
 - One or more labels (for example, a resource type and an instance name)
@@ -84,14 +84,14 @@ Comments are supported and useful for documenting intent:
 - Multi-line (block) comments: /* ... */
 
 Example annotated HCL:
-# single-line comment
+// single-line comment
 block_type "block_label" "block_label" {
   first_argument  = expression_or_value
   second_argument = expression_or_value
   third           = expression_or_value
 }
 
-# Top-level assignments must appear inside appropriate blocks (for example, locals).
+// Top-level assignments must appear inside appropriate blocks (for example, locals).
 locals {
   attribute_abc = "value_1"
   attribute_2   = "value_2"
@@ -99,7 +99,7 @@ locals {
 
 Files use the .tf extension (for example, main.tf). Terraform automatically loads .tf files in a directory as a single configuration.
 
-## Common HCL block types (at-a-glance)
+### Common HCL block types (at-a-glance)
 Block Type      Purpose                                                 Example
 resource        Declares infrastructure to create and manage            resource "aws_instance" "web" { ... }
 data            Reads information from existing infrastructure          data "aws_ami" "ubuntu" { ... }
@@ -107,16 +107,16 @@ variable        Declares input values for a module                      variable
 output          Exposes values from a module or root configuration      output "vpc_id" { value = aws_vpc.vpc.id }
 locals          Defines local computed values                           locals { common_tags = { Environment = "dev" } }
 
-## A real example: defining a VPC
+### A real example: defining a VPC
 Below is a compact, realistic Terraform configuration showing data sources and a resource block that defines an AWS VPC:
 
-# Retrieve the list of availability zones in the current AWS region
+// Retrieve the list of availability zones in the current AWS region
 data "aws_availability_zones" "available" {}
 
-# Retrieve the current AWS region
+// Retrieve the current AWS region
 data "aws_region" "current" {}
 
-# Define the VPC
+// Define the VPC
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
 
@@ -134,7 +134,7 @@ Key points:
 
 Use terraform fmt or a Terraform-aware editor (for example, the VS Code Terraform extension) to keep formatting consistent automatically.
 
-## Anatomy of a resource block
+### Anatomy of a resource block
 *** First label aws_vpc is tied to the provider ***
 
 Question: How do I reference the correct resource from provider? Do I have to read the documentation?
@@ -152,13 +152,13 @@ Each resource name (the second label) must be unique per resource type within a 
 resource "aws_vpc" "production" { ... }
 resource "aws_vpc" "test"       { ... }
 
-## (Copy Paste) HCL style recommendations
+### (Copy Paste) HCL style recommendations
 
-## (Copy Paste) Quick workflow (getting started)
+### (Copy Paste) Quick workflow (getting started)
 
-## (Skip) Summary
+### (Skip) Summary
 
-# Lets Look at Resource Referencing with Demo
+## Lets Look at Resource Referencing with Demo
 *** You can manage github repositories with terraform ***
 *** I skip explanation on referencing because there was no example code ***
 
@@ -248,6 +248,88 @@ Wrap-up
 - Resource referencing enables dynamic, maintainable Terraform configurations by passing values between blocks rather than hard-coding.
 - Terraform uses references to build a dependency graph and determine the correct provisioning order.
 - Maintain consistent style with terraform fmt, split files for clarity, and keep secrets out of source files.
+
+## (Continue) Learn about Best Practices for HCL
+
+# Terraform Configuration - Fundamentals
+## (Continue) Connecting to Cloud Platforms with Provider Blocks
+
+Question: Where does Kubernetes fit in cloud?
+
+## (Continue) Creating Infrastructure with Resource Blocks
+*** You need to consult Terraform registry for available resource types and argument details ***
+*** I wonder if there's a way for me to read the Terraform registry with VScode ***
+
+### Resource: aws_instance
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
+### Argument Reference
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#argument-reference
+
+Example: two EC2 instances:
+
+resource "aws_instance" "web" {
+  ami           = "ami-012345"
+  instance_type = "t2.micro"
+
+  key_name  = "prd-web-key"
+  subnet_id = "subnet-12345abc"
+
+  tags = {
+    Name = "prd-web-svr-01"
+  }
+}
+
+resource "aws_instance" "db" {
+  ami           = "ami-0c55b159"
+  instance_type = "m5.4xlarge"
+}
+
+Example configuration for a production stack:
+
+resource "aws_lb" "public_load_balancer" {
+  name               = "prd-web-lb"
+  load_balancer_type = "network"
+}
+
+resource "fortios_firewall_policy" "allow_web_443" {
+  action = "accept"
+  name   = "allow_web_443"
+}
+
+resource "aws_instance" "web" {
+  instance_type = "t3.large"
+  ami           = "ami-0c55b159"
+}
+
+resource "aws_db_instance" "prd_db" {
+  engine         = "mysql"
+  instance_class = "db.t3.large"
+}
+
+- The aws_lb name value (prd-web-lb) is provider-visible and will appear in the AWS Console.
+- Each block maps to a real-world component; together they create a functioning environment.
+
+Example: create a GitHub repository, a branch, and set the default branch:
+
+resource "github_repository" "prod_repo" {
+  name       = "prod-app-xyz-repo"
+  visibility = "private"
+}
+
+resource "github_branch" "default" {
+  repository = github_repository.prod_repo.name
+  branch     = "main"
+}
+
+resource "github_branch_default" "default" {
+  repository = github_repository.prod_repo.name
+  branch     = github_branch.default.branch
+}
+
+# Understading and Managing Terraform State
+## (Continue) Remote State Configuration
+*** This looks like the real meat of Terraform ***
 
 # Extra
 # single-line comment
