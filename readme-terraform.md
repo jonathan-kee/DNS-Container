@@ -68,6 +68,187 @@ Terraform state contains the authoritative mapping of resources. Protect and man
 
 5. Maintain and update through version control and CI.
 
+## (Skip) Introduction to Terraform
+
+## Learn the Basics of HashiCorp Configuration Language HCL
+HCL is declarative: you describe the desired end state (for example, “a VPC with CIDR 10.0.0.0/16”) and Terraform determines how to create or update resources to match that state. Think of it like ordering a dish at a restaurant — you specify the final result, not every step required to cook it.
+
+## HCL structure and basic syntax
+HCL configurations are organized into blocks that group related configuration items. Each block has:
+- A block type (for example, resource, data, variable, output)
+- One or more labels (for example, a resource type and an instance name)
+- A body containing arguments and optionally nested blocks
+
+Comments are supported and useful for documenting intent:
+- Single-line comments: # or //
+- Multi-line (block) comments: /* ... */
+
+Example annotated HCL:
+# single-line comment
+block_type "block_label" "block_label" {
+  first_argument  = expression_or_value
+  second_argument = expression_or_value
+  third           = expression_or_value
+}
+
+# Top-level assignments must appear inside appropriate blocks (for example, locals).
+locals {
+  attribute_abc = "value_1"
+  attribute_2   = "value_2"
+}
+
+Files use the .tf extension (for example, main.tf). Terraform automatically loads .tf files in a directory as a single configuration.
+
+## Common HCL block types (at-a-glance)
+Block Type      Purpose                                                 Example
+resource        Declares infrastructure to create and manage            resource "aws_instance" "web" { ... }
+data            Reads information from existing infrastructure          data "aws_ami" "ubuntu" { ... }
+variable        Declares input values for a module                      variable "aws_region" { type = string }
+output          Exposes values from a module or root configuration      output "vpc_id" { value = aws_vpc.vpc.id }
+locals          Defines local computed values                           locals { common_tags = { Environment = "dev" } }
+
+## A real example: defining a VPC
+Below is a compact, realistic Terraform configuration showing data sources and a resource block that defines an AWS VPC:
+
+# Retrieve the list of availability zones in the current AWS region
+data "aws_availability_zones" "available" {}
+
+# Retrieve the current AWS region
+data "aws_region" "current" {}
+
+# Define the VPC
+resource "aws_vpc" "vpc" {
+  cidr_block = var.vpc_cidr
+
+  tags = {
+    Name        = var.vpc_name
+    Environment = "demo_environment"
+    Terraform   = "true"
+  }
+}
+
+Key points:
+- data blocks read existing information (e.g., AZs or AMIs).
+- resource blocks declare resources Terraform will manage.
+- Arguments inside resource blocks (like cidr_block) describe desired properties, not procedural steps.
+
+Use terraform fmt or a Terraform-aware editor (for example, the VS Code Terraform extension) to keep formatting consistent automatically.
+
+## Anatomy of a resource block
+*** First label aws_vpc is tied to the provider ***
+
+Question: How do I reference the correct resource from provider? Do I have to read the documentation?
+
+Breakdown of the VPC resource block:
+- resource — keyword indicating managed infrastructure.
+- First label ("aws_vpc") — the resource type provided by the provider (AWS in this case).
+- Second label ("vpc") — the local instance name that uniquely identifies this resource in the module.
+- Body — arguments (like cidr_block) and nested blocks (like tags) describing the resource.
+
+Reference a resource elsewhere using the canonical address resource_type.resource_name, for example aws_vpc.vpc. That address allows other resources, modules, and outputs to read attributes from the VPC.
+
+Each resource name (the second label) must be unique per resource type within a module. For multiple VPCs use distinct names, for example:
+
+resource "aws_vpc" "production" { ... }
+resource "aws_vpc" "test"       { ... }
+
+## (Copy Paste) HCL style recommendations
+
+## (Copy Paste) Quick workflow (getting started)
+
+## (Skip) Summary
+
+# Lets Look at Resource Referencing with Demo
+*** You can manage github repositories with terraform ***
+*** I skip explanation on referencing because there was no example code ***
+
+HCL demo: writing Terraform files in VS Code
+
+This demo shows practical HCL examples and recommended workflow items (like using terraform fmt). The focus is on writing, referencing, and formatting HCL rather than provider-specific behavior.
+
+1. Create a file named github.tf in your working directory. VS Code with a Terraform extension will provide syntax highlighting and snippets for provider and resource blocks.
+
+2. Add a provider block that references a token variable:
+
+provider "github" {
+  token = var.github_token
+}
+
+3. Define a repository resource. Each resource block is a combination of type and local name that forms the unique address used elsewhere in the configuration:
+
+resource "github_repository" "production-repo" {
+  name        = "prod-repo"
+  description = "Repo for our production app"
+  private     = true
+}
+
+4. Add another repository using a different local name so both resources have unique addresses:
+
+resource "github_repository" "testing-repo" {
+  name        = "test-repo"
+  description = "Repo for our testing app"
+  private     = true
+}
+
+Every resource instance in a Terraform configuration must have a unique address: the combination of its type and its local name (for example, github_repository.production-repo). Reusing the same local name for two instances of the same resource type will produce a configuration error.
+
+Do not hard-code sensitive values (like provider tokens) directly in .tf files. Use input variables, terraform.tfvars, or environment variables (for example, TF_VAR_github_token) and store secrets in a secure secrets manager or CI/CD secret store.
+
+Using terraform fmt to format HCL
+
+Keep code readable and consistent with terraform fmt. It normalizes indentation and aligns assignment operators to Terraform’s canonical style.
+
+Examples:
+- Run the formatter across the working directory:
+$ terraform fmt
+github.tf
+test.tf
+
+- If only one file required formatting, the output might be:
+$ terraform fmt
+github.tf
+
+Splitting resources across files
+
+Terraform treats all .tf files in a directory as a single configuration. Use multiple files to organize resources logically — e.g., separate providers, networking, compute, and test resources.
+
+Example file split:
+
+test.tf:
+
+resource "github_repository" "testing-repo" {
+  name        = "test-repo"
+  description = "Repo for our testing app"
+  private     = true
+}
+
+github.tf:
+
+provider "github" {
+  token = var.github_token
+}
+
+resource "github_repository" "production-repo" {
+  name        = "prod-repo"
+  description = "Repo for our production app"
+  private     = true
+}
+
+Running terraform fmt in the directory will scan and format all .tf files and report each file it modified.
+
+Quick best practices
+
+Area	              Recommendation
+- Referencing	      Prefer using attributes from created resource or data blocks instead of hard-coded values
+- Secrets	Use       variables and secure secret stores — avoid committing tokens to VCS
+- Formatting	      Run terraform fmt regularly or enable automatic formatting in your editor
+- Organization	    Group related resources into separate .tf files or modules for maintainability
+
+Wrap-up
+- Resource referencing enables dynamic, maintainable Terraform configurations by passing values between blocks rather than hard-coding.
+- Terraform uses references to build a dependency graph and determine the correct provisioning order.
+- Maintain consistent style with terraform fmt, split files for clarity, and keep secrets out of source files.
+
 # Extra
 # single-line comment
 block_type "block_label" "block_label" {
