@@ -3,6 +3,10 @@
 
 ![Different Environments like uat, sit, prod](../../screenshots/DifferentEnvironments.png)
 
+[Github Actions for CI / CD](../../screenshots/GithubActions2Tier.png)
+
+![Github Actions for CI / CD](../../screenshots/GithubActions2Tier.png)
+
 [Port mapping for Vagrant](../../screenshots/VagrantPortMapping.png)
 
 ![Port mapping for Vagrant](../../screenshots/VagrantPortMapping.png)
