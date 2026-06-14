@@ -9,6 +9,7 @@
 
 # Resources to learn
 *** Terraform can actually spin up vms through Proxmox ***
+
 *** Terraform can be used in local testing using AWS emulators like localstack, ministack, floci ***
 
 List of available local AWS emulators:
@@ -17,10 +18,10 @@ List of available local AWS emulators:
 - https://github.com/localstack/localstack
 
 LocalStack Explained: Simulate AWS Services for Seamless Development:
-https://www.youtube.com/watch?v=_PD4j5Ra3kY
+- https://www.youtube.com/watch?v=_PD4j5Ra3kY
 
 Run 45 AWS Services Locally FREE: Floci, Quarkus and GraalVM-Powered, LocalStack Alternative (#96):
-https://www.youtube.com/watch?v=dvyDakgeMig
+- https://www.youtube.com/watch?v=dvyDakgeMig
 
 # Terraform Foundations
 ## Section Introduction Terraform Foundations
