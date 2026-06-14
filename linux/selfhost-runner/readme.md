@@ -27,6 +27,7 @@
 - I think when you develop an app around container like docker, you have to make sure it’s still functioning (like docker volume) after you start, stop, restart
 - My self hosted github actions runner expired, try to automate that
 - Try to show how different .env files will affect the app
+- Try to port Vagrant into Terraform (KVM, QEMU, libvirt setup for macos is too complicated)
 
 # Installation Guide
 Follow the official github documentation:
