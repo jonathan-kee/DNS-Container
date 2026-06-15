@@ -1,0 +1,6 @@
+# Standard release — recommended for most use cases
+services:
+  floci:
+    image: floci/floci:latest
+    ports:
+      - "4566:4566"

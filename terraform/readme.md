@@ -13,7 +13,13 @@ https://floci.io/floci/getting-started/quick-start/
 1) cd terraform
 2) docker compose up -d
 3) terraform apply --auto-approve
+^
+Missing terraform init step
+
 4) aws --endpoint-url=http://localhost:4566 ec2 describe-instances
+^
+I do not awscli installed
+
 5) terraform destroy --auto-approve
 
 ## Workflow
