@@ -27,10 +27,11 @@ I do not awscli installed
 
 # Project Setup
 1) cd terraform
-2) terraform init 
-3) terraform plan
-4) terraform apply--auto-approve
-5) terraform destroy --auto-approve
+2) docker compose up -d
+3) terraform init 
+4) terraform plan
+5) terraform apply--auto-approve
+6) terraform destroy --auto-approve
 
 ## Workflow
 1) Write (Develop Your Terraform Configuration Files)
