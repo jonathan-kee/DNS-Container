@@ -7,6 +7,10 @@
 
 ![Terraform Extension](./screenshots/TerraformExtension.png)
 
+[HCL Extension](./screenshots/HCLExtension.png)
+
+![HCL Extension](./screenshots/HCLExtension.png)
+
 # Resources to learn
 *** Terraform can actually spin up vms through Proxmox ***
 
@@ -36,13 +40,14 @@ Key verbs you’ll use frequently:
 ### (Skip) Why organizations use Terraform
 
 ### Core Terraform concepts
-Concept           Purpose                               Example/Notes
-Configuration     Declare resources and settings        Files with .tf using HCL (HashiCorp Configuration Language)
-Provider          Plugin for a target platform          provider "aws" { region = "us-east-1" }
-Resource          A managed infrastructure object       resource "aws_instance" "web" { ... }
-State             Maps config to real resources         Stored locally or remotely (S3, Terraform Cloud)
-Plan/Apply        Preview and enact changes             terraform plan → terraform apply
-Module            Reusable configuration unit           Local or registry-based modules for reuse
+|Concept           |Purpose                               |Example/Notes |
+| --- | --- | --- |
+|Configuration     |Declare resources and settings        |Files with .tf using HCL (HashiCorp Configuration Language) |
+|Provider          |Plugin for a target platform          |provider "aws" { region = "us-east-1" } |
+|Resource          |A managed infrastructure object       |resource "aws_instance" "web" { ... } |
+|State             |Maps config to real resources         |Stored locally or remotely (S3, Terraform Cloud) |
+|Plan/Apply        |Preview and enact changes             |terraform plan → terraform apply |
+|Module            |Reusable configuration unit           |Local or registry-based modules for reuse |
 
 Terraform state contains the authoritative mapping of resources. Protect and manage state carefully (use remote backends and locking for teams) to avoid resource drift and corruption.
 
@@ -161,6 +166,7 @@ resource "aws_vpc" "test"       { ... }
 
 ## Lets Look at Resource Referencing with Demo
 *** You can manage github repositories with terraform ***
+
 *** I skip explanation on referencing because there was no example code ***
 
 HCL demo: writing Terraform files in VS Code
@@ -170,26 +176,29 @@ This demo shows practical HCL examples and recommended workflow items (like usin
 1. Create a file named github.tf in your working directory. VS Code with a Terraform extension will provide syntax highlighting and snippets for provider and resource blocks.
 
 2. Add a provider block that references a token variable:
-
+```terraform
 provider "github" {
   token = var.github_token
 }
+```
 
 3. Define a repository resource. Each resource block is a combination of type and local name that forms the unique address used elsewhere in the configuration:
-
+```terraform
 resource "github_repository" "production-repo" {
   name        = "prod-repo"
   description = "Repo for our production app"
   private     = true
 }
+```
 
 4. Add another repository using a different local name so both resources have unique addresses:
-
+```terraform
 resource "github_repository" "testing-repo" {
   name        = "test-repo"
   description = "Repo for our testing app"
   private     = true
 }
+```
 
 Every resource instance in a Terraform configuration must have a unique address: the combination of its type and its local name (for example, github_repository.production-repo). Reusing the same local name for two instances of the same resource type will produce a configuration error.
 
@@ -201,13 +210,17 @@ Keep code readable and consistent with terraform fmt. It normalizes indentation 
 
 Examples:
 - Run the formatter across the working directory:
+```bash
 $ terraform fmt
 github.tf
 test.tf
+```
 
 - If only one file required formatting, the output might be:
+```bash
 $ terraform fmt
 github.tf
+```
 
 Splitting resources across files
 
@@ -216,15 +229,15 @@ Terraform treats all .tf files in a directory as a single configuration. Use mul
 Example file split:
 
 test.tf:
-
+```terraform
 resource "github_repository" "testing-repo" {
   name        = "test-repo"
   description = "Repo for our testing app"
   private     = true
 }
-
+```
 github.tf:
-
+```terraform
 provider "github" {
   token = var.github_token
 }
@@ -234,7 +247,7 @@ resource "github_repository" "production-repo" {
   description = "Repo for our production app"
   private     = true
 }
-
+```
 Running terraform fmt in the directory will scan and format all .tf files and report each file it modified.
 
 Quick best practices
@@ -251,6 +264,110 @@ Wrap-up
 - Maintain consistent style with terraform fmt, split files for clarity, and keep secrets out of source files.
 
 ## (Continue) Learn about Best Practices for HCL
+
+## Core Components and Benefits of Terraform
+
+### Summary Table
+|Component           |Role                               |Example |
+| --- | --- | --- |
+|Terraform Core | Execution engine; builds dependency graph and applies changes | CLI commands: terraform init, terraform plan, terraform apply|
+|Provider | Translates resources to API calls for a platform | provider "aws" { region = "us-east-1" }|
+|Resource | Declares infrastructure objects to manage | resource "aws_instance" "web" { ... }|
+|State | Persists mapping and metadata of managed resources | backend "s3" { ... }|
+|Module | Reusable configuration package | module "vpc" { source = ".../vpc" }|
+
+### Terraform Core
+Terraform Core is the CLI binary that reads and interprets your Terraform configuration files (.tf). When you run terraform init, terraform plan, or terraform apply, you are interacting with Terraform Core. Its responsibilities include:
+
+- Parsing configuration files and building a dependency graph.
+- Comparing your declared configuration against the current state.
+- Determining a plan of changes and orchestrating provider API calls to create, update, or destroy resources.
+
+Terraform Core is provider-agnostic: it defines the workflow and execution model while delegating resource-specific operations to providers.
+
+### Providers
+Providers are plugins that extend Terraform Core with the logic to manage resources on a particular platform (AWS, Azure, Google Cloud, GitHub, etc.). Providers implement the mappings between Terraform resource declarations and platform API calls.
+
+A minimal provider block:
+```terraform
+provider "aws" {
+  region = "us-east-1"
+}
+```
+
+Notes about providers:
+- Version pin providers to ensure reproducible behavior.
+- Providers may require credentials and specific configuration (environment variables, shared configs, or explicit blocks).
+- Provider plugins are installed during terraform init.
+
+### Resources
+Resources are the primary declarations that describe the infrastructure objects Terraform will manage — compute instances, networks, databases, DNS records, and more. Each resource block contains arguments (inputs) and exposes attributes (outputs) that can be referenced elsewhere.
+
+Example resource:
+```terraform
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "example-web"
+  }
+}
+```
+
+Key resource concepts:
+- Attributes such as IDs and computed values are stored in state and can be referenced using interpolation.
+- Lifecycle meta-arguments (create_before_destroy, prevent_destroy) control how Terraform updates resources.
+- Resource dependencies are inferred from references; explicit depends_on can enforce ordering when needed.
+
+### State
+Terraform state is the authoritative record of what Terraform manages in the real world. It maps resources in your configuration to real-world objects, stores metadata (IDs, attributes), and enables Terraform to compute incremental diffs.
+
+State enables:
+- Mapping real resources to configuration.
+- Accurate planning and targeted updates.
+- Sensitive metadata persistence (resource IDs, ARNs, endpoints).
+
+Remote state and locking are critical for team workflows. Example S3 backend with DynamoDB locking:
+```terraform
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state-bucket"
+    key            = "project-name/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-lock-table"
+  }
+}
+```
+
+Remote state backends enable team collaboration, state locking, and recovery. Use them for shared environments to avoid state conflicts and accidental overwrites.
+
+Terraform state can contain sensitive information (secrets, IDs, endpoints). Use encrypted storage, restrict access, and avoid committing state files to source control.
+
+### Modules
+Modules are reusable, composable packages of Terraform configuration — the primary method to encapsulate and share common infrastructure patterns. Think of modules as functions or libraries for infrastructure.
+
+Calling a module:
+```terraform
+module "vpc" {
+  source = "git::https://example.com/terraform-modules.git//vpc"
+  cidr   = "10.0.0.0/16"
+  region = "us-east-1"
+}
+```
+
+Module best practices:
+- Keep modules focused and opinionated.
+- Expose inputs (variables) and outputs (outputs) for composability.
+- Version and publish modules (Terraform Registry, Git tags) for stability.
+
+### Component Overview
+- Terraform Core: Orchestrates the execution model and dependency graph.
+- Providers: Implement API interactions for specific platforms.
+- Resources: Declare the desired infrastructure objects.
+- State: Records the current status and metadata of managed resources.
+- Modules: Package reusable configuration patterns.
+
 
 # Terraform Configuration - Fundamentals
 ## (Continue) Connecting to Cloud Platforms with Provider Blocks
