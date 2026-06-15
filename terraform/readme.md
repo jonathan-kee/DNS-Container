@@ -1,4 +1,5 @@
 # Terraform installation
+Link to documentation:
 https://developer.hashicorp.com/terraform/install#darwin
 
 For Mac installation:
@@ -13,13 +14,22 @@ https://floci.io/floci/getting-started/quick-start/
 1) cd terraform
 2) docker compose up -d
 3) terraform apply --auto-approve
+
 ^
 Missing terraform init step
 
 4) aws --endpoint-url=http://localhost:4566 ec2 describe-instances
+
 ^
 I do not awscli installed
 
+5) terraform destroy --auto-approve
+
+# Project Setup
+1) cd terraform
+2) terraform init 
+3) terraform plan
+4) terraform apply--auto-approve
 5) terraform destroy --auto-approve
 
 ## Workflow
