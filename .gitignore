@@ -4,3 +4,4 @@ linux/multiplehosts/.vagrant
 linux/selfhost-runner/.vagrant
 .idea
 .DS_Store
+terraform/.terraform
