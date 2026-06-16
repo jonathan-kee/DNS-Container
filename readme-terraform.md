@@ -252,11 +252,12 @@ Running terraform fmt in the directory will scan and format all .tf files and re
 
 Quick best practices
 
-Area	              Recommendation
-- Referencing	      Prefer using attributes from created resource or data blocks instead of hard-coded values
-- Secrets	Use       variables and secure secret stores — avoid committing tokens to VCS
-- Formatting	      Run terraform fmt regularly or enable automatic formatting in your editor
-- Organization	    Group related resources into separate .tf files or modules for maintainability
+|Area	              |Recommendation|
+| --- | --- |
+| Referencing	      |Prefer using attributes from created resource or data blocks instead of hard-coded values|
+| Secrets	Use       |variables and secure secret stores — avoid committing tokens to VCS|
+| Formatting	      |Run terraform fmt regularly or enable automatic formatting in your editor|
+| Organization	    |Group related resources into separate .tf files or modules for maintainability|
 
 Wrap-up
 - Resource referencing enables dynamic, maintainable Terraform configurations by passing values between blocks rather than hard-coding.
@@ -368,10 +369,128 @@ Module best practices:
 - State: Records the current status and metadata of managed resources.
 - Modules: Package reusable configuration patterns.
 
+## (Skip) Which Terraform Version Should You Use 
+
+## (Continue) Comparing Terraform to Other Tools
+
+## (Continue) Declarative vs Imperative Why Terraform Works the Way It Does
+
+# The Core Terraform Workflow
+
+## (Continue) Section Introduction Terraform Workflow
+
+```terraform
+# Initialize the working directory (downloads providers, sets up backend)
+terraform init
+
+# Create and show an execution plan (safe preview of changes)
+terraform plan
+
+# Apply the planned changes (prompts for approval by default)
+terraform apply
+
+# Tear down managed infrastructure
+terraform destroy
+```
+
+## (Continue) Intro to the Terraform Workflow
+
+## Terraform Init
+### Summary
+- Run terraform init at the start of a project and whenever providers, modules, or backend configuration change.
+- terraform init downloads providers and modules, configures the backend, creates/updates .terraform.lock.hcl, and populates the .terraform directory.
+- Commit .terraform.lock.hcl to version control to ensure consistent provider versions across environments.
+- Do not commit .terraform; add it to .gitignore and recreate it with terraform init if needed.
+
+### What terraform init does
+terraform init sets up the working environment by:
+
+- Downloading provider plugins referenced in your configuration (for example, AWS, Azure, GCP).
+- Fetching referenced modules from the Terraform Registry, Git, or other sources.
+- Configuring the backend where the Terraform state is stored (local or remote backends such as S3, Azure Storage, etc.).
+- Creating or updating the dependency lock file .terraform.lock.hcl to pin provider versions and checksums.
+
+Think of terraform init as the foundation step — Terraform ensures all dependencies are available locally before any planning or applying occurs. The command is incremental: if you update a single provider, Terraform downloads only the changed provider and leaves other cached providers intact.
+
+When to run terraform init:
+- At the start of a new Terraform project.
+- After adding, removing, or upgrading providers or modules.
+- After changing backend settings.
+- Any time you want to refresh locally cached dependencies.
+
+[Terraform Lock File](./screenshots/TerraformLockFile.png)
+
+![Terraform Lock File](./screenshots/TerraformLockFile.png)
+
+Commit .terraform.lock.hcl to version control. It pins provider versions and checksums so every team member and CI run uses the same provider binaries, preventing “works on my machine” issues.
+
+### The lock file:  .terraform.lock.hcl
+Each run of terraform init will create or update a .terraform.lock.hcl file in your working directory (the same folder as your *.tf files). This lock file:
+
+- Records provider versions and checksums selected during initialization.
+- Ensures consistent provider selection across machines and CI runs.
+- Is managed automatically by Terraform — do not edit it manually.
+
+Best practice: include .terraform.lock.hcl in your repository so provider selection changes are visible in code reviews.
+
+### (Continue) Example output from terraform init
+
+## (Continue) Terraform Plan
+*** The plan output is for audit purposes ***
+
+Summary and best practices
+- Treat terraform plan as a dry-run: it refreshes state, calculates the delta, and displays actions with clear symbols.
+- Always review the plan before applying, especially in production environments.
+- Use terraform plan -out=FILE to produce a saved, deterministic plan that can be reviewed and applied later.
+- Be mindful of sensitive values: Terraform hides them in plan output.
+- Pay attention to -/+ replacement annotations so you understand when resources will be destroyed and recreated.
+
+## (Continue) Understanding the Resource Graph
+### Summary
+- Terraform automatically builds and walks a dependency graph from references in your configuration.
+- File ordering does not control execution order — dependency references do.
+- Use depends_on only when Terraform cannot infer the required ordering from references.
+- Terraform executes resources in parallel where possible; default concurrency is 10, adjustable via -parallelism.
+- A clear understanding of the resource graph explains how terraform plan generates an execution plan and why operations run in a particular order.
+
+|Dependency type| How Terraform discovers it|When to use|Example
+| --- | --- | --- | --- |
+|Implicit|Inferred from attribute references and data sources|Default; use whenever possible|vpc_id = aws_vpc.main.id|
+|Explicit|Declared manually with depends_on|When there is an ordering requirement Terraform can’t infer|depends_on = [aws_db_instance.db]|
+
+## (Continue) Terraform Apply
+
+## (Continue) Terraform Destroy
+### Summary
+- terraform destroy removes all resources managed in the current workspace after showing a destruction plan and requiring confirmation.
+- For selective removals, prefer deleting resource blocks and running terraform apply so your configuration remains the source of truth.
+- Destroyed resources are removed from the Terraform state file.
+- Targeted destruction (-target) can remove a specific resource quickly but may cause drift and should be used sparingly.
+- Always double-check destruction plans and consider backups before proceeding in production.
+
+## (Continue) Terraform Validate
+
+# Terraform CLI
+
+## (Continue) Section Introduction Terraform CLI
+
+## (Continue) Introduction to the Terraform CLI
+
+## (Important) Demo Terraform CLI 
+
+## Making the Most of the Terraform CLI
+
+## (Important) Demo Making the Most of the Terraform CLI
+
+# Terraform File Structure and Organization
+
+## (Important) Terraform File Structure and Organization
 
 # Terraform Configuration - Fundamentals
-## (Continue) Connecting to Cloud Platforms with Provider Blocks
 
+## (Important) HCL Basics Understanding Block Structure
+
+## (Continue) Connecting to Cloud Platforms with Provider Blocks
 Question: Where does Kubernetes fit in cloud?
 
 ## (Continue) Creating Infrastructure with Resource Blocks
@@ -444,6 +563,27 @@ resource "github_branch_default" "default" {
   repository = github_repository.prod_repo.name
   branch     = github_branch.default.branch
 }
+
+## (Important) Defining Variable Types
+### Summary
+- The three primitive types (string, number, bool) form the foundation of Terraform variables.
+- Lists, maps, and sets are the primary collection types; choose based on order, naming, and uniqueness requirements.
+- Always reference variables as var.<name> and validate indexes and types before runtime.
+
+## Assigning Variable Values and Understanding Precedence
+### Summary and best practices
+- Defaults: Use for safe, non-sensitive baselines and documentation.
+- Environment variables: Use for secrets and CI/CD-injected values.
+- .tfvars files: Use to group environment-specific settings; avoid committing secrets unless stripped.
+- Command-line flags: Use for ad-hoc overrides and testing; remember these are highest precedence.
+- Always follow the precedence rules above to avoid unexpected overrides during runs.
+
+## Exposing Configuration Data with Output Values
+### Summary
+- output blocks provide a structured way to expose information from Terraform configurations.
+- Outputs appear after terraform apply, are stored in state, and can be consumed by scripts, CI pipelines, and other modules.
+- Use description and sensitive to make outputs easier and safer to use.
+- Keep outputs focused on externally useful values and secure your state backend.
 
 # Understading and Managing Terraform State
 ## (Continue) Remote State Configuration
