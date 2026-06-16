@@ -1,5 +1,12 @@
 # Resources to learn
+Kodekloud notes:
 - https://notes.kodekloud.com/docs/HashiCorp-Certified-Terraform-Associate-004/Course-Introduction/Course-Introduction/page
+
+List of projects using localstack:
+- https://docs.localstack.cloud/aws/sample-apps/
+
+Sample React with Spring:
+- https://github.com/localstack-samples/sample-terraform-fullstack-serverless-shipment-app
 
 # Terraform Extensions to Install
 
