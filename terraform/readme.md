@@ -29,9 +29,14 @@ I do not awscli installed
 1) cd terraform
 2) docker compose up -d
 3) terraform init 
-4) terraform plan
-5) terraform apply--auto-approve
-6) terraform destroy --auto-approve
+4) Run the below commands in terminal:
+export AWS_ENDPOINT_URL=http://localhost:4566
+export AWS_DEFAULT_REGION=us-east-1
+export AWS_ACCESS_KEY_ID=test
+export AWS_SECRET_ACCESS_KEY=test
+5) terraform plan
+6) terraform apply --auto-approve
+7) terraform destroy --auto-approve
 
 ## Workflow
 1) Write (Develop Your Terraform Configuration Files)
@@ -51,3 +56,11 @@ I do not awscli installed
 5) Destroy (Tear Down All Managed Resources)
 
 - terraform destroy #(Destroy managed resources)
+
+## Workflow 2.0
+1. terraform init — set up the directory and backend.
+2. terraform validate and terraform fmt — ensure configuration quality.
+3. terraform plan -out=plan.tfplan — generate a reviewable plan.
+4. Review the plan carefully, then terraform apply plan.tfplan — apply changes.
+5. Use terraform output to retrieve values and terraform state to inspect state as needed.
+6. When decommissioning resources, use terraform destroy with caution.
