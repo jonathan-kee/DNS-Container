@@ -7,6 +7,20 @@ List of projects using localstack:
 
 Sample React with Spring:
 - https://github.com/localstack-samples/sample-terraform-fullstack-serverless-shipment-app
+^
+I am not familiar with:
+- localstack CLI.
+- AWS CLI with the awslocal wrapper.
+- Terraform with the tflocal wrapper.
+- make (optional, but recommended for running the sample application)
+
+The application uses Spring Boot profiles (dev for LocalStack, prod for AWS) with different endpoint configurations (application-prod.yml, application-dev.yml), ensuring the same codebase works across both environments. Testcontainers integration provides additional validation that the LocalStack environment accurately emulates AWS behavior.
+^
+Follow below for the full picture of Java / Spring Boot development:
+- https://github.com/Jojoooo1/project-assignment
+
+For React:
+- https://playfulprogramming.com/collections/framework-field-guide/
 
 # Terraform Extensions to Install
 
