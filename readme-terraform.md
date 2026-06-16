@@ -453,7 +453,7 @@ Summary and best practices
 - Terraform executes resources in parallel where possible; default concurrency is 10, adjustable via -parallelism.
 - A clear understanding of the resource graph explains how terraform plan generates an execution plan and why operations run in a particular order.
 
-|Dependency type| How Terraform discovers it|When to use|Example
+|Dependency type| How Terraform discovers it|When to use|Example|
 | --- | --- | --- | --- |
 |Implicit|Inferred from attribute references and data sources|Default; use whenever possible|vpc_id = aws_vpc.main.id|
 |Explicit|Declared manually with depends_on|When there is an ordering requirement Terraform can’t infer|depends_on = [aws_db_instance.db]|
@@ -495,6 +495,7 @@ Question: Where does Kubernetes fit in cloud?
 
 ## (Continue) Creating Infrastructure with Resource Blocks
 *** You need to consult Terraform registry for available resource types and argument details ***
+
 *** I wonder if there's a way for me to read the Terraform registry with VScode ***
 
 ### Resource: aws_instance
@@ -505,6 +506,7 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/inst
 
 Example: two EC2 instances:
 
+```terraform
 resource "aws_instance" "web" {
   ami           = "ami-012345"
   instance_type = "t2.micro"
@@ -521,9 +523,11 @@ resource "aws_instance" "db" {
   ami           = "ami-0c55b159"
   instance_type = "m5.4xlarge"
 }
+```
 
 Example configuration for a production stack:
 
+```terraform
 resource "aws_lb" "public_load_balancer" {
   name               = "prd-web-lb"
   load_balancer_type = "network"
@@ -543,12 +547,14 @@ resource "aws_db_instance" "prd_db" {
   engine         = "mysql"
   instance_class = "db.t3.large"
 }
+```
 
 - The aws_lb name value (prd-web-lb) is provider-visible and will appear in the AWS Console.
 - Each block maps to a real-world component; together they create a functioning environment.
 
 Example: create a GitHub repository, a branch, and set the default branch:
 
+```terraform
 resource "github_repository" "prod_repo" {
   name       = "prod-app-xyz-repo"
   visibility = "private"
@@ -563,6 +569,7 @@ resource "github_branch_default" "default" {
   repository = github_repository.prod_repo.name
   branch     = github_branch.default.branch
 }
+```
 
 ## (Important) Defining Variable Types
 ### Summary
