@@ -723,8 +723,94 @@ When referencing remote modules, pin to a specific tag, branch, or commit using 
 ## Calling Modules with the Module Block
 
 ## Understanding Variable Scope in Modules
+Overview of the setup
+- The root (parent) module is the top-level configuration that invokes other modules.
+- A child module is a reusable unit of configuration — for example, a networking module or a compute module.
+- Typical module files:
+  - main.tf — resources and module invocations
+  - variables.tf — input variable declarations
+  - outputs.tf — exported values for callers
 
-## Demo Using Modules from the Terraform Registry
+What “module scope” means
+- Each module has its own variable namespace (scope).
+- Variables declared in one module are not visible to other modules unless explicitly passed or exported as outputs.
+- This isolation makes modules more reusable and less prone to accidental coupling.
+
+Variables are defined per-module
+
+Below is an example where the root module defines its own variables and the child module defines different variables. These definitions are independent; naming collisions do not create implicit connections.
+
+```terraform
+# root module variables (variables.tf)
+variable "environment" {
+  type    = string
+  default = "prod"
+}
+
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
+variable "project" {
+  type    = string
+  default = "myapp"
+}
+
+# child module variables (variables.tf)
+variable "env" {
+  type = string
+}
+
+variable "cidr_block" {
+  type    = string
+  default = "10.0.0.0/16"
+}
+
+variable "az_count" {
+  type    = number
+  default = 2
+}
+```
+
+Because each module has an isolated scope, the child module does not automatically see environment or region from the root, and the root does not automatically see cidr_block or az_count from the child. This behavior is intentional: modules act like black-box functions that only observe inputs you provide.
+
+Note: Modules behave like functions — they only see the inputs you explicitly provide to them.
+
+Modules have isolated scopes. You must explicitly pass values between modules; variables are not shared implicitly.
+
+Passing values into a child module (module block)
+
+To provide values to a child module, set arguments in the module block of the calling (root) module. Each argument corresponds to a declared input variable in the child module.
+
+Example — passing a root variable into a child module:
+```terraform
+# root module - main.tf
+module "child" {
+  source = "./modules/child"
+
+  # pass root module variable value into the child module's `env` variable
+  env = var.environment
+}
+```
+
+What you can pass into a module
+- Root variables: var.<NAME> (e.g., var.environment)
+- Resource attributes: aws_vpc.example.id
+- Another module’s outputs: module.network.subnet_ids[0]
+- Hard-coded literals: "us-west-2", 42, true
+
+Quick reference table
+| Value type | Example |
+| -- | -- |
+| Root variable | var.environment |
+| Resource attribute | aws_vpc.example.id |
+| Module output | module.network.subnet_ids[0] |
+| Literal | "us-west-2" |
+
+*** I have not yet continue the rest ***
+
+## (Don't understand) Demo Using Modules from the Terraform Registry
 
 ## Demo Writing and Using Your Own Modules
 ### What you’ll build
