@@ -617,6 +617,93 @@ resource "github_branch_default" "default" {
 ## (Continue) Remote State Configuration
 *** This looks like the real meat of Terraform ***
 
+# Terraform Modules
+## Introduction to Modules
+### (Skip) What is a module?
+
+### (Skip) Benefits of using modules
+
+### What does a module look like?
+A module is simply a directory containing standard Terraform files. The most common layout is:
+- main.tf — resources and core configuration
+- variables.tf — input variables the module accepts
+- outputs.tf — outputs the module exposes to callers
+- (optional) versions.tf — provider and Terraform version constraints
+- (optional) examples/ — example usage to help consumers
+
+Example filesystem layout:
+modules/
+  tls/
+    main.tf
+    variables.tf
+    outputs.tf
+  load_balancer/
+    main.tf
+    variables.tf
+    outputs.tf
+
+Common module file types and purpose
+
+| File | Purpose | Example |
+| main.tf | Define resources and composition | resource "aws_acm_certificate" "example" { ... } |
+| variables.tf | Declare input variables and defaults | hcl variable "domain_name" { type = string } |
+| outputs.tf | Expose values to calling module | hcl output "certificate_arn" { value = aws_acm_certificate.example.arn } |
+| versions.tf | Lock Terraform and provider versions | hcl terraform { required_version = ">= 1.0.0" } |
+| examples/ | Example root module demonstrating usage | examples/complete/main.tf |
+
+Example: calling a local child module from a root module
+
+```terraform
+module "tls" {
+  source = "./modules/tls"
+
+  domain_name = "example.com"
+  cert_tags   = {
+    environment = "prod"
+  }
+}
+```
+
+Minimal variables.tf inside the module:
+
+```terraform
+variable "domain_name" {
+  type        = string
+  description = "Domain name for the TLS certificate"
+}
+
+variable "cert_tags" {
+  type        = map(string)
+  description = "Tags to apply to the certificate"
+  default     = {}
+}
+```
+
+Minimal outputs.tf inside the module:
+
+```terraform
+output "certificate_arn" {
+  description = "The ARN of the TLS certificate"
+  value       = aws_acm_certificate.example.arn
+}
+```
+
+### ​Module sources and versioning
+Modules can be sourced from several places: local paths, Git repositories, Terraform Registry, or other VCS. Always prefer versioned sources for reproducible builds when pulling remote modules.
+
+Examples of module sources
+| Source type | Example |
+| Local path  | source = "./modules/network" |
+| Git (with ref) | source = "git::https://github.com/example-org/terraform-modules.git//modules/postgres?ref=v1.2.0" |
+| Registry | source = "app.terraform.io/example-org/mysql/aws" |
+| Archive URL | source = "https://example.com/terraform-modules.tar.gz" |
+
+When referencing remote modules, pin to a specific tag, branch, or commit using ?ref= to avoid accidental changes.
+
+### (Skip) Declaring and using module blocks
+
+### (Skip) Summary
+
 # Extra
 # single-line comment
 block_type "block_label" "block_label" {
