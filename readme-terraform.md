@@ -706,7 +706,7 @@ When referencing remote modules, pin to a specific tag, branch, or commit using 
 
 ### (Skip) Summary
 
-## Understanding Parent and Child Modules
+## (Continue) Understanding Parent and Child Modules
 
 ### (Copy pasted) Parent (root / calling) module — module block example
 
@@ -718,7 +718,7 @@ When referencing remote modules, pin to a specific tag, branch, or commit using 
 
 ### (Skip) Benefits of a modular approach
 
-## (Continue) Module Versioning and Version Constraints
+## Module Versioning and Version Constraints
 Below is a simple example showing how a root configuration can consume a module from the Terraform Registry.
 ```terraform
 variable "cidr_block" {
