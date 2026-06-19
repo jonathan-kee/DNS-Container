@@ -721,6 +721,52 @@ When referencing remote modules, pin to a specific tag, branch, or commit using 
 ## Module Versioning and Version Constraints
 
 ## Calling Modules with the Module Block
+### (Skip) What is a Terraform module?
+### (Skip) How the module block works
+### Example: Using a VPC module from the Terraform Registry
+Below is a typical example using a popular AWS VPC module from the Terraform Registry. Instead of creating many networking resources directly, you call a tested module and pass the values you need.
+
+```Terraform
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "4.0.1"
+
+  name           = var.vpc_name
+  cidr           = var.vpc_cidr_block
+
+  azs            = ["us-west-2a", "us-west-2b"]
+  private_subnets = ["10.0.1.0/24"]
+  public_subnets  = ["10.0.101.0/24"]
+
+  enable_nat_gateway = true
+  single_nat_gateway = true
+}
+```
+How to read this example:
+- source — Where the module code lives (a Registry module in this case).
+- version — Pins a specific module release to ensure reproducible runs.
+- Inputs such as name, cidr, and the subnet lists correspond to variables declared inside the module and let you customize its behavior.
+
+### Common module block attributes
+| Attribute | Purpose | Example |
+| -- | -- | -- |
+| source | Location of the module code. Can be a Registry address, Git URL, local path, or other supported source. | terraform-aws-modules/vpc/aws |
+| version | (Registry modules) Pin the module version to ensure reproducible deployments. | "4.0.1" |
+| inputs (arguments) | Values you pass to module variables to configure the module. | name = var.vpc_name |
+| outputs | Values the module exports so other resources can consume them. | module.vpc.public_subnets |
+
+### Reuse patterns
+- Call the same module multiple times with different arguments to create multiple instances (e.g., separate VPCs for different environments).
+- Use for_each or count with module blocks to dynamically create multiple module instances when supported (Terraform 0.13+ supports loop over modules).
+- Version pin modules and review changes before upgrading to avoid surprises in production.
+
+### Best practices
+- Keep module interfaces small and stable: expose only the variables and outputs needed.
+- Pin module versions and test upgrades in a staging environment.
+- Publish commonly used modules to a private module registry or the Terraform Registry for easy discovery and reuse.
+- Document module inputs, outputs, and behavior so other teams can consume them correctly.
+
+Pinning a module version ensures reproducible deployments. Test new module versions deliberately — do not rely on automatically pulling the latest release.
 
 ## Understanding Variable Scope in Modules
 Overview of the setup
