@@ -617,6 +617,147 @@ resource "github_branch_default" "default" {
 ## (Continue) Remote State Configuration
 *** This looks like the real meat of Terraform ***
 
+# Marking Code Reusable
+## Using Built In Functions to Standardize Code
+
+### Compact cheat sheet
+| Function | Returns | Typical use |
+| -- | -- | -- |
+| max(...), min(...) | number | Compute capacity or constraints
+| floor(x), ceil(x) | number | Rounding for counts or sizes
+| join(sep, list) | string | Build names or tags
+| upper(s), lower(s) | string | Enforce naming conventions
+| replace(s, old, new) | string | Templating strings
+| base64encode(s) | string | User-data or API payloads
+| cidrsubnet(base, newbits, netnum) | string (CIDR) | Split VPC CIDR into subnets
+| toset(x), tolist(x), tomap(x) | collection | Prepare for for_each, index access, or lookups
+
+### Numeric functions
+Numeric helpers let Terraform compute sizing decisions and defaults instead of hard-coding values.
+
+Common functions:
+- max(...) — largest numeric value
+- min(...) — smallest numeric value
+- floor(...) — round down
+- ceil(...) — round up
+
+Example:
+```terraform
+variable "number" {
+  type    = number
+  default = 15
+}
+
+# Evaluate the maximum among values including a variable
+max(10, 4, var.number) # -> 15
+```
+
+Use numeric functions when computing instance counts, bucket sizes, or autoscaling thresholds.
+
+### String functions
+String manipulation enforces naming conventions, builds unique resource names, and prepares user-data payloads.
+
+Common functions:
+- join(separator, list) — concatenate a list of strings
+- upper(s) / lower(s) — case conversions
+- replace(s, old, new) — substring substitution
+- base64encode(s) — encode for user-data or API payloads
+
+Examples:
+```terraform
+# join: concatenates elements with a dash
+join("-", ["prod", "web", "us-west-1"])   # -> "prod-web-us-west-1"
+
+# case conversion
+upper("example")                          # -> "EXAMPLE"
+
+# replace: substitute substring
+replace("123-abc", "abc", "xyz")          # -> "123-xyz"
+
+# base64encode: encode for user data
+base64encode("my-secret-data")            # -> "bXktc2VjcmV0LWRhdGE="
+```
+
+Tip: Use format() to build predictable names, e.g. format("%s-%s-%s", var.env, var.role, var.region).
+
+### Network functions: CIDR math without the pain
+Network functions like cidrsubnet and cidrhost let you calculate subnets and host addresses programmatically.
+
+Example: create a VPC and generate multiple subnets using cidrsubnet
+
+```terraform
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
+
+# Public subnet: first /19 from the /16
+resource "aws_subnet" "public" {
+  vpc_id            = aws_vpc.main.id
+  availability_zone = "us-east-1a"
+  cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 3, 0)
+}
+
+# Private subnet: second /19 from the /16
+resource "aws_subnet" "private" {
+  vpc_id            = aws_vpc.main.id
+  availability_zone = "us-east-1b"
+  cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 3, 1)
+}
+```
+
+How cidrsubnet(base_cidr, newbits, netnum) works:
+- newbits extends the prefix length by that many bits, so the original block splits into 2^newbits subnets.
+- netnum selects which subnet index to use (0-based).
+- In the example, newbits = 3 turns /16 into /19 subnets.
+
+When using cidrsubnet with dynamic indexes, ensure your netnum never exceeds 2^newbits - 1. Off-by-one or unstable indexing can produce overlapping CIDR ranges. Convert sets back to lists for stable indexing when required.
+
+### Type conversion and collection helpers
+Convert collections to the proper type for for_each, maps, or index-based logic.
+
+Key functions:
+- toset(x) — convert to set (unique values; good for for_each)
+- tolist(x) — convert to list (stable index order required)
+- tomap(x) — convert to map for key lookups
+- tostring(x) — make values suitable for tags or logs
+
+Example: deduplicate AZs for for_each, then compute a deterministic subnet index
+```terraform
+variable "availability_zones" {
+  type    = list(string)
+  default = ["us-east-1a", "us-east-1a", "us-east-1b"]
+}
+
+locals {
+  unique_zones = toset(var.availability_zones)
+}
+
+resource "aws_subnet" "example" {
+  for_each = local.unique_zones
+
+  vpc_id            = aws_vpc.main.id
+  availability_zone = each.value
+  cidr_block        = cidrsubnet(
+                       aws_vpc.main.cidr_block,
+                       2,
+                       index(tolist(local.unique_zones), each.value)
+                     )
+}
+```
+
+Notes:
+- toset removes duplicates so for_each iterates only unique values.
+- If you need deterministic indices, convert the set back to a list with tolist(...) and use index(...).
+
+## Enhancing Code with Dynamic Values
+
+## Using Locals to Avoid Code Duplication
+
+## Using the count Meta Argument
+
+## Using the for each Meta Argument
+
+
 # Terraform Modules
 ## Introduction to Modules
 ### (Skip) What is a module?
