@@ -8,6 +8,9 @@ https://github.com/floci-io/floci/blob/main/compatibility-tests/compat-terraform
 Andrian Cantril's AWS solutions architect cert notes:
 https://github.com/jonathan-kee/aws-certified-solutions-architect-cantrill-notes/blob/main/MAIN-notes-SAA-C03.txt
 
+AWS IAM for Terraform:
+https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/examples/iam-account
+
 # High level overview of AWS CLI
 ## DEMO Creating Access Keys and Setting Up AWS CLI v2 Tools
 
@@ -147,3 +150,36 @@ Accessing S3 is generally done via APIs. Static Website Hosting is a feature of 
  6. You can now visit your website
  Extra: If you Registered a domain in R53, you can customize your URL. R53 > Hosted Zones > access your domain > Create Record > select Simple Routing > Record Name Eg. "top10".animals4life.io > choose Endpoint "Alias to S3 website endpoint" > Region: us-east-1 > S3 endpoint, select your bucket > click "Define simple record" > Create Records. Now Cantrill can go to top10.animals4life.io. Remember: Domain name and bucket name must match exactly to do this
  7. Clean Up: Empty bucket, delete bucket
+
+# High level overview of VPC
+### AWS Default Virtual Private Cloud (VPC)
+A Virtual Network inside AWS. VPCs are regional services; regionally resilient. They operate from multiple AZ's in a region. 
+- A VPC is 1 account and 1 region, cann't be spread across multiple accounts/regions
+- Private and isolated unless configured otherwise
+- Default VPC (max 1 per region, pre-configured) and Custom VPCs (can have many)
+- Can be used to connect AWS private networks to on-premise network. Or connecting during multi-cloud deployments
+
+EXAM: VPCs are REGIONALLY resilient
+
+#### Default VPC
+There can only be one default VPC per region, and they can be deleted and recreated from the console UI. Unless configured otherwise, VPC is entirely private/isolated. 
+- VPC CIDR: Start and end range of IP addresses VPC can use. If anything needs (and is allowed to) communicate with VPC, it needs to communicate to the VPC CIDR
+- Default VPC only gets 1 CIDR IP range. Can't change it.
+- Default VPC provides Internet Gateway (IGW), Security Group, and NACL
+- VPC can be subdivided into subnetworks. Each subnet in VPC is located in one AZ. Default VPC has one subnet in each AZ by default
+-- Each subnet uses part of the VPC CIDR range
+-- Default VPC CIDR: always 172.31.0.0/16
+-- Assigns public IPv4 addresses
+--- /20 subnet in each AZ in the region. The higher the /#, the smaller the network. /17 is half the size of /16
+
+QUIZ: How many subnets are in a default VPC? Default VPCs always have the same IP range and same '1 subnet per AZ' architecture. # Subnets = # AZ's in region
+
+EXAM: Default VPC CIDR IP? 172.31.0.0/16
+
+##### Default VPC - Create / Delete
+
+To Locate: AWS Dashboard > Search "VPC" > Your VPCs
+
+To Delete: check Default VPC > actions dropdown "Delete" > follow prompt
+
+To Create Default VPC: If you've deleted Default VPC. In Your VPCs > Actions dropdown > Create Default VPC
