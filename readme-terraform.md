@@ -7,14 +7,15 @@ List of projects using localstack:
 
 Sample React with Spring:
 - https://github.com/localstack-samples/sample-terraform-fullstack-serverless-shipment-app
-^
-I am not familiar with:
-- localstack CLI.
-- AWS CLI with the awslocal wrapper.
-- Terraform with the tflocal wrapper.
-- make (optional, but recommended for running the sample application)
+
+For the above project, I am not familiar with:
+  - localstack CLI.
+  - AWS CLI with the awslocal wrapper.
+  - Terraform with the tflocal wrapper.
+  - make (optional, but recommended for running the sample application)
 
 The application uses Spring Boot profiles (dev for LocalStack, prod for AWS) with different endpoint configurations (application-prod.yml, application-dev.yml), ensuring the same codebase works across both environments. Testcontainers integration provides additional validation that the LocalStack environment accurately emulates AWS behavior.
+
 ^
 Follow below for the full picture of Java / Spring Boot development:
 - https://github.com/Jojoooo1/project-assignment
@@ -111,32 +112,38 @@ Comments are supported and useful for documenting intent:
 - Multi-line (block) comments: /* ... */
 
 Example annotated HCL:
+```terraform
 // single-line comment
 block_type "block_label" "block_label" {
   first_argument  = expression_or_value
   second_argument = expression_or_value
   third           = expression_or_value
 }
+```
 
+```terraform
 // Top-level assignments must appear inside appropriate blocks (for example, locals).
 locals {
   attribute_abc = "value_1"
   attribute_2   = "value_2"
 }
+```
 
 Files use the .tf extension (for example, main.tf). Terraform automatically loads .tf files in a directory as a single configuration.
 
 ### Common HCL block types (at-a-glance)
-Block Type      Purpose                                                 Example
-resource        Declares infrastructure to create and manage            resource "aws_instance" "web" { ... }
-data            Reads information from existing infrastructure          data "aws_ami" "ubuntu" { ... }
-variable        Declares input values for a module                      variable "aws_region" { type = string }
-output          Exposes values from a module or root configuration      output "vpc_id" { value = aws_vpc.vpc.id }
-locals          Defines local computed values                           locals { common_tags = { Environment = "dev" } }
+| Block Type | Purpose | Example |
+| -- | -- | -- |
+| resource | Declares infrastructure to create and manage           | resource "aws_instance" "web" { ... } |
+| data     | Reads information from existing infrastructure         | data "aws_ami" "ubuntu" { ... } |
+| variable | Declares input values for a module                     | variable "aws_region" { type = string } |
+| output   | Exposes values from a module or root configuration     | output "vpc_id" { value = aws_vpc.vpc.id } |
+| locals   | Defines local computed values                          | locals { common_tags = { Environment = "dev" } } |
 
 ### A real example: defining a VPC
 Below is a compact, realistic Terraform configuration showing data sources and a resource block that defines an AWS VPC:
 
+```terraform
 // Retrieve the list of availability zones in the current AWS region
 data "aws_availability_zones" "available" {}
 
@@ -153,6 +160,8 @@ resource "aws_vpc" "vpc" {
     Terraform   = "true"
   }
 }
+```
+Question: How does var.vpc_cidr & var.vpc_name work?
 
 Key points:
 - data blocks read existing information (e.g., AZs or AMIs).
@@ -176,8 +185,10 @@ Reference a resource elsewhere using the canonical address resource_type.resourc
 
 Each resource name (the second label) must be unique per resource type within a module. For multiple VPCs use distinct names, for example:
 
+```terraform
 resource "aws_vpc" "production" { ... }
 resource "aws_vpc" "test"       { ... }
+```
 
 ### (Copy Paste) HCL style recommendations
 
