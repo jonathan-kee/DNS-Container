@@ -122,6 +122,36 @@ Kodekloud link:
 Kodekloud link:
 - https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
 
+### 1. Workflows
+A workflow is a configurable automated process defined by a YAML file. It listens for one or more events in your repository and runs one or more jobs.
+Key elements in the example above:
+name: My Awesome App
+A custom label visible in the Actions tab.
+on: push
+Defines the event(s) that trigger the workflow. You can specify multiple events and filters.
+You can also trigger workflows via:
+pull_request
+schedule (cron jobs)
+workflow_dispatch (manual run)
+For more triggers, see Events that trigger workflows.
+
+### 2. Jobs
+A job is a collection of steps executed on the same runner. By default, jobs run in parallel, but you can coordinate them using dependencies.
+
+jobs:
+  unit-testing:
+    name: Unit Testing
+    runs-on: ubuntu-latest
+    steps:
+      # Individual steps go here...
+
+- Job identifier (unit-testing): used to set dependencies.
+- runs-on: selects the runner environment (ubuntu-latest, windows-latest, etc.).
+
+If you need to share data between jobs, use artifacts or caches.
+
+### 3. Steps
+
 ## Understanding DevOps Pipeline
 *** This section goes into detail to understand CI / CD ***
 
@@ -156,36 +186,6 @@ Follow below docker installation guide for Rocky:
 https://docs.docker.com/engine/install/centos/#install-using-the-repository
 
 Question: For self hosted, how to I prevent it from requesting github.com?
-
-### 1. Workflows
-A workflow is a configurable automated process defined by a YAML file. It listens for one or more events in your repository and runs one or more jobs.
-Key elements in the example above:
-name: My Awesome App
-A custom label visible in the Actions tab.
-on: push
-Defines the event(s) that trigger the workflow. You can specify multiple events and filters.
-You can also trigger workflows via:
-pull_request
-schedule (cron jobs)
-workflow_dispatch (manual run)
-For more triggers, see Events that trigger workflows.
-
-### 2. Jobs
-A job is a collection of steps executed on the same runner. By default, jobs run in parallel, but you can coordinate them using dependencies.
-
-jobs:
-  unit-testing:
-    name: Unit Testing
-    runs-on: ubuntu-latest
-    steps:
-      # Individual steps go here...
-
-- Job identifier (unit-testing): used to set dependencies.
-- runs-on: selects the runner environment (ubuntu-latest, windows-latest, etc.).
-
-If you need to share data between jobs, use artifacts or caches.
-
-### 3. Steps
 
 ## Types of Runners
 https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Self-Hosted-Runner/Types-of-Runners/page
