@@ -1,15 +1,15 @@
 # Resources to learn
 Github's Project Management tool like Trello, Jira:
-https://github.com/jonathan-kee/examTopicScraper/projects?query=is%3Aopen
+- https://github.com/jonathan-kee/examTopicScraper/projects?query=is%3Aopen
 
 Very useful feature for Github:
-https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue
+- https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue
 
 Scrum with GitHub Projects (Very good introduction to Github Projects):
-https://www.youtube.com/watch?v=06AWiNvjlQU&list=PLGxFXI4dC2siB2ENZ6OhagfwSId5FcWmY
+- https://www.youtube.com/watch?v=06AWiNvjlQU&list=PLGxFXI4dC2siB2ENZ6OhagfwSId5FcWmY
 
 Github Workflow for Issues and Pull Requests
-https://www.youtube.com/watch?v=d3N2yeAaLkc
+- https://www.youtube.com/watch?v=d3N2yeAaLkc
 ^
 1) Create Issues 
 2) Issue can become a branch or link a pull request to the Issue
@@ -20,13 +20,13 @@ https://www.youtube.com/watch?v=d3N2yeAaLkc
 TLDR: Create Issue -> New Branch from Issue -> Create Pull Request (Compare branch to main) -> Merge Pull Request -> Close Issue
 
 GitHub Foundations Certification Course (Most detailed explanation on Issues & Pull Request)
-https://www.youtube.com/watch?v=Jdc0i7RcBv8
+- https://www.youtube.com/watch?v=Jdc0i7RcBv8
 
 Learn about Github Issue before moving into Github projects:
-https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/quickstart
+- https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/quickstart
 
 Github projects training course:
-https://learn.microsoft.com/en-us/training/modules/manage-work-github-projects/
+- https://learn.microsoft.com/en-us/training/modules/manage-work-github-projects/
 
 Question: So how does Github Issues, Github Projects fit into CI / CD?
 
@@ -34,7 +34,7 @@ Question: So how does Github Issues, Github Projects fit into CI / CD?
 
 # How Github platform relates to CI / CD
 Link to Kodekloud notes about CI / CD:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Basics-of-CI-CD/page
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Basics-of-CI-CD/page
 
 A typical feature workflow looks like this:
 1) Developer creates a feature branch from main. (You should create an issue first, then a branch from the issue)
@@ -53,7 +53,7 @@ Core Steps in a CI Pipeline
 | Build Artifact | Package application binaries or containers | Docker, Gradle
 | Vulnerability Scan | Detect known security issues | Trivy, Snyk
 
-*** (My notes) It looks like Core Steps in CI are runned before Merging a pull request like ***
+*** (My notes) It looks like Core Steps in CI are runned before Merging a pull request ***
 
 Workflow:
 1) A developer pushes to feature branch A and opens a PR.
@@ -63,3 +63,20 @@ Workflow:
 5) Parallel feature branch B undergoes the same CI checks; after merging, CI validates that A and B coexist without regressions.
 
 Automating tests and scans early in your workflow reduces costly fixes later and accelerates your release cadence.
+
+## Understanding DevOps Pipeline
+*** This section goes into detail to understand CI / CD ***
+
+Kodekloud link:
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Continuous-Integration-with-GitHub-Actions/Understanding-DevOps-Pipeline/page#continuous-delivery-cdel
+
+(My notes) In my 2tier app, Because I don't own the source code for mariadb-server, apache2, etc I was able to skip stages like: 
+- Install Dependencies
+- Dependency Vulnerability
+- Unit Tests & Coverage
+- Static Code Analysis
+- Image Vulnerability Scan
+- Push to Registry
+
+I only ever did
+- Containerization
