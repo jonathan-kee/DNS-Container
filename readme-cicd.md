@@ -37,33 +37,40 @@ git rebase --continue
 
 # GIT for Beginners
 Kodekloud link:
-https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
+- https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Course-Introduction/GIT-Course-Introduction/page
 
 ## Local and Remote Repositories
-https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Introduction/Local-and-Remote-Repositories/page
+Kodekloud link:
+- https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Introduction/Local-and-Remote-Repositories/page
 
 A typical local repository in Git is composed of three primary areas:
-Component	                Description
-
-Working Directory	        Contains the active files where you make changes. Git monitors these files but does not track their state.
-Staging Area	            Temporary storage where files are added after changes. Once reviewed, these files are prepped for a commit.
-Committed Files	            Files that have been saved into the repository’s history via commits.
+| Component | Description |
+| -- | -- |
+| Working Directory	| Contains the active files where you make changes. Git monitors these files but does not track their state. |
+| Staging Area | Temporary storage where files are added after changes. Once reviewed, these files are prepped for a commit. |
+| Committed Files	| Files that have been saved into the repository’s history via commits. |
 
 *** I think code editors like Vscode combines Working Directory & Staging Area to see changes graphically ***
 
 Question: What is Working Area?
+
 Answer: It's probably the same as Working Directory
 
 ## Demo Initialize a GIT Repository
-https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Introduction/Demo-Initialize-a-GIT-Repository/page#committing-multiple-changes
+Kodekloud link:
+- https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Introduction/Demo-Initialize-a-GIT-Repository/page#committing-multiple-changes
 
 It is best practice to commit unrelated changes separately. Keeping commits atomic makes it easier to understand your project’s history and revert changes as necessary. For example, if one commit contains both a front page addition and an unrelated bug fix, it can be difficult to isolate one change without affecting the other.
+
 ^
 I have been doing a lot of bad commits, need to keep commits atomic
 
-https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Introduction/Demo-Initialize-a-GIT-Repository/page#committing-specific-files
+Kodekloud link:
+- https://notes.kodekloud.com/docs/GIT-for-Beginners/GIT-Introduction/Demo-Initialize-a-GIT-Repository/page#committing-specific-files
+
 ^
 It looks like git is based around file changes. 
+
 ^
 I think there has to be a GUI equivalent including or excluding files from stage changes
 
@@ -71,19 +78,19 @@ I think there has to be a GUI equivalent including or excluding files from stage
 https://notes.kodekloud.com/docs/GIT-for-Beginners/Initialize-Remote-Repositories/Initialize-Remote-Repositories/page
 
 Below are some examples of connection strings from popular platforms:
-https://github.com/kodekloudhub/stories.git
-https://gitlab.com/kodekloudhub/stories.git
-https://bitbucket.org/kodekloudhub/stories.git
+- https://github.com/kodekloudhub/stories.git
+- https://gitlab.com/kodekloudhub/stories.git
+- https://bitbucket.org/kodekloudhub/stories.git
 
 # GitHub Actions Certification
 *** There's a bit too much information for simple ci/cd project automation ***
 
 Kodekloud link:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Introducing-Github-Actions/page#introducing-github-actions
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Introducing-Github-Actions/page#introducing-github-actions
 
 ## Basics of CI CD
 Kodekloud link:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Basics-of-CI-CD/page
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Basics-of-CI-CD/page
 ^
 Below are the concepts I am not familiar:
 - Pull Request (I think it's a specific GIT platform feature, not part of GIT)
@@ -97,47 +104,58 @@ Below are the concepts I am not familiar:
 ^
 You can actually use AI to review code in the CI
 
+*** Pull Request, Review, Approve is under the same step for Github workflow ***
+
+TLDR: Create Issue -> New Branch from Issue -> Create Pull Request (Compare branch to main) -> Merge Pull Request -> Close Issue
+
 Question: How does continuous deployment handle UAT, SIT, PROD?
 
 ## (Skip, Optional) Create Explore GitHub Account
 Kodekloud link:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Create-Explore-GitHub-Account/page
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Introduction/Create-Explore-GitHub-Account/page
 
 ## What are Actions
 Kodekloud link:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/What-are-Actions/page
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/What-are-Actions/page
 
 ## GitHub Action Core Components
 Kodekloud link:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/GitHub-Actions-Core-Concepts/GitHub-Action-Core-Components/page
 
 ## Understanding DevOps Pipeline
 *** This section goes into detail to understand CI / CD ***
 
+Kodekloud link:
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Continuous-Integration-with-GitHub-Actions/Understanding-DevOps-Pipeline/page#continuous-delivery-cdel
+
 Question: But does it cover multiple repositories for CI / CD?
 
 Question: Is there an example of deply to SIT, UAT, PROD?
+
 Answer: Yes, below kodekloud notes is an example
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Reusable-Workflows-and-Reporting/Understanding-Reusable-Workflows/page#sample-ci-workflow-for-a-node-js-app
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Reusable-Workflows-and-Reporting/Understanding-Reusable-Workflows/page#sample-ci-workflow-for-a-node-js-app
+
 ^
 Try to follow to self hosted for your project, then follow the above:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Self-Hosted-Runner/Types-of-Runners/page
+- https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Self-Hosted-Runner/Types-of-Runners/page
+
 ^
 Try to follow setup Rocky VM using Vagrant
+
 ^
 Try to adapt the CI pipeline for my current 2tier app
+
 ^
 I have to transfer the docker artifact to the VM, I also have to install docker in the VM as well.
+
 ^
 I don't think you have to transfer because Github Actions Checkout will clone the repo, you can build the artifact in the vm.
+
 ^
 Follow below docker installation guide for Rocky:
 https://docs.docker.com/engine/install/centos/#install-using-the-repository
 
 Question: For self hosted, how to I prevent it from requesting github.com?
-
-Kodekloud link:
-https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Continuous-Integration-with-GitHub-Actions/Understanding-DevOps-Pipeline/page#continuous-delivery-cdel
 
 ### 1. Workflows
 A workflow is a configurable automated process defined by a YAML file. It listens for one or more events in your repository and runs one or more jobs.
