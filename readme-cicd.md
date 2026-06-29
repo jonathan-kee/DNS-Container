@@ -158,6 +158,17 @@ If you need to share data between jobs, use artifacts or caches.
 Kodekloud link:
 - https://notes.kodekloud.com/docs/GitHub-Actions-Certification/Continuous-Integration-with-GitHub-Actions/Understanding-DevOps-Pipeline/page#continuous-delivery-cdel
 
+(My notes) In my 2tier app, Because I don't own the source code for mariadb-server, apache2, etc I was able to skip stages like: 
+- Install Dependencies
+- Dependency Vulnerability
+- Unit Tests & Coverage
+- Static Code Analysis
+- Image Vulnerability Scan
+- Push to Registry
+
+I only ever did
+- Containerization
+
 Question: But does it cover multiple repositories for CI / CD?
 
 Question: Is there an example of deply to SIT, UAT, PROD?
