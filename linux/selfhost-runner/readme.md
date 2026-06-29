@@ -107,13 +107,13 @@ dig prod.company
 You need to enable the setting below for vmware to work:
 Privacy & Security -> Full Disk Access -> vagrant-vmware-utility
 
-cd linux/selfhost-runner
-vagrant up --provider vmware_desktop
-vagrant provision
-vagrant ssh Server1
-sudo chown -R vagrant:vagrant /home/vagrant/actions-runner
-cd actions-runner
-./config.sh --url https://github.com/<OWNER>/<REPO> --token YOUR_TOKEN_HERE
+1) cd linux/selfhost-runner
+2) vagrant up --provider vmware_desktop
+3) vagrant provision
+4) vagrant ssh Server1
+5) sudo chown -R vagrant:vagrant /home/vagrant/actions-runner
+6) cd actions-runner
+7) ./config.sh --url https://github.com/<OWNER>/<REPO> --token YOUR_TOKEN_HERE
 
 *** Enter registration process details ***
 
