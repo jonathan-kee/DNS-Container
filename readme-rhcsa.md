@@ -1,6 +1,7 @@
 # Kraker Notes
 ## Module 08: Networking
 https://alexkraker.com/rhcsa/rhcsa_synthesis/08_networking/#key-terminology
+
 ^
 For Key Terminology section, I am not familiar with the below:
 - Connection: NetworkManager configuration profile applied to interface
@@ -10,23 +11,27 @@ For Key Terminology section, I am not familiar with the below:
 Question: What is the difference between Physical or virtual network device?
 
 https://alexkraker.com/rhcsa/rhcsa_synthesis/08_networking/#decision-tree-network-configuration-strategy
+
 ^
 Question: Multiple IPs can be assigned because a computer has multiple interfaces
 Question: What is VLANS?
 Question: What is Bonding?
 
 https://alexkraker.com/rhcsa/rhcsa_synthesis/08_networking/#standard-procedure-network-troubleshooting
+
 ^
 I think Wireshark is a great way to understand OSI model like 
 - Layer 3 - IP connectivity
 - Layer 7 - DNS resolution 
 
 https://alexkraker.com/rhcsa/rhcsa_synthesis/08_networking/#lab-61-basic-network-configuration-asghar-ghori-style
+
 ^
 Question: For 2. Create static IP configuration, how does it look like in the GUI?
 
 ## Module 10: Firewall
 https://alexkraker.com/rhcsa/rhcsa_synthesis/10_firewall/#key-terminology
+
 ^
 For Key Terminology section, I am not familiar with all of them:
 - Zone: Security context with specific rules applied to network interfaces
@@ -39,8 +44,7 @@ For Key Terminology section, I am not familiar with all of them:
 - Target: Default action for traffic not matching any rules in a zone
 
 Question: How does the GUI for firewall look like?  
-All I remember about Firewall is that after installing servers, 
-you should use Firewall for your servers.
+Answer: All I remember about Firewall is that after installing servers, you should use Firewall for your servers.
 
 # Sander Red Hat RHCSA 9 (EX200) Book
 ## Part IV Managing Network Services
